@@ -1,29 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+---
+layout: default
+---
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<div class="home">
 
-    <link rel="stylesheet" type="text/css" href="stylefile.css">
-    <style>
-        body {
+  <h1 class="page-heading">Posts</h1>
 
-        }
-    </style>
-    <link rel="shortcut icon" href="favicon.ico" />
-    <title>Welcome</title>
-</head>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-<body>
-<h1>Blog is under building.</h1>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-</body>
-</html>
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
