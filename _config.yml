@@ -16,11 +16,11 @@ defaults:
     values:
       title: SilMOON
 
-description: Stylish Jekyll Theme
+description: SilMOON's blog.
 author:
   name: SilMOON
   email: chenminghui8899@gmail.com
-  github: silmoon
+  github: SilMOON
   twitter:
   pinterest:
   linkedin:
