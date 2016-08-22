@@ -12,4 +12,4 @@ fullview: true
 <br>
 在这个例子里，在使用Lambda表达式后只需要一行代码。<br>
 To be continue.
-===s
+---
