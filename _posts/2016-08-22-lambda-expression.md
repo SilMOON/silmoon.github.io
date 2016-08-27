@@ -7,13 +7,13 @@ fullview: true
 ---
 
 The purpose of this project is to create an easy Visual Novel. In this series of blogs, I’ll share some experience in the process of building a game in Ren’Py.
-<br><br>
+
 Ren’Py is a AVG engine made by python. The API is python-like and easy to use. The engine based on MIT license. The main direction of Ren’Py engine is galgame which fits my goal.
-<br><br>
+
 My OS is Ubuntu 16.04 LTS, and I will use Atom as my editor. The Ren’Py version I use is 6.99.8. To install it in Ubuntu, just input this command in terminal:
-<br><br>
+
 `sudo apt install renpy`
-<br><br>
+
 The Ren’Py in Ubuntu’s repository may not be the newest, if you want to get the up-to-date version, check the official website https://www.renpy.org/
 <br><br>
 After installing the Ren’Py, you’ll see a icon like this: ![RenPyIco](https://silmoonblog.files.wordpress.com/2016/05/selection_001.jpg?w=700 "Ren'Py Icon"). Then we can click the “preference” button to begin configuration. The process of configuration is easy, for beginning, we just need to set our editor and project directory. And then click the “Back” button to the main interface. To create a new game, just click “Create New Game” and set a theme you like. The basic frame is found.
