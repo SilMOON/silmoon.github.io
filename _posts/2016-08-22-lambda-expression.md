@@ -6,30 +6,28 @@ tags: [Ren'Py,Galgames]
 fullview: true
 ---
 
-The purpose of this project is to create an easy Visual Novel. In this series of blogs, I’ll share some experience in the process of building a game in Ren’Py.
-
-Ren’Py is a AVG engine made by python. The API is python-like and easy to use. The engine based on MIT license. The main direction of Ren’Py engine is galgame which fits my goal.
-
+The purpose of this project is to create an easy Visual Novel. In this series of blogs, I’ll share some experience in the process of building a game in Ren’Py.<br><br>
+Ren’Py is a AVG engine made by python. The API is python-like and easy to use. The engine based on MIT license. The main direction of Ren’Py engine is galgame which fits my goal.<br><br>
 My OS is Ubuntu 16.04 LTS, and I will use Atom as my editor. The Ren’Py version I use is 6.99.8. To install it in Ubuntu, just input this command in terminal:
 
 `sudo apt install renpy`
-
+<br><br>
 The Ren’Py in Ubuntu’s repository may not be the newest, if you want to get the up-to-date version, check the official website https://www.renpy.org/
-
+<br><br>
 After installing the Ren’Py, you’ll see a icon like this: ![RenPyIco](https://silmoonblog.files.wordpress.com/2016/05/selection_001.jpg?w=700 "Ren'Py Icon"). Then we can click the “preference” button to begin configuration. The process of configuration is easy, for beginning, we just need to set our editor and project directory. And then click the “Back” button to the main interface. To create a new game, just click “Create New Game” and set a theme you like. The basic frame is found.
-
+<br><br>
 The main part of your game will be found in a file named script.rpy. Ren’Py is very friendly to beginners, the comments are specific and easy to understand. In this blog I’ll show some basic syntax.
-
+<br><br>
 To create a background picture, we can use image syntax, in the example below, I’ll show how to declare a background picture named light:
 
 `image bg light = “light.jpg”`
-
+<br><br>
 Now we initialise our background picture light. If we want to use the background, we can use the code below in label block to invoke it:
 
 `scene bg light`
-
+<br><br>
 (Tips: Resources like pictures, music should be put in game folder.)
-
+<br><br>
 So what is a label block?
-
+<br><br>
 To be continued.
