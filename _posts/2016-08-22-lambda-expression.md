@@ -23,6 +23,7 @@ The main part of your game will be found in a file named script.rpy. Ren’Py is
 To create a background picture, we can use image syntax, in the example below, I’ll show how to declare a background picture named light:
 <br><br>
 `image bg light = “light.jpg”`
+<br><br>
 Now we initialise our background picture light. If we want to use the background, we can use the code below in label block to invoke it:
 <br><br>
 `scene bg light`
