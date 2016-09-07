@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Hello World!
-categories: [general]
-tags: [silmoon]
+categories: [General]
+tags: [SilMOON]
 fullview: true
 ---
 
