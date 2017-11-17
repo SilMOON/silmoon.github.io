@@ -40,13 +40,13 @@ class Solution {
 This solution passed the time limited test in most cases but still failed sometimes. Obviously this solution is not fast enough because the two loops for duplicate checking. But I couldn't figure out a better solution. So I checked the discussion posts of this problem and find a much more better solution than mine:
 ```java
     int ans =0;
-    
     int len = nums.length;
-    for(int i=0; i<len; i++)
+    for(int i=0; i<len; i++){
         ans ^= nums[i];
-    
+    }
+
     return ans;
 ```
 
-This solution uses only one loop and the way it check unduplicated element is using XOR. The main idea is that 0^N==N and N^N==0. But I'm still confused about the mechanism of executing order of XOR in java. I'll update when I figure it out.
+This solution uses only one loop and the way it check unduplicated element is using bitwise XOR. The main idea is that 0^N==N and N^N==0. Also, XOR is **commutative** which means N1^N3^N2^N1^N2 == N1^N1^N2^N2^N3. As a result, the variable ans will always be the single element and the complexity is only O(n)! Brilliant!
 <br><br>
