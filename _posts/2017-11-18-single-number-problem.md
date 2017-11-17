@@ -6,7 +6,7 @@ tags: [Algorithm,Java]
 fullview: true
 ---
 
-I'm doing some algorithm practices recently in Leetcode. This post is about the "Single Number" problem and my attempts to the answer.<br><br>
+I'm doing some algorithm practices recently in Leetcode. This post is about the "Single Number" problem and my attempts to it.<br><br>
 In this problem, you are given an array with some int numbers in pair except one single number and you need to find the single number. The tricky part I think is that you can't delete an element from an array directly in java so you need to fine another approach to make the single element more "outstanding".<br><br>
 My first attempt is quite straightforward (and stupid): use a for loop to find the maximum number in the given array and plus it by 1 to generate an invalid number, then use another 2 loops to find elements in pair and turn them into this invalid number. At last, use another loop to find the element which doesn't equal to the invalid number to get the result. This approach did solve the problem, but the speed is pathetically slow and unsurprisingly, it failed the speed test.<br><br>
 My second attempt got rid of the loop for generating invalid number and the loop for finding the element which is not "invalid". Instead, I use a variable named "counter", the counter will become 1 when an element has a duplicate when its "duplicate checking" loop ends, and the counter will be reset to 0 before next checking loop. If an element doesn't have a duplicate, the counter will still be 0 and the answer will be nums[i], then the program will jump out of the loop directly. Here's this version's solution:
