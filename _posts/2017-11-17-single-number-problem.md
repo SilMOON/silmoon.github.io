@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The single number problem in Leetcode
+title: The single element problem
 categories: [Algorithm,Java]
 tags: [Algorithm,Java]
 fullview: true
