@@ -7,9 +7,11 @@ fullview: true
 ---
 
 1. Check mail-lists frequently.
-2. Use ```Shell
+2. Use
+```Shell
 zypper dup
 ```
-instead of ```Shell
+instead of 
+```Shell
 zypper up
 ```
