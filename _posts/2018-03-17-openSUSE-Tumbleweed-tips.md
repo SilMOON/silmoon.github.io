@@ -9,9 +9,9 @@ fullview: true
 1. Check mail-lists frequently.
 2. Use
 ```Shell
-zypper dup
+zypper dup --no-allow-vendor-change
 ```
-instead of 
+instead of
 ```Shell
 zypper up
 ```
