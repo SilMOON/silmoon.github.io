@@ -31,7 +31,7 @@ class Solution {
                 counter = 1;
             }            
         }
-        
+
         return answer;
     }
 }
@@ -48,7 +48,7 @@ class Solution {
         return nums[nums.length/2];
     }
 }
-``` 
+```
 <br><br>
 **II. HashMap**<br>
 This approach uses HashMap with element and appears times to find the majority element. The code snippet below is from [leetcode](https://leetcode.com/problems/majority-element/solution/):
