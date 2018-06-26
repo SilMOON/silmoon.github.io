@@ -9,10 +9,11 @@ fullview: true
 1. Check mail-lists frequently.<br>
 2. Use
 ```Shell
-zypper dup --no-allow-vendor-change
+zypper dup
 ```
 instead of
 ```Shell
 zypper up
 ```
 <br>
+3. Use snapper to manage snapshots for recovery
