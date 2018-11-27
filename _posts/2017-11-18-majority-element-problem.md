@@ -6,8 +6,7 @@ tags: [Algorithm,Java]
 fullview: true
 ---
 
-This post is about the "Majority Element" problem and my attempts to it.<br><br>
-In this problem, you are given an array of size **n** with some int numbers and you need to find the "majority element" which appears more than **n/2** times.<br><br>
+This post is about the "Majority Element" problem and my attempts to it. In this problem, you are given an array of size **n** with some int numbers and you need to find the "majority element" which appears more than **n/2** times.<br><br>
 My first attempt is intuitive: use two loops to traverse the whole array and an if statement and a counter variable to find the majority element. This approach did solve the problem, but wasn't fast enough to pass the speed test. Here's the code:
 
 ```java
@@ -49,7 +48,7 @@ class Solution {
     }
 }
 ```
-<br><br>
+<br>
 **II. HashMap**<br>
 This approach uses HashMap with element and appears times to find the majority element. The code snippet below is from [leetcode](https://leetcode.com/problems/majority-element/solution/):
 
@@ -85,4 +84,4 @@ class Solution {
 ```
 
 
-<br><br>
+<br>
