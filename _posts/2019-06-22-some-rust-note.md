@@ -17,7 +17,7 @@ let x: (i32, f64, u8) = (500, 6.4, 1);
 ```rust
 let a: [i32; 5] = [1, 2, 3, 4, 5];
 ```
-6. If [6,6,6,6,6] is the desirable array, we can declare it in this way:
+6. If [6, 6, 6, 6, 6] is the desirable array, we can declare it in this way:
 ```rust
 let a = [6; 5];
 ```
