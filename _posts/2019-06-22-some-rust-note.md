@@ -21,3 +21,11 @@ let a: [i32; 5] = [1, 2, 3, 4, 5];
 ```rust
 let a = [6; 5];
 ```
+7. A good way to create a new instance of a struct that uses most of an old instance’s values but changes some is using update syntax:
+```rust
+let user2 = User {
+    email: String::from("user2@example.com"),
+    username: String::from("user2name"),
+    ..user1
+};
+```
