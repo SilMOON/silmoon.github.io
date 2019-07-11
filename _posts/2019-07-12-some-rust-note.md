@@ -29,3 +29,28 @@ let user2 = User {
     ..user1
 };
 ```
+8. An example of using derived traits of custom structs:
+```rust
+#[derive(Debug)]
+println!("{:?}",user1);
+println!("{:#?}",user1);
+```
+9. If a struct tuple is defined, when a function want to call an instance of this struct, other struct tuple (even with the same form) cannot be used:
+```rust
+struct Color (u32,u32,u32);
+struct Point (u32,u32,u32);
+```
+In this case, if a function want to call an instance of "Color", we cannot put an instance of "Point" in it even they have the same form.
+10. An example of a struct and its method implementation:
+```rust
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+```
