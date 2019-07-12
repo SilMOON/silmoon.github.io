@@ -51,5 +51,20 @@ impl Rectangle {
     fn area(&self) -> u32 {
         self.width * self.height
     }
+
+    //method with multiple parameters
+    fn can_hold(&self, other:&Rectangle) -> bool {
+        self.height > other.height && self.width > other.width
+    }
+
+    //associated function
+    fn square(size:u32) -> Rectangle {
+        Rectangle {width:size, height:size}
+    }
 }
+```
+When we want to use them:
+```rust
+rect1.can_hold(&rect2)
+let sq = Rectangle::square(20);
 ```
