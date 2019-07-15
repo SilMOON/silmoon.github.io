@@ -68,3 +68,8 @@ When we want to use them:
 rect1.can_hold(&rect2)
 let sq = Rectangle::square(20);
 ```
+11. Option<T> and T are different types so that we cannot add an i8 and an Option<i8>.
+12. If we use None rather than Some, we need to tell Rust what type of Option<T> we have:
+```rust
+let absent_number: Option<i32> = None;
+```
