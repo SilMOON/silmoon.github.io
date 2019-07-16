@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Some Rust note
+title: Some Rust notes
 categories: [Rust]
 tags: [Tips]
 fullview: true
@@ -72,4 +72,18 @@ let sq = Rectangle::square(20);
 12. If we use None rather than Some, we need to tell Rust what type of Option<T> we have:
 ```rust
 let absent_number: Option<i32> = None;
+```
+13. Using match in order to check elements in enum or check Option<T>:
+```rust
+match seven {
+    Some(7) => println!("{:?}", seven),
+    _ => (),
+}
+```
+The `_` pattern will match any value. The `()` is just the unit value, so nothing will happen in the _ case.
+However, the example above can be written in `if let` which is simpler to read:
+```rust
+if let Some(7) = seven {
+    println!("{:?}",seven);
+}
 ```
