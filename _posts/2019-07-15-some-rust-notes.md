@@ -87,3 +87,11 @@ if let Some(7) = seven {
     println!("{:?}",seven);
 }
 ```
+Also, `else` can be used with `if let`:
+```rust
+if let Some(7) = seven {
+    println!("{:?}",seven);
+} else {
+    println!("This is a else statement.");
+}
+```
