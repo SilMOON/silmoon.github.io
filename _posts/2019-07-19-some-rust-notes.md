@@ -125,7 +125,7 @@ use std::io::{self, Write};
 ```rust
 pub struct Breakfast {
     pub toast : String,
-    //fruit is still private
+    //fruit is still private as its default
     fruit : String,
 }
 ```
