@@ -182,3 +182,16 @@ hosting.rs:
 ```rust
 pub fn add_to_waitlist() {}
 ```
+19. Store elements with different types using `enum`:
+```rust
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
+let row = vec![
+    SpreadsheetCell::Int(1),
+    SpreadsheetCell::Text(String::from("test")),
+    SpreadsheetCell::Float(3.14),
+];
+```
