@@ -160,12 +160,12 @@ fn function1() -> Result {}
 fn function2() -> IoResult<()> {}
 ```
 and usually when we want to use functions from outside, we `use` their parent path.
-18. We can separate modules into different files and still `use` the same path when we use them. But we need to declare them first in their parent path level by level until it comes to lib.rs. In this example ,the files structure is like this:
-|-src
-  -lib.rs
-  -front_of_house.rs
-  |-front_of_house
-    -hosting.rs
+18. We can separate modules into different files and still `use` the same path when we use them. But we need to declare them first in their parent path level by level until it comes to lib.rs. In this example ,the files structure is like this:  
+|-src  
+|&nbsp;&nbsp;&nbsp;-front_of_house  
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-hosting.rs  
+|&nbsp;&nbsp;&nbsp;-lib.rs  
+|&nbsp;&nbsp;&nbsp;-front_of_house.rs  
 lib.rs:
 ```rust
 mod front_of_house;
