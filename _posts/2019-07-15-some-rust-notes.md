@@ -95,3 +95,69 @@ if let Some(7) = seven {
     println!("This is a else statement.");
 }
 ```
+14. Absolute path starts from a crate root by using a crate name or a literal `crate`:
+```rust
+crate::front_house::hosting::add_to_waitlist();
+```
+Relative path starts from the current module and uses `self`, `super`, or an identifier in the current module:
+```rust
+front_house::hosting::add_to_waitlist();
+self::front_house::hosting::add_to_waitlist();
+```
+btw when we use `use` keyword for this one, we need to use `self` (but this usage might not be necessary in the future):
+```rust
+use self::front_of_house::hosting;
+```
+15. Use nested paths to bring the same items into scope in one line:
+```rust
+use std::{cmp::Ordering, io};
+```
+When there are two `use` statements where one is a subpath of the other, instead of using:
+```rust
+use std::io;
+use std::io::Write;
+```
+we can use:
+```rust
+use std::io::{self, Write};
+```
+16. When using `pub` to a struct, we need to also use `pub` to fields we want to make it public:
+```rust
+pub struct Breakfast {
+    pub toast : String,
+    //fruit is still private
+    fruit : String,
+}
+```
+but for an enum we only need to use `pub` to the enum itself:
+```rust
+pub enum Appetizer {
+    //both Soup and Salad are now public
+    Soup,
+    Salad,
+}
+```
+17. Usually we `use` the full path for structs and enums: 
+```rust
+use std::collections::HashMap;
+fn main() {
+    let mut map = HashMap::new();
+    map.insert(1, 2);
+}
+```
+when multiple of them have the same name we want to use their parent path in order to avoid conflicts:
+```rust
+use std::fmt;
+use std::io;
+fn function1() -> fmt::Result {}
+fn function2() -> io::Result<()> {}
+```
+but we can still use the full path if we use `as` keyword to give them aliases:
+```rust
+use std::fmt::Result;
+use std::io::Result as IoResult;
+fn function1() -> Result {}
+fn function2() -> IoResult<()> {}
+```
+and usually when we want to use functions from outside, we `use` their parent path.
+18. We can separate modules into different files
