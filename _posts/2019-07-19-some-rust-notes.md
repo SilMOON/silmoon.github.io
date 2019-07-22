@@ -195,3 +195,8 @@ let row = vec![
     SpreadsheetCell::Float(3.14),
 ];
 ```
+20. Cast a type to a different type:
+```rust
+let num1 : u32 = 1;
+let num : f32 = (num1) as f32;
+```
