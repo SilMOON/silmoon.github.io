@@ -227,3 +227,17 @@ fn read_username_from_file() -> Result<String, io::Error> {
     Ok(s)
 }
 ```
+Or the shorter one:
+```rust
+fn read_username_from_file() -> Result<String, io::Error> {
+    let mut s = String::new();
+    File::open("hello.txt")?.read_to_string(&mut s)?;
+    Ok(s)
+}
+```
+BTW in the case above there is a even shorter way to do the same thing:
+```rust
+fn read_username_from_file() -> Result<String, io::Error> {
+    fs::read_to_string("hello.txt")
+}
+```
