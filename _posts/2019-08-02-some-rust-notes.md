@@ -273,7 +273,7 @@ fn some_function<T, U>(t: T, u: U) -> i32
 ```rust
 fn returns_summarizable() -> impl Summary {}
 ```
-However, you can only use impl Trait if you’re returning a single type:
+However, we can only use impl Trait if we’re returning a single type. We cannot do this:
 ```rust
 fn returns_summarizable() -> impl Summary {
     if condition {
