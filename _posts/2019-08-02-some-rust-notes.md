@@ -241,3 +241,46 @@ fn read_username_from_file() -> Result<String, io::Error> {
     fs::read_to_string("hello.txt")
 }
 ```
+22. When using `trait` as a parameter in a function:
+```rust
+pub fn notify(item1: impl Summary, item2: impl Summary) {}
+```
+in this case is similar to:
+```rust
+pub fn notify<T: Summary>(item1: T, item2: T) {
+```
+However, this way will force both parameters to have the same type whih is T. If we want to allow `item1` and `item2` to have different types, it's more appropriate to use `impl Trait` syntax.
+23. We can use `+` for multiple trait bounds:
+```rust
+pub fn notify(item: impl Summary + Display) {}
+```
+which in this case is the same as:
+```rust
+pub fn notify<T: Summary + Display>(item: T) {}
+```
+24. Instead of using: 
+```rust
+fn some_function<T: Display + Clone, U: Clone + Debug>(t: T, u: U) -> i32 {}
+```
+We can use a `where` clause:
+```rust
+fn some_function<T, U>(t: T, u: U) -> i32
+    where T: Display + Clone,
+          U: Clone + Debug
+{}
+```
+25. We can make functions to return types which implement a specific trait:
+```rust
+fn returns_summarizable() -> impl Summary {}
+```
+However, you can only use impl Trait if you’re returning a single type:
+```rust
+fn returns_summarizable() -> impl Summary {
+    if condition {
+        StructA{...}
+    } else {
+        StructB{...}
+    }
+}
+```
+In this case the program will not compile even if both structs have the trait `Summary`.
