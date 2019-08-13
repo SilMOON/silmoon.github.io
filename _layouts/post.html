@@ -6,19 +6,3 @@ layout: default
 {% if site.disqus and page.comments %}
     {% include disqus.html %}
 {% endif %}
-
-<div id="comments"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-const gitment = new Gitment({
-  owner: 'SilMOON',
-  repo: 'https://github.com/SilMOON/silmoon.github.io.git',
-  oauth: {
-    client_id: '6a473a9963ae8a6d580f',
-    client_secret: '57e57b694744545d9ab5e6d2c920884c1e3614a4',
-  },
-  // ...
-})
-gitment.render('comments')
-</script>
