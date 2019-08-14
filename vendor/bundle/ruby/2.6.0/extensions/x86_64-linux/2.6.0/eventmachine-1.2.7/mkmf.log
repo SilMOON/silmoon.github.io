@@ -1,0 +1,25 @@
+"gcc -o conftest -I/usr/include/ruby-2.6.0/x86_64-linux-gnu -I/usr/include/ruby-2.6.0/ruby/backward -I/usr/include/ruby-2.6.0 -I.    -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector-strong -funwind-tables -fasynchronous-unwind-tables -fstack-clash-protection -flto=3 -g -fno-strict-aliasing -std=gnu99 -fPIC conftest.c  -L. -L/usr/lib64 -L. -flto=3 -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -lruby2.6  -lm   -lc"
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+

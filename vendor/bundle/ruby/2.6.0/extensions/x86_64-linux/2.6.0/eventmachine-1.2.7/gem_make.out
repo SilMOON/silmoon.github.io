@@ -1,0 +1,51 @@
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+/usr/bin/ruby.ruby2.6 -I /usr/lib64/ruby/2.6.0 -r ./siteconf20190814-23673-1b45jpx.rb extconf.rb
+[proxychains] DLL init: proxychains-ng 4.11
+creating Makefile
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" clean
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR="
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+compiling mapper.cpp
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+compiling rubymain.cpp
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+linking shared-object fastfilereaderext.so
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/2.6.0/gems/eventmachine-1.2.7/ext/fastfilereader
+make "DESTDIR=" install
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+/usr/bin/install -c -m 0755 fastfilereaderext.so ./.gem.20190814-23673-s44fic
+[proxychains] DLL init: proxychains-ng 4.11

@@ -122,21 +122,21 @@
 
 	<div class="col-sm-9 col-sm-offset-3">
 		<div class="page-header">
-  <h1>The single element problem </h1>
+	<h1>The single element problem </h1>
 </div>
 
 <article>
 
 	<div class="col-sm-10">
-	 <span class="post-date">
-	   
-	   November
-	   17th,
-	   
-	   2017
-	 </span>
-	  <div class="article_body">
-	  <p>I’m doing some algorithm practices recently in Leetcode. This post is about the “Single Number” problem and my attempts to it.<br /><br />
+		<span class="post-date">
+			
+			November
+			17th,
+			
+			2017
+		</span>
+		<div class="article_body">
+			<p>I’m doing some algorithm practices recently in Leetcode. This post is about the “Single Number” problem and my attempts to it.<br /><br />
 In this problem, you are given an array with some int numbers in pair except one single number and you need to find the single number. The tricky part I think is that you can’t delete an element from an array directly in java so you need to fine another approach to make the single element more “outstanding”.<br /><br />
 My first attempt is quite straightforward (and stupid): use a for loop to find the maximum number in the given array and plus it by 1 to generate an invalid number, then use another 2 loops to find elements in pair and turn them into this invalid number. At last, use another loop to find the element which doesn’t equal to the invalid number to get the result. This approach did solve the problem, but the speed is pathetically slow and unsurprisingly, it failed the speed test.<br /><br />
 My second attempt got rid of the loop for generating invalid number and the loop for finding the element which is not “invalid”. Instead, I use a variable named “counter”, the counter will become 1 when an element has a duplicate when its “duplicate checking” loop ends, and the counter will be reset to 0 before next checking loop. If an element doesn’t have a duplicate, the counter will still be 0 and the answer will be nums[i], then the program will jump out of the loop directly. Here’s this version’s solution:</p>
@@ -178,57 +178,57 @@ My second attempt got rid of the loop for generating invalid number and the loop
 <p>This solution uses only one loop and the way it check unduplicated element is using bitwise XOR. The main idea is that 0^N==N and N^N==0. Also, XOR is <strong>commutative</strong> which means N1^N3^N2^N1^N2 == N1^N1^N2^N2^N3. As a result, the variable ans will always be the single element and the complexity is only O(n)! Brilliant!
 <br /><br /></p>
 
-	  </div>
+		</div>
 
 		
 		<ul class="tag_box list-unstyled list-inline">
-		  <li><i class="fa fa-folder-open"></i></li>
-		  
-		  
+			<li><i class="fa fa-folder-open"></i></li>
 			
-				<li><a href="/categories.html#Algorithm-ref">
-					Algorithm <span>(3)</span>
+			
+			
+			<li><a href="/categories.html#Algorithm-ref">
+					Algorithm <span>(5)</span>
 					,
 				</a></li>
 			
-				<li><a href="/categories.html#Java-ref">
-					Java <span>(3)</span>
+			<li><a href="/categories.html#Java-ref">
+					Java <span>(5)</span>
 					
 				</a></li>
 			
-		  
+			
 		</ul>
 		
 
 		
 		<ul class="list-inline">
-		  <li><i class="fa fa-tags"></i></li>
-		  
-		  
+			<li><i class="fa fa-tags"></i></li>
 			
-				<li>
-					<a href="/tags.html#Algorithm-ref">
-					Algorithm <span>(3)</span>
+			
+			
+			<li>
+				<a href="/tags.html#Algorithm-ref">
+					Algorithm <span>(5)</span>
 					,
-					</a>
-				</li>
+				</a>
+			</li>
 			
-				<li>
-					<a href="/tags.html#Java-ref">
-					Java <span>(3)</span>
+			<li>
+				<a href="/tags.html#Java-ref">
+					Java <span>(5)</span>
 					
-					</a>
-				</li>
+				</a>
+			</li>
 			
-		  
-		  
+			
+			
 		</ul>
 		
 
 		<hr>
 
 		<div>
-            <!--  *****share botton*****
+			<!--  *****share botton*****
       <section class="share col-sm-6">
         <h4 class="section-title">Share Post</h4>
         <a class="btn btn-default btn-sm twitter" href="http://twitter.com/share?text=The single element problem"
@@ -249,41 +249,50 @@ My second attempt got rid of the loop for generating invalid number and the loop
       </section>
   -->
 
-      <section class="col-sm-6 author">
-        <img src="http://www.gravatar.com/avatar/42a0f21355b450beade4a5a062c6983c" class="img-rounded author-image" />
-        <h4 class="section-title author-name">SilMOON</h4>
-        <p class="author-bio">Student, programmer.</p>
-      </section>
-    </div>
+			<section class="col-sm-6 author">
+				<img src="http://www.gravatar.com/avatar/42a0f21355b450beade4a5a062c6983c" class="img-rounded author-image" />
+				<h4 class="section-title author-name">SilMOON</h4>
+				<p class="author-bio">Student, programmer.</p>
+			</section>
+		</div>
 
-    <div class="clearfix"></div>
+		<div class="clearfix"></div>
 
 		<ul class="pager">
-		  
-		  <li class="previous"><a href="/network/2017/06/04/public-key-authentication.html" title="Public key authentication">&larr; Previous</a></li>
-		  
-		  
-		  <li class="next"><a href="/algorithm/java/2017/11/18/majority-element-problem.html" title="The majority element problem">Next &rarr;</a></li>
-		  
+			
+			<li class="previous"><a href="/network/2017/06/04/public-key-authentication.html"
+					title="Public key authentication">&larr; Previous</a></li>
+			
+			
+			<li class="next"><a href="/algorithm/java/2017/11/18/majority-element-problem.html" title="The majority element problem">Next
+					&rarr;</a></li>
+			
 		</ul>
 
 		<hr>
+		
+		<script src="https://utteranc.es/client.js"
+			repo="SilMOON/silmoon.github.io"
+			issue-term="pathname"
+			label="UttComments"
+			theme="github-light"
+			crossorigin="anonymous"
+			async>
+		</script>
+
 	</div>
-
 	<div class="col-sm-2 sidebar-2">
-
 	</div>
 </article>
+
 <div class="clearfix"></div>
-
-
 
 
 
 		<footer style="text-align: center;">
 			<hr/>
 			<p>
-				&copy; 2018 SilMOON with Jekyll. Theme is modified from dbyll.
+				&copy; 2019 SilMOON with Jekyll. Theme is modified from dbyll.
 			</p>
 		</footer>
 	</div>

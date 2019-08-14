@@ -1,0 +1,51 @@
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+/usr/bin/ruby.ruby2.6 -I /usr/lib64/ruby/2.6.0 -r ./siteconf20190814-23673-mug2zj.rb extconf.rb
+[proxychains] DLL init: proxychains-ng 4.11
+creating Makefile
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR=" clean
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR="
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+compiling ruby_http_parser.c
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+compiling ryah_http_parser.c
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+linking shared-object ruby_http_parser.so
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/2.6.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make "DESTDIR=" install
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+[proxychains] DLL init: proxychains-ng 4.11
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20190814-23673-1geicpt
+[proxychains] DLL init: proxychains-ng 4.11

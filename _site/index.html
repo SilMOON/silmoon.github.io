@@ -131,6 +131,501 @@
 
   <span class="post-date">
     
+    August
+    13th,
+    
+    2019
+  </span>
+
+  <h2>
+    <a href="/general/2019/08/13/comment-system-is-added-now.html">Comment system is added now</a>
+  </h2>
+
+  <div>
+    
+    <p>Just added a comment system using Utterances. Welcome to leave your thoughts about my blogs!<br /></p>
+
+    
+  </div>
+
+</article>
+
+
+<article class="home">
+
+  <span class="post-date">
+    
+    August
+    9th,
+    
+    2019
+  </span>
+
+  <h2>
+    <a href="/rust/2019/08/09/some-rust-notes-ii.html">Some Rust notes II</a>
+  </h2>
+
+  <div>
+    
+    <ol>
+  <li>A simple example of the syntax of specifying generic type parameters, trait bounds, and lifetimes:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">fmt</span><span class="p">::</span><span class="n">Display</span><span class="p">;</span>
+<span class="k">fn</span> <span class="n">longest_with_an_announcement</span><span class="o">&lt;</span><span class="nv">'a</span><span class="p">,</span> <span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="o">&amp;</span><span class="nv">'a</span> <span class="nb">str</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">&amp;</span><span class="nv">'a</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ann</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="nv">'a</span> <span class="nb">str</span>
+ <span class="k">where</span> <span class="n">T</span><span class="p">:</span> <span class="n">Display</span>
+<span class="p">{</span>
+ <span class="nd">println!</span><span class="p">(</span><span class="s">"Announcement! {}"</span><span class="p">,</span> <span class="n">ann</span><span class="p">);</span>
+ <span class="k">if</span> <span class="n">x</span><span class="nf">.len</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">y</span><span class="nf">.len</span><span class="p">()</span> <span class="p">{</span>
+     <span class="n">x</span>
+ <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+     <span class="n">y</span>
+ <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>We can put expected panic information in the <code class="highlighter-rouge">expected</code> parameter of <code class="highlighter-rouge">#[should_panic]</code>:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="nf">should_panic</span><span class="p">(</span><span class="n">expected</span> <span class="o">=</span> <span class="s">"Guess value must be less than or equal to 100"</span><span class="p">)]</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+    
+  </div>
+
+</article>
+
+
+<article class="home">
+
+  <span class="post-date">
+    
+    August
+    2nd,
+    
+    2019
+  </span>
+
+  <h2>
+    <a href="/rust/2019/08/02/some-rust-notes.html">Some Rust notes</a>
+  </h2>
+
+  <div>
+    
+    <ol>
+  <li>io::stdin().read_line(&amp;xx) appends new value on the target which is “xx” in this case.</li>
+  <li>A tuple can have values with different types in it while an array must have the same type.</li>
+  <li>A tuple with explictly type annotations example:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="nb">i32</span><span class="p">,</span> <span class="nb">f64</span><span class="p">,</span> <span class="nb">u8</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mf">6.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>An array in Rust have a fixed length while a Vector can grow or shrink its size.</li>
+  <li>An array with explictly type and elements’ number annotations example:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">a</span><span class="p">:</span> <span class="p">[</span><span class="nb">i32</span><span class="p">;</span> <span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+</code></pre></div>    </div>
+  </li>
+  <li>If [6, 6, 6, 6, 6] is the desirable array, we can declare it in this way:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">;</span> <span class="mi">5</span><span class="p">];</span>
+</code></pre></div>    </div>
+  </li>
+  <li>A good way to create a new instance of a struct that uses most of an old instance’s values but changes some is using update syntax:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">user2</span> <span class="o">=</span> <span class="n">User</span> <span class="p">{</span>
+ <span class="n">email</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"user2@example.com"</span><span class="p">),</span>
+ <span class="n">username</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"user2name"</span><span class="p">),</span>
+ <span class="o">..</span><span class="n">user1</span>
+<span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li>An example of using derived traits of custom structs:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="nf">derive</span><span class="p">(</span><span class="n">Debug</span><span class="p">)]</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span><span class="n">user1</span><span class="p">);</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"{:#?}"</span><span class="p">,</span><span class="n">user1</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>If a struct tuple is defined, when a function want to call an instance of this struct, other struct tuple (even with the same form) cannot be used:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="nf">Color</span> <span class="p">(</span><span class="nb">u32</span><span class="p">,</span><span class="nb">u32</span><span class="p">,</span><span class="nb">u32</span><span class="p">);</span>
+<span class="k">struct</span> <span class="nf">Point</span> <span class="p">(</span><span class="nb">u32</span><span class="p">,</span><span class="nb">u32</span><span class="p">,</span><span class="nb">u32</span><span class="p">);</span>
+</code></pre></div>    </div>
+    <p>In this case, if a function want to call an instance of “Color”, we cannot put an instance of “Point” in it even they have the same form.</p>
+  </li>
+  <li>An example of a struct and its method implementation:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Rectangle</span> <span class="p">{</span>
+<span class="n">width</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+<span class="n">height</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="k">impl</span> <span class="n">Rectangle</span> <span class="p">{</span>
+<span class="k">fn</span> <span class="nf">area</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">u32</span> <span class="p">{</span>
+    <span class="k">self</span><span class="py">.width</span> <span class="o">*</span> <span class="k">self</span><span class="py">.height</span>
+<span class="p">}</span>
+
+<span class="c">//method with multiple parameters</span>
+<span class="k">fn</span> <span class="nf">can_hold</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span><span class="o">&amp;</span><span class="n">Rectangle</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">bool</span> <span class="p">{</span>
+    <span class="k">self</span><span class="py">.height</span> <span class="o">&gt;</span> <span class="n">other</span><span class="py">.height</span> <span class="o">&amp;&amp;</span> <span class="k">self</span><span class="py">.width</span> <span class="o">&gt;</span> <span class="n">other</span><span class="py">.width</span>
+<span class="p">}</span>
+
+<span class="c">//associated function</span>
+<span class="k">fn</span> <span class="nf">square</span><span class="p">(</span><span class="n">size</span><span class="p">:</span><span class="nb">u32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">Rectangle</span> <span class="p">{</span>
+    <span class="n">Rectangle</span> <span class="p">{</span><span class="n">width</span><span class="p">:</span><span class="n">size</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span><span class="n">size</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>When we want to use them:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rect1</span><span class="nf">.can_hold</span><span class="p">(</span><span class="o">&amp;</span><span class="n">rect2</span><span class="p">)</span>
+<span class="k">let</span> <span class="n">sq</span> <span class="o">=</span> <span class="nn">Rectangle</span><span class="p">::</span><span class="nf">square</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Option<T> and T are different types so that we cannot add an i8 and an Option<i8>.</i8></T></li>
+  <li>If we use None rather than Some, we need to tell Rust what type of Option<T> we have:
+</T>    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">absent_number</span><span class="p">:</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nb">None</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Using match in order to check elements in enum or check Option<T>:
+</T>    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">match</span> <span class="n">seven</span> <span class="p">{</span>
+<span class="nf">Some</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span> <span class="n">seven</span><span class="p">),</span>
+<span class="n">_</span> <span class="k">=&gt;</span> <span class="p">(),</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>The <code class="highlighter-rouge">_</code> pattern will match any value. The <code class="highlighter-rouge">()</code> is just the unit value, so nothing will happen in the _ case.
+However, the example above can be written in <code class="highlighter-rouge">if let</code> which is simpler to read:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="k">let</span> <span class="nf">Some</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">=</span> <span class="n">seven</span> <span class="p">{</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span><span class="n">seven</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>Also, <code class="highlighter-rouge">else</code> can be used with <code class="highlighter-rouge">if let</code>:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="k">let</span> <span class="nf">Some</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="o">=</span> <span class="n">seven</span> <span class="p">{</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span><span class="n">seven</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="nd">println!</span><span class="p">(</span><span class="s">"This is a else statement."</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Absolute path starts from a crate root by using a crate name or a literal <code class="highlighter-rouge">crate</code>:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">crate</span><span class="p">::</span><span class="nn">front_house</span><span class="p">::</span><span class="nn">hosting</span><span class="p">::</span><span class="nf">add_to_waitlist</span><span class="p">();</span>
+</code></pre></div>    </div>
+    <p>Relative path starts from the current module and uses <code class="highlighter-rouge">self</code>, <code class="highlighter-rouge">super</code>, or an identifier in the current module:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">front_house</span><span class="p">::</span><span class="nn">hosting</span><span class="p">::</span><span class="nf">add_to_waitlist</span><span class="p">();</span>
+<span class="k">self</span><span class="p">::</span><span class="nn">front_house</span><span class="p">::</span><span class="nn">hosting</span><span class="p">::</span><span class="nf">add_to_waitlist</span><span class="p">();</span>
+</code></pre></div>    </div>
+    <p>btw when we use <code class="highlighter-rouge">use</code> keyword for this one, we need to use <code class="highlighter-rouge">self</code> (but this usage might not be necessary in the future):</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="k">self</span><span class="p">::</span><span class="nn">front_of_house</span><span class="p">::</span><span class="n">hosting</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Use nested paths to bring the same items into scope in one line:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::{</span><span class="nn">cmp</span><span class="p">::</span><span class="n">Ordering</span><span class="p">,</span> <span class="n">io</span><span class="p">};</span>
+</code></pre></div>    </div>
+    <p>When there are two <code class="highlighter-rouge">use</code> statements where one is a subpath of the other, instead of using:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">io</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">io</span><span class="p">::</span><span class="n">Write</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <p>we can use:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">io</span><span class="p">::{</span><span class="k">self</span><span class="p">,</span> <span class="n">Write</span><span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li>When using <code class="highlighter-rouge">pub</code> to a struct, we need to also use <code class="highlighter-rouge">pub</code> to fields we want to make it public:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">struct</span> <span class="n">Breakfast</span> <span class="p">{</span>
+<span class="k">pub</span> <span class="n">toast</span> <span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+<span class="c">//fruit is still private as its default</span>
+<span class="n">fruit</span> <span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>but for an enum we only need to use <code class="highlighter-rouge">pub</code> to the enum itself:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">enum</span> <span class="n">Appetizer</span> <span class="p">{</span>
+<span class="c">//both Soup and Salad are now public</span>
+<span class="n">Soup</span><span class="p">,</span>
+<span class="n">Salad</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Usually we <code class="highlighter-rouge">use</code> the full path for structs and enums:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">collections</span><span class="p">::</span><span class="n">HashMap</span><span class="p">;</span>
+<span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">map</span> <span class="o">=</span> <span class="nn">HashMap</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+<span class="n">map</span><span class="nf">.insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>when multiple of them have the same name we want to use their parent path in order to avoid conflicts:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">fmt</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">io</span><span class="p">;</span>
+<span class="k">fn</span> <span class="nf">function1</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="nn">fmt</span><span class="p">::</span><span class="n">Result</span> <span class="p">{}</span>
+<span class="k">fn</span> <span class="nf">function2</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="nn">io</span><span class="p">::</span><span class="n">Result</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span> <span class="p">{}</span>
+</code></pre></div>    </div>
+    <p>but we can still use the full path if we use <code class="highlighter-rouge">as</code> keyword to give them aliases:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">fmt</span><span class="p">::</span><span class="n">Result</span><span class="p">;</span>
+<span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">io</span><span class="p">::</span><span class="n">Result</span> <span class="k">as</span> <span class="n">IoResult</span><span class="p">;</span>
+<span class="k">fn</span> <span class="nf">function1</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">Result</span> <span class="p">{}</span>
+<span class="k">fn</span> <span class="nf">function2</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">IoResult</span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span> <span class="p">{}</span>
+</code></pre></div>    </div>
+    <p>and usually when we want to use functions from outside, we <code class="highlighter-rouge">use</code> their parent path.</p>
+  </li>
+  <li>We can separate modules into different files and still <code class="highlighter-rouge">use</code> the same path when we use them. But we need to declare them first in their parent path level by level until it comes to lib.rs. In this example ,the files structure is like this:<br />
+|-src<br />
+|   -front_of_house<br />
+|      -hosting.rs<br />
+|   -lib.rs<br />
+|   -front_of_house.rs<br />
+lib.rs:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">mod</span> <span class="n">front_of_house</span><span class="p">;</span>
+<span class="k">pub</span> <span class="k">use</span> <span class="nn">crate</span><span class="p">::</span><span class="nn">front_of_house</span><span class="p">::</span><span class="n">hosting</span><span class="p">;</span>
+<span class="k">pub</span> <span class="k">fn</span> <span class="nf">eat_at_restaurant</span><span class="p">()</span> <span class="p">{</span>
+<span class="nn">hosting</span><span class="p">::</span><span class="nf">add_to_waitlist</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>front_of_house.rs:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">mod</span> <span class="n">hosting</span><span class="p">;</span>
+</code></pre></div>    </div>
+    <p>hosting.rs:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">fn</span> <span class="nf">add_to_waitlist</span><span class="p">()</span> <span class="p">{}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Store elements with different types using <code class="highlighter-rouge">enum</code>:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">enum</span> <span class="n">SpreadsheetCell</span> <span class="p">{</span>
+<span class="nf">Int</span><span class="p">(</span><span class="nb">i32</span><span class="p">),</span>
+<span class="nf">Float</span><span class="p">(</span><span class="nb">f64</span><span class="p">),</span>
+<span class="nf">Text</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span>
+<span class="p">}</span>
+<span class="k">let</span> <span class="n">row</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span>
+<span class="nn">SpreadsheetCell</span><span class="p">::</span><span class="nf">Int</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+<span class="nn">SpreadsheetCell</span><span class="p">::</span><span class="nf">Text</span><span class="p">(</span><span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"test"</span><span class="p">)),</span>
+<span class="nn">SpreadsheetCell</span><span class="p">::</span><span class="nf">Float</span><span class="p">(</span><span class="mf">3.14</span><span class="p">),</span>
+<span class="p">];</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Cast a type to a different type:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="n">num1</span> <span class="p">:</span> <span class="nb">u32</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">let</span> <span class="n">num</span> <span class="p">:</span> <span class="nb">f32</span> <span class="o">=</span> <span class="p">(</span><span class="n">num1</span><span class="p">)</span> <span class="k">as</span> <span class="nb">f32</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Instead of just using <code class="highlighter-rouge">match</code> in error handling:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">read_username_from_file</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">Result</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nn">io</span><span class="p">::</span><span class="n">Error</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="k">let</span> <span class="n">f</span> <span class="o">=</span> <span class="nn">File</span><span class="p">::</span><span class="nf">open</span><span class="p">(</span><span class="s">"hello.txt"</span><span class="p">);</span>
+
+<span class="k">let</span> <span class="k">mut</span> <span class="n">f</span> <span class="o">=</span> <span class="k">match</span> <span class="n">f</span> <span class="p">{</span>
+    <span class="nf">Ok</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">file</span><span class="p">,</span>
+    <span class="nf">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="k">return</span> <span class="nf">Err</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+<span class="p">};</span>
+
+<span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+
+<span class="k">match</span> <span class="n">f</span><span class="nf">.read_to_string</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">Ok</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Ok</span><span class="p">(</span><span class="n">s</span><span class="p">),</span>
+    <span class="nf">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Err</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>We can use <code class="highlighter-rouge">?</code>:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">read_username_from_file</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">Result</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nn">io</span><span class="p">::</span><span class="n">Error</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">f</span> <span class="o">=</span> <span class="nn">File</span><span class="p">::</span><span class="nf">open</span><span class="p">(</span><span class="s">"hello.txt"</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+<span class="n">f</span><span class="nf">.read_to_string</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="nf">Ok</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>Or the shorter one:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">read_username_from_file</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">Result</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nn">io</span><span class="p">::</span><span class="n">Error</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+<span class="nn">File</span><span class="p">::</span><span class="nf">open</span><span class="p">(</span><span class="s">"hello.txt"</span><span class="p">)</span><span class="o">?</span><span class="nf">.read_to_string</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">)</span><span class="o">?</span><span class="p">;</span>
+<span class="nf">Ok</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>BTW in the case above there is a even shorter way to do the same thing:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">read_username_from_file</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="n">Result</span><span class="o">&lt;</span><span class="nb">String</span><span class="p">,</span> <span class="nn">io</span><span class="p">::</span><span class="n">Error</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="nn">fs</span><span class="p">::</span><span class="nf">read_to_string</span><span class="p">(</span><span class="s">"hello.txt"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>When using <code class="highlighter-rouge">trait</code> as a parameter in a function:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">fn</span> <span class="nf">notify</span><span class="p">(</span><span class="n">item1</span><span class="p">:</span> <span class="k">impl</span> <span class="n">Summary</span><span class="p">,</span> <span class="n">item2</span><span class="p">:</span> <span class="k">impl</span> <span class="n">Summary</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div>    </div>
+    <p>in this case is similar to:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">fn</span> <span class="n">notify</span><span class="o">&lt;</span><span class="n">T</span><span class="p">:</span> <span class="n">Summary</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item1</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">item2</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+</code></pre></div>    </div>
+    <p>However, this way will force both parameters to have the same type whih is T. If we want to allow <code class="highlighter-rouge">item1</code> and <code class="highlighter-rouge">item2</code> to have different types, it’s more appropriate to use <code class="highlighter-rouge">impl Trait</code> syntax.</p>
+  </li>
+  <li>We can use <code class="highlighter-rouge">+</code> for multiple trait bounds:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">fn</span> <span class="nf">notify</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="k">impl</span> <span class="n">Summary</span> <span class="o">+</span> <span class="n">Display</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div>    </div>
+    <p>which in this case is the same as:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">pub</span> <span class="k">fn</span> <span class="n">notify</span><span class="o">&lt;</span><span class="n">T</span><span class="p">:</span> <span class="n">Summary</span> <span class="o">+</span> <span class="n">Display</span><span class="o">&gt;</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="p">{}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Instead of using:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="n">some_function</span><span class="o">&lt;</span><span class="n">T</span><span class="p">:</span> <span class="n">Display</span> <span class="o">+</span> <span class="n">Clone</span><span class="p">,</span> <span class="n">U</span><span class="p">:</span> <span class="n">Clone</span> <span class="o">+</span> <span class="n">Debug</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">u</span><span class="p">:</span> <span class="n">U</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span> <span class="p">{}</span>
+</code></pre></div>    </div>
+    <p>We can use a <code class="highlighter-rouge">where</code> clause:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="n">some_function</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">U</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span> <span class="n">u</span><span class="p">:</span> <span class="n">U</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span>
+<span class="k">where</span> <span class="n">T</span><span class="p">:</span> <span class="n">Display</span> <span class="o">+</span> <span class="n">Clone</span><span class="p">,</span>
+      <span class="n">U</span><span class="p">:</span> <span class="n">Clone</span> <span class="o">+</span> <span class="n">Debug</span>
+<span class="p">{}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>We can make functions to return types which implement a specific trait:
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">returns_summarizable</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">impl</span> <span class="n">Summary</span> <span class="p">{}</span>
+</code></pre></div>    </div>
+    <p>However, we can only use impl Trait if we’re returning a single type. We cannot do this:</p>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">returns_summarizable</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="k">impl</span> <span class="n">Summary</span> <span class="p">{</span>
+<span class="k">if</span> <span class="n">condition</span> <span class="p">{</span>
+    <span class="n">StructA</span><span class="p">{</span><span class="o">...</span><span class="p">}</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">StructB</span><span class="p">{</span><span class="o">...</span><span class="p">}</span>
+<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+    <p>In this case the program will not compile even if both structs have the trait <code class="highlighter-rouge">Summary</code>.</p>
+  </li>
+</ol>
+
+    
+  </div>
+
+</article>
+
+
+<article class="home">
+
+  <span class="post-date">
+    
+    June
+    19th,
+    
+    2019
+  </span>
+
+  <h2>
+    <a href="/general/2019/06/19/semantic-versioning-note.html">Semantic versioning note</a>
+  </h2>
+
+  <div>
+    
+    <p>Given a version number MAJOR.MINOR.PATCH, increment the:</p>
+
+<ol>
+  <li>MAJOR version when you make incompatible API changes,</li>
+  <li>MINOR version when you add functionality in a backwards-compatible manner, and</li>
+  <li>PATCH version when you make backwards-compatible bug fixes.</li>
+</ol>
+
+<p>Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.</p>
+
+    
+  </div>
+
+</article>
+
+
+<article class="home">
+
+  <span class="post-date">
+    
+    December
+    7th,
+    
+    2018
+  </span>
+
+  <h2>
+    <a href="/algorithm/java/2018/12/07/add-two-numbers-in-two-reversed-singly-linked-list.html">Add two numbers in two reversed singly linked list</a>
+  </h2>
+
+  <div>
+    
+    <p>Given two non-empty linked lists representing two non-negative integers in reverse order. Also, each node contains a single digit. The question is to add the two numbers and return the result in reverse order in another linked list. For instance, as the example given by LeetCode, here’s the input: <code class="highlighter-rouge">(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</code> and the output should be <code class="highlighter-rouge">7 -&gt; 0 -&gt; 8</code> because 342 + 465 = 807.</p>
+
+<p>Here’s the definition for singly-linked list:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ListNode</span> <span class="o">{</span>
+  <span class="kt">int</span> <span class="n">val</span><span class="o">;</span>
+  <span class="n">ListNode</span> <span class="n">next</span><span class="o">;</span>
+  <span class="n">ListNode</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span> <span class="n">val</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span> <span class="o">}</span>
+ <span class="o">}</span>
+</code></pre></div></div>
+
+<p>My very beginning thought when I saw the question was that we can read the two linked lists and reversely store them in two String variables, then read those strings as integers and add them. After that, we can store the result in a new linked list. However, this approach will cause high time complexity and is not easy to implement. So we can simply simulate how numbers add. And due to the reverse order of digits, it’s easier to add numbers from the last digits of intended numbers which are safe for carrying. The code below is my solution:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">ListNode</span> <span class="nf">addTwoNumbers</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">l1</span><span class="o">,</span> <span class="n">ListNode</span> <span class="n">l2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">ListNode</span> <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>            <span class="c1">// this line is to simplify the head</span>
+        <span class="n">ListNode</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>                        <span class="c1">// this line is creating pointer instead of normal assignment</span>
+        <span class="kt">int</span> <span class="n">tempVal</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="na">val</span> <span class="o">+</span> <span class="n">l2</span><span class="o">.</span><span class="na">val</span><span class="o">;</span>
+        <span class="kt">boolean</span> <span class="n">isGTTen</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">tempVal</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">isGTTen</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="n">tempVal</span> <span class="o">-=</span> <span class="mi">10</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">ans</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">tempVal</span><span class="o">);</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">l1</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">l2</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">l1</span> <span class="o">=</span> <span class="o">(</span><span class="n">l1</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">l1</span><span class="o">.</span><span class="na">next</span> <span class="o">:</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+            <span class="n">l2</span> <span class="o">=</span> <span class="o">(</span><span class="n">l2</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">l2</span><span class="o">.</span><span class="na">next</span> <span class="o">:</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">isGTTen</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">l1</span><span class="o">.</span><span class="na">val</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
+                <span class="n">isGTTen</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">l1</span><span class="o">.</span><span class="na">val</span> <span class="o">==</span><span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">l1</span><span class="o">.</span><span class="na">val</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+                    <span class="n">isGTTen</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="n">tempVal</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="na">val</span> <span class="o">+</span> <span class="n">l2</span><span class="o">.</span><span class="na">val</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">tempVal</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">isGTTen</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                <span class="n">tempVal</span> <span class="o">-=</span> <span class="mi">10</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="n">ans</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">tempVal</span><span class="o">);</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isGTTen</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">ans</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>It’s a really interesting question and definitely help me to understand more about pointer in Java.</p>
+
+    
+  </div>
+
+</article>
+
+
+<article class="home">
+
+  <span class="post-date">
+    
+    December
+    2nd,
+    
+    2018
+  </span>
+
+  <h2>
+    <a href="/algorithm/java/2018/12/02/maximum-sum-of-non-consecutive-subsequence.html">Maximum sum of non-consecutive subsequence</a>
+  </h2>
+
+  <div>
+    
+    <p>Today I saw a question which required us to calculate the maximum sum of the non-consecutive subsequence of a list. An important restriction of this question is that the subsequence must be non-consecutive in the original list. For example, here’s a list [3,5,6,10], all non-consecutive subsequences in this case are [3,6], [5,10] and [3,10]. Therefore the maximum sum of non-consecutive subsequence in this case is 5 + 10 = 15.<br /><br />
+In order to solve this problem, we can use brutal method to calculate sums of all non-consecutive subsequences which is neither easy to implement nor efficient. An interesting fact of this problem is that if we go through the original list from the first element, every position has a maximum sum from the first element to this position. And let’s say the position is i which is greater than or equal to 2, so that the maximum sum here is either <code class="highlighter-rouge">max(maxSum(list[i-1]), list[i])</code> or <code class="highlighter-rouge">maxSum(list[i-2]) + list[i]</code>. As we can see here, it’s quite easy to solve using the dynamic programming technique.<br /><br />
+Here’s the code for this question:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">maxNonConsecSum</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">inputArray</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">sumList</span> <span class="o">=</span> <span class="n">inputArray</span><span class="o">.</span><span class="na">clone</span><span class="o">();</span>
+    <span class="n">sumList</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">sumList</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">sumList</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span> <span class="c1">//base case</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sumList</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+      <span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]),</span> <span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">sumList</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="o">]);</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">sumList</span><span class="o">[</span><span class="n">sumList</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+    
+  </div>
+
+</article>
+
+
+<article class="home">
+
+  <span class="post-date">
+    
     November
     26th,
     
@@ -170,20 +665,15 @@
   </span>
 
   <h2>
-    <a href="/flutter/dart/2018/11/26/fix-gems-version-issue-in-gitpage.html">Some flutter notes</a>
+    <a href="/gitpage/ruby/2018/11/26/fix-gems-version-issue-in-gitpage.html">Fix gems/plugins version issue in GitPage</a>
   </h2>
 
   <div>
     
-    <p>Recently I found that Flutter is interesting so I decide to start learn it and put some of my notes about Flutter and Dart here.<br /><br /></p>
-<ol>
-  <li>Use arrow notation for one-line functions or methods. For example:
-    <div class="language-dart highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">runApp</span><span class="o">(</span><span class="n">MyApp</span><span class="o">());</span>
-</code></pre></div>    </div>
-  </li>
-  <li>A widget’s main job is to provide a build() method that describes how to display the widget in terms of other, lower level widgets.<br /><br /></li>
-  <li></li>
-</ol>
+    <p>I got a security alert of my GitPage (this one) today. It was because the dependencies of my site were out of date which might cause some security issues.<br /><br />
+I’m not sure if my workaround is the best practice, but it worked so I just put it here. <br /><br />
+First I installed <a href="https://bundler.io/">Bundler</a> in my computer, then I <code class="highlighter-rouge">cd</code> into the directory of my gitpage and run <code class="highlighter-rouge">bundle update</code>. I encountered some issues of lacking header files when updating dependencies so that make sure you have ruby-dev (or ruby-devel, depend on your OS) installed. <br /><br />
+Running <code class="highlighter-rouge">bundle exec jekyll serve</code> to test your website before pushing it to GitHub is highly recommended. I encountered some issues which nested in <code class="highlighter-rouge">bundle</code> directory where I installed ruby plugins. Those “issues” are usually date format in example project or symbolic links issues of plugins themselves which don’t affect my project so we can simply add <code class="highlighter-rouge">exclude: [vendor]</code> (vendor here can be changed, depends on your directory which contains the bundle and plugins files) in _config.yml.</p>
 
     
   </div>
@@ -252,275 +742,16 @@ This is a pretty easy one, so I just put my code below. Although the speed of my
   <div>
     
     <ol>
-  <li>Check mail-lists frequently.<br /></li>
+  <li>Check mail-lists frequently.<br /><br /></li>
   <li>Use
     <pre><code class="language-Shell">zypper dup
 </code></pre>
     <p>instead of</p>
     <pre><code class="language-Shell">zypper up
 </code></pre>
-    <p><br /></p>
   </li>
   <li>Use snapper to manage snapshots for recovery</li>
 </ol>
-
-    
-  </div>
-
-</article>
-
-
-<article class="home">
-
-  <span class="post-date">
-    
-    November
-    18th,
-    
-    2017
-  </span>
-
-  <h2>
-    <a href="/algorithm/java/2017/11/18/majority-element-problem.html">The majority element problem</a>
-  </h2>
-
-  <div>
-    
-    <p>This post is about the “Majority Element” problem and my attempts to it.<br /><br />
-In this problem, you are given an array of size <strong>n</strong> with some int numbers and you need to find the “majority element” which appears more than <strong>n/2</strong> times.<br /><br />
-My first attempt is intuitive: use two loops to traverse the whole array and an if statement and a counter variable to find the majority element. This approach did solve the problem, but wasn’t fast enough to pass the speed test. Here’s the code:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">majorityElement</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">==</span><span class="mi">1</span><span class="o">){</span>
-            <span class="n">answer</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
-        <span class="o">}</span> <span class="k">else</span><span class="o">{</span>
-            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
-                    <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]==</span><span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">]){</span>
-                        <span class="n">counter</span><span class="o">++;</span>
-                        <span class="k">if</span> <span class="o">(</span><span class="n">counter</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span><span class="o">){</span>
-                            <span class="n">answer</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
-                            <span class="k">break</span><span class="o">;</span>
-                        <span class="o">}</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-                <span class="n">counter</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
-            <span class="o">}</span>            
-        <span class="o">}</span>
-
-        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>I didn’t figure out a better solution so I turned to the solution tab. And I saw some good approaches: <br /><br />
-<strong>I. Sorting</strong> <br />
-The main idea of this approach is that if an element appears more than n/2 times, if we sort it in an monotonically increasing (or decreasing) order, the element in the middle (the index is (n/2) or (n/2 + 1), depends on the length of the array is odd or even) must be this majority element. So the solution will be very simple:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">majorityElement</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Arrays</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">nums</span><span class="o">[</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">/</span><span class="mi">2</span><span class="o">];</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-<p><br /><br />
-<strong>II. HashMap</strong><br />
-This approach uses HashMap with element and appears times to find the majority element. The code snippet below is from <a href="https://leetcode.com/problems/majority-element/solution/">leetcode</a>:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">countNums</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">counts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">num</span> <span class="o">:</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(!</span><span class="n">counts</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">num</span><span class="o">))</span> <span class="o">{</span>
-                <span class="n">counts</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">num</span><span class="o">,</span> <span class="mi">1</span><span class="o">);</span>
-            <span class="o">}</span>
-            <span class="k">else</span> <span class="o">{</span>
-                <span class="n">counts</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">num</span><span class="o">,</span> <span class="n">counts</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">num</span><span class="o">)+</span><span class="mi">1</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="n">counts</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">majorityElement</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">countNums</span><span class="o">(</span><span class="n">nums</span><span class="o">);</span>
-
-        <span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">majorityEntry</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">entry</span> <span class="o">:</span> <span class="n">counts</span><span class="o">.</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">majorityEntry</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">()</span> <span class="o">&gt;</span> <span class="n">majorityEntry</span><span class="o">.</span><span class="na">getValue</span><span class="o">())</span> <span class="o">{</span>
-                <span class="n">majorityEntry</span> <span class="o">=</span> <span class="n">entry</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-
-        <span class="k">return</span> <span class="n">majorityEntry</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p><br /><br /></p>
-
-    
-  </div>
-
-</article>
-
-
-<article class="home">
-
-  <span class="post-date">
-    
-    November
-    17th,
-    
-    2017
-  </span>
-
-  <h2>
-    <a href="/algorithm/java/2017/11/17/single-number-problem.html">The single element problem</a>
-  </h2>
-
-  <div>
-    
-    <p>I’m doing some algorithm practices recently in Leetcode. This post is about the “Single Number” problem and my attempts to it.<br /><br />
-In this problem, you are given an array with some int numbers in pair except one single number and you need to find the single number. The tricky part I think is that you can’t delete an element from an array directly in java so you need to fine another approach to make the single element more “outstanding”.<br /><br />
-My first attempt is quite straightforward (and stupid): use a for loop to find the maximum number in the given array and plus it by 1 to generate an invalid number, then use another 2 loops to find elements in pair and turn them into this invalid number. At last, use another loop to find the element which doesn’t equal to the invalid number to get the result. This approach did solve the problem, but the speed is pathetically slow and unsurprisingly, it failed the speed test.<br /><br />
-My second attempt got rid of the loop for generating invalid number and the loop for finding the element which is not “invalid”. Instead, I use a variable named “counter”, the counter will become 1 when an element has a duplicate when its “duplicate checking” loop ends, and the counter will be reset to 0 before next checking loop. If an element doesn’t have a duplicate, the counter will still be 0 and the answer will be nums[i], then the program will jump out of the loop directly. Here’s this version’s solution:</p>
-
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">singleNumber</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">]==</span><span class="n">nums</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">i</span><span class="o">!=</span><span class="n">j</span><span class="o">){</span>
-                    <span class="n">counter</span><span class="o">++;</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-            <span class="k">if</span> <span class="o">(</span><span class="n">counter</span> <span class="o">==</span> <span class="mi">1</span><span class="o">){</span>
-                <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
-            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-                <span class="n">answer</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-                <span class="k">break</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">}</span>
-
-        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div></div>
-
-<p>This solution passed the time limited test in most cases but still failed sometimes. Obviously this solution is not fast enough because the two loops for duplicate checking. But I couldn’t figure out a better solution. So I checked the discussion posts of this problem and find a much more better solution than mine:</p>
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kt">int</span> <span class="n">ans</span> <span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
-    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">len</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-        <span class="n">ans</span> <span class="o">^=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
-    <span class="o">}</span>
-
-    <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
-</code></pre></div></div>
-
-<p>This solution uses only one loop and the way it check unduplicated element is using bitwise XOR. The main idea is that 0^N==N and N^N==0. Also, XOR is <strong>commutative</strong> which means N1^N3^N2^N1^N2 == N1^N1^N2^N2^N3. As a result, the variable ans will always be the single element and the complexity is only O(n)! Brilliant!
-<br /><br /></p>
-
-    
-  </div>
-
-</article>
-
-
-<article class="home">
-
-  <span class="post-date">
-    
-    June
-    4th,
-    
-    2017
-  </span>
-
-  <h2>
-    <a href="/network/2017/06/04/public-key-authentication.html">Public key authentication</a>
-  </h2>
-
-  <div>
-    
-    <p>As a widely used network protocol, Secure Shell (SSH) provides several authentication approaches. However, we’ll focus on public key authentication only in this article.<br /><br />
-Public key cryptography which is also named as asymmetric cryptography uses pairs of keys: public keys and private keys.</p>
-
-    
-  </div>
-
-</article>
-
-
-<article class="home">
-
-  <span class="post-date">
-    
-    August
-    22nd,
-    
-    2016
-  </span>
-
-  <h2>
-    <a href="/game%20development/ren'py/2016/08/22/simple-avg-1.html">Simple AVG (1) Plan, Configure and Basic Syntax</a>
-  </h2>
-
-  <div>
-    
-    <p>The purpose of this project is to create an easy Visual Novel. In this series of blogs, I’ll share some experience in the process of building a game in Ren’Py.<br /><br />
-Ren’Py is a AVG engine made by python. The API is python-like and easy to use. The engine based on MIT license. The main direction of Ren’Py engine is galgame which fits my goal.<br /><br />
-My OS is Ubuntu 16.04 LTS, and I will use Atom as my editor. The Ren’Py version I use is 6.99.8. To install it in Ubuntu, just input this command in terminal:</p>
-
-<p><code class="highlighter-rouge">sudo apt install renpy</code>
-<br /><br />
-The Ren’Py in Ubuntu’s repository may not be the newest, if you want to get the up-to-date version, check its official website <a href="https://www.renpy.org/">https://www.renpy.org/</a>.
-<br /><br />
-After installing the Ren’Py, you’ll see a icon like this: <img src="https://silmoonblog.files.wordpress.com/2016/05/selection_001.jpg?w=700" alt="RenPyIco" title="Ren'Py Icon" />. Then we can click the “preference” button to begin configuration. The process of configuration is easy, for beginning, we just need to set our editor and project directory. And then click the “Back” button to the main interface. To create a new game, just click “Create New Game” and set a theme you like. The basic frame is found.
-<br /><br />
-The main part of your game will be found in a file named script.rpy. Ren’Py is very friendly to beginners, the comments are specific and easy to understand. In this blog I’ll show some basic syntax.
-<br /><br />
-To create a background picture, we can use image syntax, in the example below, I’ll show how to declare a background picture named light:</p>
-
-<p><code class="highlighter-rouge">image bg light = “light.jpg”</code>
-<br /><br />
-Now we initialise our background picture light. If we want to use the background, we can use the code below in label block to invoke it:</p>
-
-<p><code class="highlighter-rouge">scene bg light</code>
-<br /><br />
-(Tips: Resources like pictures, music should be put in game folder.)
-<br /><br />
-This series will be closed temporarily.
-<br /><br /></p>
-
-    
-  </div>
-
-</article>
-
-
-<article class="home">
-
-  <span class="post-date">
-    
-    August
-    20th,
-    
-    2016
-  </span>
-
-  <h2>
-    <a href="/general/2016/08/20/hello-world.html">Hello World!</a>
-  </h2>
-
-  <div>
-    
-    <p>Hi I’m SilMOON, I hope I can learn and share interesting technologies and programming skills by building this blog.<br /></p>
 
     
   </div>
@@ -538,12 +769,12 @@ This series will be closed temporarily.
   
   
   <li>
-    <span class="page_number">Page: 1 of 1</span>
+    <span class="page_number">Page: 1 of 2</span>
   </li>
 
   
-  <li class="next disabled">
-    <a>Older &rarr;</a>        
+  <li class="next">
+    <a href="/page2">Older &rarr;</a>
   </li>
   
 
@@ -555,7 +786,7 @@ This series will be closed temporarily.
 		<footer style="text-align: center;">
 			<hr/>
 			<p>
-				&copy; 2018 SilMOON with Jekyll. Theme is modified from dbyll.
+				&copy; 2019 SilMOON with Jekyll. Theme is modified from dbyll.
 			</p>
 		</footer>
 	</div>
