@@ -161,7 +161,7 @@
 </code></pre></div>    </div>
   </li>
   <li>An example of using derived traits of custom structs:
-    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="nf">derive</span><span class="p">(</span><span class="n">Debug</span><span class="p">)]</span>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug)]</span>
 <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span><span class="n">user1</span><span class="p">);</span>
 <span class="nd">println!</span><span class="p">(</span><span class="s">"{:#?}"</span><span class="p">,</span><span class="n">user1</span><span class="p">);</span>
 </code></pre></div>    </div>
@@ -206,7 +206,7 @@
   <li>Using match in order to check elements in enum or check Option<T>:
 </T>    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">match</span> <span class="n">seven</span> <span class="p">{</span>
 <span class="nf">Some</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span> <span class="n">seven</span><span class="p">),</span>
-<span class="n">_</span> <span class="k">=&gt;</span> <span class="p">(),</span>
+<span class="mi">_</span> <span class="k">=&gt;</span> <span class="p">(),</span>
 <span class="p">}</span>
 </code></pre></div>    </div>
     <p>The <code class="highlighter-rouge">_</code> pattern will match any value. The <code class="highlighter-rouge">()</code> is just the unit value, so nothing will happen in the _ case.
@@ -331,7 +331,7 @@ lib.rs:
 <span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
 
 <span class="k">match</span> <span class="n">f</span><span class="nf">.read_to_string</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">Ok</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Ok</span><span class="p">(</span><span class="n">s</span><span class="p">),</span>
+    <span class="nf">Ok</span><span class="p">(</span><span class="mi">_</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Ok</span><span class="p">(</span><span class="n">s</span><span class="p">),</span>
     <span class="nf">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Err</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
 <span class="p">}</span>
 <span class="p">}</span>

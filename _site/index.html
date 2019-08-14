@@ -183,7 +183,7 @@
 </code></pre></div>    </div>
   </li>
   <li>We can put expected panic information in the <code class="highlighter-rouge">expected</code> parameter of <code class="highlighter-rouge">#[should_panic]</code>:
-    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="nf">should_panic</span><span class="p">(</span><span class="n">expected</span> <span class="o">=</span> <span class="s">"Guess value must be less than or equal to 100"</span><span class="p">)]</span>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[should_panic(expected</span> <span class="nd">=</span> <span class="s">"Guess value must be less than or equal to 100"</span><span class="nd">)]</span>
 </code></pre></div>    </div>
   </li>
 </ol>
@@ -235,7 +235,7 @@
 </code></pre></div>    </div>
   </li>
   <li>An example of using derived traits of custom structs:
-    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="nf">derive</span><span class="p">(</span><span class="n">Debug</span><span class="p">)]</span>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[derive(Debug)]</span>
 <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span><span class="n">user1</span><span class="p">);</span>
 <span class="nd">println!</span><span class="p">(</span><span class="s">"{:#?}"</span><span class="p">,</span><span class="n">user1</span><span class="p">);</span>
 </code></pre></div>    </div>
@@ -280,7 +280,7 @@
   <li>Using match in order to check elements in enum or check Option<T>:
 </T>    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">match</span> <span class="n">seven</span> <span class="p">{</span>
 <span class="nf">Some</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"{:?}"</span><span class="p">,</span> <span class="n">seven</span><span class="p">),</span>
-<span class="n">_</span> <span class="k">=&gt;</span> <span class="p">(),</span>
+<span class="mi">_</span> <span class="k">=&gt;</span> <span class="p">(),</span>
 <span class="p">}</span>
 </code></pre></div>    </div>
     <p>The <code class="highlighter-rouge">_</code> pattern will match any value. The <code class="highlighter-rouge">()</code> is just the unit value, so nothing will happen in the _ case.
@@ -405,7 +405,7 @@ lib.rs:
 <span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
 
 <span class="k">match</span> <span class="n">f</span><span class="nf">.read_to_string</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nf">Ok</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Ok</span><span class="p">(</span><span class="n">s</span><span class="p">),</span>
+    <span class="nf">Ok</span><span class="p">(</span><span class="mi">_</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Ok</span><span class="p">(</span><span class="n">s</span><span class="p">),</span>
     <span class="nf">Err</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Err</span><span class="p">(</span><span class="n">e</span><span class="p">),</span>
 <span class="p">}</span>
 <span class="p">}</span>
@@ -531,27 +531,27 @@ lib.rs:
 <p>Here’s the definition for singly-linked list:</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ListNode</span> <span class="o">{</span>
   <span class="kt">int</span> <span class="n">val</span><span class="o">;</span>
-  <span class="n">ListNode</span> <span class="n">next</span><span class="o">;</span>
-  <span class="n">ListNode</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span> <span class="n">val</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span> <span class="o">}</span>
+  <span class="nc">ListNode</span> <span class="n">next</span><span class="o">;</span>
+  <span class="nc">ListNode</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span> <span class="n">val</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span> <span class="o">}</span>
  <span class="o">}</span>
 </code></pre></div></div>
 
 <p>My very beginning thought when I saw the question was that we can read the two linked lists and reversely store them in two String variables, then read those strings as integers and add them. After that, we can store the result in a new linked list. However, this approach will cause high time complexity and is not easy to implement. So we can simply simulate how numbers add. And due to the reverse order of digits, it’s easier to add numbers from the last digits of intended numbers which are safe for carrying. The code below is my solution:</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">ListNode</span> <span class="nf">addTwoNumbers</span><span class="o">(</span><span class="n">ListNode</span> <span class="n">l1</span><span class="o">,</span> <span class="n">ListNode</span> <span class="n">l2</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">ListNode</span> <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>            <span class="c1">// this line is to simplify the head</span>
-        <span class="n">ListNode</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>                        <span class="c1">// this line is creating pointer instead of normal assignment</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">ListNode</span> <span class="nf">addTwoNumbers</span><span class="o">(</span><span class="nc">ListNode</span> <span class="n">l1</span><span class="o">,</span> <span class="nc">ListNode</span> <span class="n">l2</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ListNode</span> <span class="n">head</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>            <span class="c1">// this line is to simplify the head</span>
+        <span class="nc">ListNode</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>                        <span class="c1">// this line is creating pointer instead of normal assignment</span>
         <span class="kt">int</span> <span class="n">tempVal</span> <span class="o">=</span> <span class="n">l1</span><span class="o">.</span><span class="na">val</span> <span class="o">+</span> <span class="n">l2</span><span class="o">.</span><span class="na">val</span><span class="o">;</span>
         <span class="kt">boolean</span> <span class="n">isGTTen</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">tempVal</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">isGTTen</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
             <span class="n">tempVal</span> <span class="o">-=</span> <span class="mi">10</span><span class="o">;</span>
         <span class="o">}</span>
-        <span class="n">ans</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">tempVal</span><span class="o">);</span>
+        <span class="n">ans</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="n">tempVal</span><span class="o">);</span>
         <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
         <span class="k">while</span> <span class="o">(</span><span class="n">l1</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">l2</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">l1</span> <span class="o">=</span> <span class="o">(</span><span class="n">l1</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">l1</span><span class="o">.</span><span class="na">next</span> <span class="o">:</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
-            <span class="n">l2</span> <span class="o">=</span> <span class="o">(</span><span class="n">l2</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">l2</span><span class="o">.</span><span class="na">next</span> <span class="o">:</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+            <span class="n">l1</span> <span class="o">=</span> <span class="o">(</span><span class="n">l1</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">l1</span><span class="o">.</span><span class="na">next</span> <span class="o">:</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+            <span class="n">l2</span> <span class="o">=</span> <span class="o">(</span><span class="n">l2</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">?</span> <span class="n">l2</span><span class="o">.</span><span class="na">next</span> <span class="o">:</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
             <span class="k">if</span> <span class="o">(</span><span class="n">isGTTen</span><span class="o">)</span> <span class="o">{</span>
                 <span class="n">l1</span><span class="o">.</span><span class="na">val</span> <span class="o">+=</span> <span class="mi">1</span><span class="o">;</span>
                 <span class="n">isGTTen</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
@@ -565,11 +565,11 @@ lib.rs:
                 <span class="n">isGTTen</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
                 <span class="n">tempVal</span> <span class="o">-=</span> <span class="mi">10</span><span class="o">;</span>
             <span class="o">}</span>
-            <span class="n">ans</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="n">tempVal</span><span class="o">);</span>
+            <span class="n">ans</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="n">tempVal</span><span class="o">);</span>
             <span class="n">ans</span> <span class="o">=</span> <span class="n">ans</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
         <span class="o">}</span>
         <span class="k">if</span> <span class="o">(</span><span class="n">isGTTen</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">ans</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+            <span class="n">ans</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
     <span class="o">}</span>
@@ -607,9 +607,9 @@ Here’s the code for this question:</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">maxNonConsecSum</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">inputArray</span><span class="o">)</span> <span class="o">{</span>
     <span class="kt">int</span><span class="o">[]</span> <span class="n">sumList</span> <span class="o">=</span> <span class="n">inputArray</span><span class="o">.</span><span class="na">clone</span><span class="o">();</span>
-    <span class="n">sumList</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">sumList</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">sumList</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span> <span class="c1">//base case</span>
+    <span class="n">sumList</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">sumList</span><span class="o">[</span><span class="mi">0</span><span class="o">],</span> <span class="n">sumList</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span> <span class="c1">//base case</span>
     <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">sumList</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-      <span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]),</span> <span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">sumList</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="o">]);</span>
+      <span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="o">]),</span> <span class="n">sumList</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">sumList</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">2</span><span class="o">]);</span>
     <span class="o">}</span>
     <span class="k">return</span> <span class="n">sumList</span><span class="o">[</span><span class="n">sumList</span><span class="o">.</span><span class="na">length</span><span class="o">-</span><span class="mi">1</span><span class="o">];</span>
   <span class="o">}</span>
@@ -703,12 +703,12 @@ For example, here’s the input: J=”aA”, S=”aAAAbB”, so the output shoul
 This is a pretty easy one, so I just put my code below. Although the speed of my program is not the fastest, I can’t check the official answer because I don’t have a premium subscription.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numJewelsInStones</span><span class="o">(</span><span class="n">String</span> <span class="n">J</span><span class="o">,</span> <span class="n">String</span> <span class="n">S</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numJewelsInStones</span><span class="o">(</span><span class="nc">String</span> <span class="no">J</span><span class="o">,</span> <span class="nc">String</span> <span class="no">S</span><span class="o">)</span> <span class="o">{</span>
         <span class="kt">int</span> <span class="n">num</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">,</span> <span class="n">l</span><span class="o">=</span><span class="n">S</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">l</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
-            <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">,</span> <span class="n">k</span><span class="o">=</span><span class="n">J</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">k</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">c</span><span class="o">==</span><span class="n">J</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">j</span><span class="o">)){</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">,</span> <span class="n">l</span><span class="o">=</span><span class="no">S</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">l</span><span class="o">;</span> <span class="n">i</span><span class="o">++){</span>
+            <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="no">S</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="o">,</span> <span class="n">k</span><span class="o">=</span><span class="no">J</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">k</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">c</span><span class="o">==</span><span class="no">J</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">j</span><span class="o">)){</span>
                     <span class="n">num</span><span class="o">++;</span>
                     <span class="k">break</span><span class="o">;</span>
                 <span class="o">}</span>

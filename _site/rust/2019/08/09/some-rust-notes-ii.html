@@ -152,7 +152,7 @@
 </code></pre></div>    </div>
   </li>
   <li>We can put expected panic information in the <code class="highlighter-rouge">expected</code> parameter of <code class="highlighter-rouge">#[should_panic]</code>:
-    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="nf">should_panic</span><span class="p">(</span><span class="n">expected</span> <span class="o">=</span> <span class="s">"Guess value must be less than or equal to 100"</span><span class="p">)]</span>
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[should_panic(expected</span> <span class="nd">=</span> <span class="s">"Guess value must be less than or equal to 100"</span><span class="nd">)]</span>
 </code></pre></div>    </div>
   </li>
 </ol>
