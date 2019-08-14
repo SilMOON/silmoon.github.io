@@ -90,8 +90,8 @@ module Concurrent
   #
   # @!macro thread_safe_variable_comparison
   #
-  # @see http://clojure.org/atoms Clojure Atoms
-  # @see http://clojure.org/state Values and Change - Clojure's approach to Identity and State
+  # @see https://clojure.org/atoms Clojure Atoms
+  # @see https://clojure.org/state Values and Change - Clojure's approach to Identity and State
   class Atom < Synchronization::Object
     include Concern::Observable
 

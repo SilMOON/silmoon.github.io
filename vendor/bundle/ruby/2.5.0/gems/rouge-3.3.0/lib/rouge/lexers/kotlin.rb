@@ -7,7 +7,7 @@ module Rouge
       # https://kotlinlang.org/docs/reference/grammar.html
 
       title "Kotlin"
-      desc "Kotlin Programming Language (http://kotlinlang.org)"
+      desc "Kotlin Programming Language (https://kotlinlang.org)"
 
       tag 'kotlin'
       filenames '*.kt', '*.kts'

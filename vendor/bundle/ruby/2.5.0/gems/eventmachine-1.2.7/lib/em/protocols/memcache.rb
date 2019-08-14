@@ -1,6 +1,6 @@
 module EventMachine
   module Protocols
-    # Implements the Memcache protocol (http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt).
+    # Implements the Memcache protocol (https://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt).
     # Requires memcached >= 1.2.4 w/ noreply support
     #
     # == Usage example

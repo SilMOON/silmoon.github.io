@@ -45,7 +45,7 @@ module Concurrent
   # at any later time using the `#set_deref_options` method.
   #
   # `TimerTask` supports notification through the Ruby standard library
-  # {http://ruby-doc.org/stdlib-2.0/libdoc/observer/rdoc/Observable.html
+  # {https://ruby-doc.org/stdlib-2.0/libdoc/observer/rdoc/Observable.html
   # Observable} module. On execution the `TimerTask` will notify the observers
   # with three arguments: time of execution, the result of the block (or nil on
   # failure), and any raised exceptions (or nil on success). If the timeout
@@ -151,8 +151,8 @@ module Concurrent
   #   #=> (2013-10-13 19:09:39 -0400) Execution failed with error StandardError
   #   task.shutdown
   #
-  # @see http://ruby-doc.org/stdlib-2.0/libdoc/observer/rdoc/Observable.html
-  # @see http://docs.oracle.com/javase/7/docs/api/java/util/TimerTask.html
+  # @see https://ruby-doc.org/stdlib-2.0/libdoc/observer/rdoc/Observable.html
+  # @see https://docs.oracle.com/javase/7/docs/api/java/util/TimerTask.html
   class TimerTask < RubyExecutorService
     include Concern::Dereferenceable
     include Concern::Observable

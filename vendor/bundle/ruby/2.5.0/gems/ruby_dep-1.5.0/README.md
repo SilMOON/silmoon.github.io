@@ -32,7 +32,7 @@ Help the Bundler team out if you can - they're awesome!
 
 ## 4. If all else fails, learn SemVer and USE IT!
 
-Often, there are older versions of gems that support the Ruby version you need. See http://semver.org/ on how to set version constraints. Then, check out the release notes of the gems you need to know what you're getting (or missing out on).
+Often, there are older versions of gems that support the Ruby version you need. See https://semver.org/ on how to set version constraints. Then, check out the release notes of the gems you need to know what you're getting (or missing out on).
 
 E.g. You can downgrade to RubyDep 1.3.1 (`gem 'ruby_dep', '~> 1.3.1'`) which allows using Ruby 2.2.4
 E.g. Or, You can use Listen 3.0.x (`gem 'listen', '~> 3.0.8'`) to avoid dealing with RubyDep and Listen.
@@ -194,4 +194,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/e2/rub
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

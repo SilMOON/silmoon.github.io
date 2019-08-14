@@ -15,8 +15,8 @@ module Concurrent
   #   tuple.get(0)                         #=> :bar  | volatile read
   #
   # @see https://en.wikipedia.org/wiki/Tuple Tuple entry at Wikipedia
-  # @see http://www.erlang.org/doc/reference_manual/data_types.html#id70396 Erlang Tuple
-  # @see http://ruby-doc.org/core-2.2.2/Enumerable.html Enumerable
+  # @see https://www.erlang.org/doc/reference_manual/data_types.html#id70396 Erlang Tuple
+  # @see https://ruby-doc.org/core-2.2.2/Enumerable.html Enumerable
   class Tuple
     include Enumerable
 

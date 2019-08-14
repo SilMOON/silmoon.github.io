@@ -74,7 +74,7 @@ describe EM::WebSocket::Framing03 do
   end
   
   # These examples are straight from the spec
-  # http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-03#section-4.6
+  # https://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-03#section-4.6
   describe "examples from the spec" do
     it "a single-frame text message" do
       @f.should_receive(:message).with(:text, '', 'Hello')
@@ -126,7 +126,7 @@ describe EM::WebSocket::Framing03 do
 end
 
 # These examples are straight from the spec
-# http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-03#section-4.6
+# https://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-03#section-4.6
 describe EM::WebSocket::Framing04 do
   class FramingContainer04
     include EM::WebSocket::Framing04
@@ -221,7 +221,7 @@ describe EM::WebSocket::Framing07 do
   end
 
   # These examples are straight from the spec
-  # http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-07#section-4.6
+  # https://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-07#section-4.6
   describe "examples from the spec" do
     it "a single-frame unmakedtext message" do
       @f.should_receive(:message).with(:text, '', 'Hello')

@@ -5,7 +5,7 @@ module Rouge
   module Lexers
     class Elm < RegexLexer
       title "Elm"
-      desc "The Elm programming language (http://elm-lang.org/)"
+      desc "The Elm programming language (https://elm-lang.org/)"
 
       tag 'elm'
       filenames '*.elm'

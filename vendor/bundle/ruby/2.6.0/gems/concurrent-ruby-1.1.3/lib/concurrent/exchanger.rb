@@ -23,7 +23,7 @@ module Concurrent
   #   will degrade rapidly due to contention on the single slot, but the algorithm
   #   will remain correct.
   #
-  #   @see http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Exchanger.html java.util.concurrent.Exchanger
+  #   @see https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Exchanger.html java.util.concurrent.Exchanger
   #   @example
   #
   #     exchanger = Concurrent::Exchanger.new
@@ -131,7 +131,7 @@ module Concurrent
     # Doug Lea, Bill Scherer, and Michael Scott with assistance from members
     # of JCP JSR-166 Expert Group and released to the public domain. It does
     # not include the arena or the multi-processor spin loops.
-    # http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/util/concurrent/Exchanger.java
+    # https://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/java/util/concurrent/Exchanger.java
 
     safe_initialization!
 

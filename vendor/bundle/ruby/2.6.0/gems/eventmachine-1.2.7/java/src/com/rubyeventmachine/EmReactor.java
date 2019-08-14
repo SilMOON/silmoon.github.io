@@ -2,7 +2,7 @@
  * $Id$
  * 
  * Author:: Francis Cianfrocca (gmail: blackhedd)
- * Homepage:: http://rubyeventmachine.com
+ * Homepage:: https://rubyeventmachine.com
  * Date:: 15 Jul 2007
  * 
  * See EventMachine and EventMachine::Connection for documentation and

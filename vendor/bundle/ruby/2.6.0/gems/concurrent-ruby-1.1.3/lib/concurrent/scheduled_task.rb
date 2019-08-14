@@ -13,7 +13,7 @@ module Concurrent
   # important difference: A `Future` is set to execute as soon as possible
   # whereas a `ScheduledTask` is set to execute after a specified delay. This
   # implementation is loosely based on Java's
-  # [ScheduledExecutorService](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html).
+  # [ScheduledExecutorService](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html).
   # It is a more feature-rich variant of {Concurrent.timer}.
   #
   # The *intended* schedule time of task execution is set on object construction
@@ -49,7 +49,7 @@ module Concurrent
   # The result of a `ScheduledTask` can be obtained either synchronously or
   # asynchronously. `ScheduledTask` mixes in both the [Obligation](Obligation)
   # module and the
-  # [Observable](http://ruby-doc.org/stdlib-2.0/libdoc/observer/rdoc/Observable.html)
+  # [Observable](https://ruby-doc.org/stdlib-2.0/libdoc/observer/rdoc/Observable.html)
   # module from the Ruby standard library. With one exception `ScheduledTask`
   # behaves identically to [Future](Observable) with regard to these modules.
   #
@@ -63,7 +63,7 @@ module Concurrent
   #
   #   class Ticker
   #     def get_year_end_closing(symbol, year)
-  #       uri = "http://ichart.finance.yahoo.com/table.csv?s=#{symbol}&a=11&b=01&c=#{year}&d=11&e=31&f=#{year}&g=m"
+  #       uri = "https://ichart.finance.yahoo.com/table.csv?s=#{symbol}&a=11&b=01&c=#{year}&d=11&e=31&f=#{year}&g=m"
   #       data = open(uri) {|f| f.collect{|line| line.strip } }
   #       data[1].split(',')[4].to_f
   #     end

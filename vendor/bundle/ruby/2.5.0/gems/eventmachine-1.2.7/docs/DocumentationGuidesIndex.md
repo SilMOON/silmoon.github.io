@@ -1,6 +1,6 @@
 # EventMachine documentation guides #
 
-Welcome to the documentation guides for [EventMachine](http://github.com/eventmachine/eventmachine),
+Welcome to the documentation guides for [EventMachine](https://github.com/eventmachine/eventmachine),
 a fast and simple event-processing library for Ruby programs (à la JBoss Netty, Twisted, Node.js
 and so on).
 
@@ -21,7 +21,7 @@ and so on).
 
 ## Tell us what you think! ##
 
-Please take a moment and tell us what you think about this guide on the [EventMachine mailing list](http://bit.ly/jW3cR3)
+Please take a moment and tell us what you think about this guide on the [EventMachine mailing list](https://bit.ly/jW3cR3)
 or in the #eventmachine channel on irc.freenode.net: what was unclear? What wasn't covered?
 Maybe you don't like the guide style or the grammar and spelling are incorrect? Reader feedback is
 key to making documentation better.

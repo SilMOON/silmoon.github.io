@@ -129,7 +129,7 @@ module Concurrent
   #     4.520000   0.030000   4.550000 (  1.187000)
   #   ```
   #
-  #   @see http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicLong.html java.util.concurrent.atomic.AtomicLong
+  #   @see https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicLong.html java.util.concurrent.atomic.AtomicLong
   #
   # @!macro atomic_fixnum_public_api
   class AtomicFixnum < AtomicFixnumImplementation

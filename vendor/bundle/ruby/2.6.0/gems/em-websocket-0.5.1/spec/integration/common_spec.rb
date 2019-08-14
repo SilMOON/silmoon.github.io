@@ -9,7 +9,7 @@ describe "WebSocket server" do
   it "should fail on non WebSocket requests" do
     em {
       EM.add_timer(0.1) do
-        http = EM::HttpRequest.new('http://127.0.0.1:12345/').get :timeout => 0
+        http = EM::HttpRequest.new('https://127.0.0.1:12345/').get :timeout => 0
         http.errback { done }
         http.callback { fail }
       end
@@ -22,7 +22,7 @@ describe "WebSocket server" do
     em {
       EM.add_timer(0.1) do
         ws = EventMachine::WebSocketClient.connect('ws://127.0.0.1:12345/',
-                                                   :origin => 'http://example.com')
+                                                   :origin => 'https://example.com')
         ws.errback { fail }
         ws.callback { ws.close_connection }
         ws.stream { |msg| }
@@ -36,7 +36,7 @@ describe "WebSocket server" do
           headers["Host"].to_s.should == "127.0.0.1:12345"
           handshake.path.should == "/"
           handshake.query.should == {}
-          handshake.origin.should == 'http://example.com'
+          handshake.origin.should == 'https://example.com'
         }
         ws.onclose {
           ws.state.should == :closed
@@ -91,7 +91,7 @@ describe "WebSocket server" do
   it "should allow the server to be started inside an existing EM" do
     em {
       EM.add_timer(0.1) do
-        http = EM::HttpRequest.new('http://127.0.0.1:12345/').get :timeout => 0
+        http = EM::HttpRequest.new('https://127.0.0.1:12345/').get :timeout => 0
         http.errback { |e| done }
         http.callback { fail }
       end

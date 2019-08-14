@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.date = "2018-10-30"
   s.description = "Like Pathname but a little less insane.".freeze
   s.email = ["jordon@envygeeks.io".freeze]
-  s.homepage = "http://github.com/envygeeks/pathutil".freeze
+  s.homepage = "https://github.com/envygeeks/pathutil".freeze
   s.licenses = ["MIT".freeze]
   s.rubygems_version = "2.7.6".freeze
   s.summary = "Almost like Pathname but just a little less insane.".freeze

@@ -26,7 +26,7 @@ module Concurrent
   #   **or** try to acquire the write lock while you already have it.
   #   This will lead to deadlock
   #
-  # @see http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html java.util.concurrent.ReentrantReadWriteLock
+  # @see https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html java.util.concurrent.ReentrantReadWriteLock
   class ReadWriteLock < Synchronization::Object
 
     # @!visibility private

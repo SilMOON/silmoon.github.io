@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.email = ["jneen@jneen.net".freeze]
   s.executables = ["rougify".freeze]
   s.files = ["bin/rougify".freeze]
-  s.homepage = "http://rouge.jneen.net/".freeze
+  s.homepage = "https://rouge.jneen.net/".freeze
   s.licenses = ["MIT".freeze, "BSD-2-Clause".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.0".freeze)
   s.rubygems_version = "3.0.3".freeze

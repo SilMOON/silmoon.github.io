@@ -120,7 +120,7 @@ module Sass
             @@compound_extend_deprecation.warn(sseq.filename, sseq.line, <<WARNING)
 Extending a compound selector, #{sseq}, is deprecated and will not be supported in a future release.
 Consider "@extend #{sseq.members.join(', ')}" instead.
-See http://bit.ly/ExtendCompound for details.
+See https://bit.ly/ExtendCompound for details.
 WARNING
           end
 

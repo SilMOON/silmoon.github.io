@@ -115,7 +115,7 @@ class Draft75WebSocketClient
   def initialize
     @ws = EventMachine::WebSocketClient.connect('ws://127.0.0.1:12345/',
                                                 :version => 75,
-                                                :origin => 'http://example.com')
+                                                :origin => 'https://example.com')
     @ws.errback { |err| @onerror.call if defined? @onerror }
     @ws.callback { @onopen.call if defined? @onopen }
     @ws.stream { |msg| @onmessage.call(msg) if defined? @onmessage }

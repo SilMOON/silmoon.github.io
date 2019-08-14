@@ -94,7 +94,7 @@ class Test::Unit::TestCase
   end
 
   module PlatformHelper
-    # http://blog.emptyway.com/2009/11/03/proper-way-to-detect-windows-platform-in-ruby/
+    # https://blog.emptyway.com/2009/11/03/proper-way-to-detect-windows-platform-in-ruby/
     def windows?
       RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
     end
@@ -103,7 +103,7 @@ class Test::Unit::TestCase
       RUBY_PLATFORM =~ /solaris/
     end
 
-    # http://stackoverflow.com/questions/1342535/how-can-i-tell-if-im-running-from-jruby-vs-ruby/1685970#1685970
+    # https://stackoverflow.com/questions/1342535/how-can-i-tell-if-im-running-from-jruby-vs-ruby/1685970#1685970
     def jruby?
       defined? JRUBY_VERSION
     end

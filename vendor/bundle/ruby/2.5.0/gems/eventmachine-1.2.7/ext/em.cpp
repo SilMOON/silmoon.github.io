@@ -434,8 +434,8 @@ EventMachine_t::GetRealTime
 ***************************/
 
 // Two great writeups of cross-platform monotonic time are at:
-// http://www.python.org/dev/peps/pep-0418
-// http://nadeausoftware.com/articles/2012/04/c_c_tip_how_measure_elapsed_real_time_benchmarking
+// https://www.python.org/dev/peps/pep-0418
+// https://nadeausoftware.com/articles/2012/04/c_c_tip_how_measure_elapsed_real_time_benchmarking
 // Uncomment the #pragma messages to confirm which compile-time option was used
 uint64_t EventMachine_t::GetRealTime()
 {
@@ -993,7 +993,7 @@ void EventMachine_t::_RunSelectOnce()
 
 		#ifdef OS_WIN32
 		/* 21Sep09: on windows, a non-blocking connect() that fails does not come up as writable.
-		   Instead, it is added to the error set. See http://www.mail-archive.com/openssl-users@openssl.org/msg58500.html
+		   Instead, it is added to the error set. See https://www.mail-archive.com/openssl-users@openssl.org/msg58500.html
 		*/
 		if (ed->IsConnectPending())
 			rb_fd_set (sd, &(SelectData->fderrors));

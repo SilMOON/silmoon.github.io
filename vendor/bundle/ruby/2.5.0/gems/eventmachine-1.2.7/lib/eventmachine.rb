@@ -110,7 +110,7 @@ module EventMachine
   # ## Using EventMachine with Ruby on Rails and other Web application frameworks ##
   #
   # Standalone applications often run event loop on the main thread, thus blocking for their entire lifespan. In case of Web applications,
-  # if you are running an EventMachine-based app server such as [Thin](http://code.macournoyer.com/thin/) or [Goliath](https://github.com/postrank-labs/goliath/),
+  # if you are running an EventMachine-based app server such as [Thin](https://code.macournoyer.com/thin/) or [Goliath](https://github.com/postrank-labs/goliath/),
   # they start event loop for you. Servers like Unicorn, Apache Passenger or Mongrel occupy main Ruby thread to serve HTTP(S) requests. This means
   # that calling {EventMachine.run} on the same thread is not an option (it will result in Web server never binding to the socket).
   # In that case, start event loop in a separate thread as demonstrated below.
@@ -848,7 +848,7 @@ module EventMachine
   #
   # Observe that the port number that you supply to {EventMachine.open_datagram_socket}
   # may be zero. In this case, EventMachine will create a UDP socket
-  # that is bound to an [ephemeral port](http://en.wikipedia.org/wiki/Ephemeral_port).
+  # that is bound to an [ephemeral port](https://en.wikipedia.org/wiki/Ephemeral_port).
   # This is not appropriate for servers that must publish a well-known
   # port to which remote peers may send datagrams. But it can be useful
   # for clients that send datagrams to other servers.

@@ -12,7 +12,7 @@ module Concurrent
   # New threads calling `#wait` will return immediately. An `Event` may be
   # `#reset` at any time once it has been set.
   #
-  # @see http://msdn.microsoft.com/en-us/library/windows/desktop/ms682655.aspx
+  # @see https://msdn.microsoft.com/en-us/library/windows/desktop/ms682655.aspx
   # @example
   #   event = Concurrent::Event.new
   #

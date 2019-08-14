@@ -17,7 +17,7 @@ module Concurrent
   #   operation therefore when two `+=` operations are executed concurrently updates
   #   may be lost. Use `#merge` instead.
   #
-  #   @see http://ruby-doc.org/stdlib-2.4.0/libdoc/set/rdoc/Set.html Ruby standard library `Set`
+  #   @see https://ruby-doc.org/stdlib-2.4.0/libdoc/set/rdoc/Set.html Ruby standard library `Set`
 
 
   # @!macro internal_implementation_note

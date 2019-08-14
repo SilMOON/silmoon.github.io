@@ -14,9 +14,9 @@ Gem::Specification.new do |s|
   s.email = "sass-lang@googlegroups.com".freeze
   s.executables = ["sass".freeze, "sass-convert".freeze, "scss".freeze]
   s.files = ["bin/sass".freeze, "bin/sass-convert".freeze, "bin/scss".freeze]
-  s.homepage = "http://sass-lang.com/".freeze
+  s.homepage = "https://sass-lang.com/".freeze
   s.licenses = ["MIT".freeze]
-  s.post_install_message = "\nRuby Sass is deprecated and will be unmaintained as of 26 March 2019.\n\n* If you use Sass as a command-line tool, we recommend using Dart Sass, the new\n  primary implementation: https://sass-lang.com/install\n\n* If you use Sass as a plug-in for a Ruby web framework, we recommend using the\n  sassc gem: https://github.com/sass/sassc-ruby#readme\n\n* For more details, please refer to the Sass blog:\n  http://sass.logdown.com/posts/7081811\n\n".freeze
+  s.post_install_message = "\nRuby Sass is deprecated and will be unmaintained as of 26 March 2019.\n\n* If you use Sass as a command-line tool, we recommend using Dart Sass, the new\n  primary implementation: https://sass-lang.com/install\n\n* If you use Sass as a plug-in for a Ruby web framework, we recommend using the\n  sassc gem: https://github.com/sass/sassc-ruby#readme\n\n* For more details, please refer to the Sass blog:\n  https://sass.logdown.com/posts/7081811\n\n".freeze
   s.required_ruby_version = Gem::Requirement.new(">= 2.0.0".freeze)
   s.rubyforge_project = "sass".freeze
   s.rubygems_version = "2.7.6".freeze

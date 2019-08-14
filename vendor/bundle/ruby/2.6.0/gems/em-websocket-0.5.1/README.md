@@ -1,9 +1,9 @@
 # EM-WebSocket
 
-[![Gem Version](https://badge.fury.io/rb/em-websocket.png)](http://rubygems.org/gems/em-websocket)
+[![Gem Version](https://badge.fury.io/rb/em-websocket.png)](https://rubygems.org/gems/em-websocket)
 [![Analytics](https://ga-beacon.appspot.com/UA-71196-10/em-websocket/readme)](https://github.com/igrigorik/ga-beacon)
 
-EventMachine based, async, Ruby WebSocket server. Take a look at examples directory, or check out the blog post: [Ruby & Websockets: TCP for the Web](http://www.igvita.com/2009/12/22/ruby-websockets-tcp-for-the-browser/).
+EventMachine based, async, Ruby WebSocket server. Take a look at examples directory, or check out the blog post: [Ruby & Websockets: TCP for the Web](https://www.igvita.com/2009/12/22/ruby-websockets-tcp-for-the-browser/).
 
 ## Simple server example
 
@@ -60,7 +60,7 @@ The `onclose` callback is passed a hash which may contain following keys (depend
   * 1006: abnormal closure (the same as `was_clean: false`)
 * `reason`: the close reason
 
-Acceptable close codes are defined in the WebSocket rfc (<http://tools.ietf.org/html/rfc6455#section-7.4>). The following codes can be supplies when calling `ws.close(code)`:
+Acceptable close codes are defined in the WebSocket rfc (<https://tools.ietf.org/html/rfc6455#section-7.4>). The following codes can be supplies when calling `ws.close(code)`:
 
 * 1000: a generic normal close
 * range 3xxx: reserved for libraries, frameworks, and applications (and can be registered with IANA)
@@ -73,7 +73,7 @@ If unsure use a code in the 4xxx range. em-websocket may also close a connection
 
 ## Secure server
 
-It is possible to accept secure `wss://` connections by passing `:secure => true` when opening the connection. Pass a `:tls_options` hash containing keys as described in http://eventmachine.rubyforge.org/EventMachine/Connection.html#start_tls-instance_method
+It is possible to accept secure `wss://` connections by passing `:secure => true` when opening the connection. Pass a `:tls_options` hash containing keys as described in https://eventmachine.rubyforge.org/EventMachine/Connection.html#start_tls-instance_method
 
 **Warning**: Safari 5 does not currently support prompting on untrusted SSL certificates therefore using a self signed certificate may leave you scratching your head.
 
@@ -95,7 +95,7 @@ It's possible to check whether an incoming connection is secure by reading `hand
 
 ## Running behind an SSL Proxy/Terminator, like Stunnel
 
-The `:secure_proxy => true` option makes it possible to use em-websocket behind a secure SSL proxy/terminator like [Stunnel](http://www.stunnel.org/) which does the actual encryption & decryption.
+The `:secure_proxy => true` option makes it possible to use em-websocket behind a secure SSL proxy/terminator like [Stunnel](https://www.stunnel.org/) which does the actual encryption & decryption.
 
 Note that this option is only required to support drafts 75 & 76 correctly (e.g. Safari 5.1.x & earlier, and Safari on iOS 5.x & earlier).
 
@@ -135,9 +135,9 @@ Using flash emulation does require some minimal support from em-websocket which 
 
 ## Examples & Projects using em-websocket
 
-* [Pusher](http://pusher.com) - Realtime Messaging Service
+* [Pusher](https://pusher.com) - Realtime Messaging Service
 * [Livereload](https://github.com/mockko/livereload) - LiveReload applies CSS/JS changes to Safari or Chrome w/o reloading
-* [Twitter AMQP WebSocket Example](http://github.com/rubenfonseca/twitter-amqp-websocket-example)
+* [Twitter AMQP WebSocket Example](https://github.com/rubenfonseca/twitter-amqp-websocket-example)
 * examples/multicast.rb - broadcast all ruby tweets to all subscribers
 * examples/echo.rb - server <> client exchange via a websocket
 

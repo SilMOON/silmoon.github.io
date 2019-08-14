@@ -49,7 +49,7 @@ module EventMachine
     # When the file is deleted, stop_watching will be called after this to make sure everything is
     # cleaned up correctly.
     #
-    # @note On Linux (with {http://en.wikipedia.org/wiki/Inotify inotify}), this method will not be called until *all* open file descriptors to
+    # @note On Linux (with {https://en.wikipedia.org/wiki/Inotify inotify}), this method will not be called until *all* open file descriptors to
     #       the file have been closed.
     #
     # @abstract

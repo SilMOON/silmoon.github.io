@@ -7,7 +7,7 @@ require 'concurrent/synchronization'
 
 module Concurrent
 
-  # `Agent` is inspired by Clojure's [agent](http://clojure.org/agents)
+  # `Agent` is inspired by Clojure's [agent](https://clojure.org/agents)
   # function. An agent is a shared, mutable variable providing independent,
   # uncoordinated, *asynchronous* change of individual values. Best used when
   # the value will undergo frequent, complex updates. Suitable when the result
@@ -139,8 +139,8 @@ module Concurrent
   #
   # @!macro thread_safe_variable_comparison
   #
-  # @see http://clojure.org/Agents Clojure Agents
-  # @see http://clojure.org/state Values and Change - Clojure's approach to Identity and State
+  # @see https://clojure.org/Agents Clojure Agents
+  # @see https://clojure.org/state Values and Change - Clojure's approach to Identity and State
   class Agent < Synchronization::LockableObject
     include Concern::Observable
 

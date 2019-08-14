@@ -6,7 +6,7 @@ module Concurrent
 
       # TODO (pitr 12-Sep-2015): locks two objects, improve
       # TODO (pitr 26-Sep-2015): study
-      # http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/8-b132/java/util/concurrent/locks/AbstractQueuedSynchronizer.java#AbstractQueuedSynchronizer.Node
+      # https://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/8-b132/java/util/concurrent/locks/AbstractQueuedSynchronizer.java#AbstractQueuedSynchronizer.Node
 
       singleton_class.send :alias_method, :private_new, :new
       private_class_method :new

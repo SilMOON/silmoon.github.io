@@ -1,11 +1,11 @@
-@prefix xsd:          <http://www.w3.org/2001/XMLSchema#>
-@prefix dcat:         <http://www.w3.org/ns/dcat#> .
-@prefix dcterms:      <http://purl.org/dc/terms/> .
-@prefix foaf:         <http://xmlns.com/foaf/0.1/> .
-@base                 <http://base.of.relative.iris> .
+@prefix xsd:          <https://www.w3.org/2001/XMLSchema#>
+@prefix dcat:         <https://www.w3.org/ns/dcat#> .
+@prefix dcterms:      <https://purl.org/dc/terms/> .
+@prefix foaf:         <https://xmlns.com/foaf/0.1/> .
+@base                 <https://base.of.relative.iris> .
 
-PREFIX  test:         <http://example.org>
-PrEfIx  insensitive:  <http://insensitive.example.org>
+PREFIX  test:         <https://example.org>
+PrEfIx  insensitive:  <https://insensitive.example.org>
 
 GRAPH <https://trig.testing.graph> {
     <https://example.org/resource/dataset> a dcat:Dataset ; 
@@ -19,7 +19,7 @@ GRAPH <https://trig.testing.graph> {
 
 #-----Recommended-----#
     dcat:contactPoint [ a foaf:Person ] ;
-    test:list ( <http://ex.org> 1 1.1 +1 -1 1.2E+4 "Test" "\"Quote\"" ) ;
+    test:list ( <https://ex.org> 1 1.1 +1 -1 1.2E+4 "Test" "\"Quote\"" ) ;
     test:datatype "2016-07-20"^^xsd:date ;
     test:text """next multiline""";
     .

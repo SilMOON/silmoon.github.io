@@ -11,7 +11,7 @@ import static http_parser.lolevel.HTTPParser.*;
 public class Url {
   
   public static Url[] URL_TESTS = new Url[]{
-      new Url("proxy request", "http://hostname/", false,
+      new Url("proxy request", "https://hostname/", false,
           new HTTPParserUrl(
               (1 << UrlFields.UF_SCHEMA.getIndex()) | (1 << UrlFields.UF_HOST.getIndex()) | (1 << UrlFields.UF_PATH.getIndex()),
               0,
@@ -37,7 +37,7 @@ public class Url {
                   new FieldData(0,0)
               }),
           0),
-      new Url("proxy ipv6 request", "http://[1:2::3:4]/", false,
+      new Url("proxy ipv6 request", "https://[1:2::3:4]/", false,
           new HTTPParserUrl(
               (1 << UrlFields.UF_SCHEMA.getIndex()) | (1 << UrlFields.UF_HOST.getIndex()) | (1 << UrlFields.UF_PATH.getIndex()),
               0,
@@ -64,7 +64,7 @@ public class Url {
               }),
           0),
       new Url("extra ? in query string",
-          "http://a.tbcdn.cn/p/fp/2010c/??fp-header-min.css,fp-base-min.css,fp-channel-min.css,fp-product-min.css,fp-mall-min.css,fp-category-min.css,fp-sub-min.css,fp-gdp4p-min.css,fp-css3-min.css,fp-misc-min.css?t=20101022.css",
+          "https://a.tbcdn.cn/p/fp/2010c/??fp-header-min.css,fp-base-min.css,fp-channel-min.css,fp-product-min.css,fp-mall-min.css,fp-category-min.css,fp-sub-min.css,fp-gdp4p-min.css,fp-css3-min.css,fp-misc-min.css?t=20101022.css",
           false,
           new HTTPParserUrl(
               (1 << UrlFields.UF_SCHEMA.getIndex()) |
@@ -82,12 +82,12 @@ public class Url {
               }),
           0),
       new Url("proxy empty host",
-          "http://:443/",
+          "https://:443/",
           false,
           null,
           1),
       new Url("proxy empty port",
-          "http://hostname:/",
+          "https://hostname:/",
           false,
           null,
           1),

@@ -33,7 +33,7 @@ concurrent-ruby-edge:
 concurrent-ruby:
 
 * requires at least Ruby 2.0
-* [Promises](http://ruby-concurrency.github.io/concurrent-ruby/1.1.0/Concurrent/Promises.html)
+* [Promises](https://ruby-concurrency.github.io/concurrent-ruby/1.1.0/Concurrent/Promises.html)
   are moved from `concurrent-ruby-edge` to `concurrent-ruby`
 * Add support for TruffleRuby
   * (#734) Fix Array/Hash/Set construction broken on TruffleRuby
@@ -261,7 +261,7 @@ concurrent-ruby-edge:
   - `Channel`
   - `Exchanger`
   - `LazyRegister`
-  - **new Future Framework** <http://ruby-concurrency.github.io/concurrent-ruby/Concurrent/Edge.html> - unified
+  - **new Future Framework** <https://ruby-concurrency.github.io/concurrent-ruby/Concurrent/Edge.html> - unified
     implementation of Futures and Promises which combines Features of previous `Future`,
     `Promise`, `IVar`, `Event`, `Probe`, `dataflow`, `Delay`, `TimerTask` into single framework. It uses extensively
     new synchronization layer to make all the paths **lock-free** with exception of blocking threads on `#wait`.
@@ -305,7 +305,7 @@ concurrent-ruby-edge:
 
 ## Release v0.7.2 (24 January 2015)
 
-* New `Semaphore` class based on [java.util.concurrent.Semaphore](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Semaphore.html)
+* New `Semaphore` class based on [java.util.concurrent.Semaphore](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Semaphore.html)
 * New `Promise.all?` and `Promise.any?` class methods
 * Renamed `:overflow_policy` on thread pools to `:fallback_policy`
 * Thread pools still accept the `:overflow_policy` option but display a warning
@@ -370,7 +370,7 @@ Please see the [roadmap](https://github.com/ruby-concurrency/concurrent-ruby/iss
 * Refactored many intermittently failing specs
 * Removed Java interop warning `executor.rb:148 warning: ambiguous Java methods found, using submit(java.lang.Runnable)`
 * Fixed minor bug in `RubyCachedThreadPool` overflow policy
-* Updated tests to use [RSpec 3.0](http://myronmars.to/n/dev-blog/2014/05/notable-changes-in-rspec-3)
+* Updated tests to use [RSpec 3.0](https://myronmars.to/n/dev-blog/2014/05/notable-changes-in-rspec-3)
 * Removed deprecated `Actor` class
 * Better support for Rubinius
 
@@ -379,7 +379,7 @@ Please see the [roadmap](https://github.com/ruby-concurrency/concurrent-ruby/iss
 * Many improvements to `Concurrent::Actress`
 * Bug fixes to `Concurrent::RubyThreadPoolExecutor`
 * Fixed several brittle tests
-* Moved documentation to http://ruby-concurrency.github.io/concurrent-ruby/frames.html
+* Moved documentation to https://ruby-concurrency.github.io/concurrent-ruby/frames.html
 
 ## Release v0.6.0 (25 May 2014)
 
@@ -407,13 +407,13 @@ Please see the [roadmap](https://github.com/ruby-concurrency/concurrent-ruby/iss
 * `Concurrent::processor_count` helper function
 * New `Async` module
 * Renamed `NullThreadPool` to `PerThreadExecutor`
-* Deprecated `Channel` (we are planning a new implementation based on [Go](http://golangtutorials.blogspot.com/2011/06/channels-in-go.html))
-* Added gem-level [configuration](http://robots.thoughtbot.com/mygem-configure-block)
+* Deprecated `Channel` (we are planning a new implementation based on [Go](https://golangtutorials.blogspot.com/2011/06/channels-in-go.html))
+* Added gem-level [configuration](https://robots.thoughtbot.com/mygem-configure-block)
 * Deprecated `$GLOBAL_THREAD_POOL` in lieu of gem-level configuration
 * Removed support for Ruby [1.9.2](https://www.ruby-lang.org/en/news/2013/12/17/maintenance-of-1-8-7-and-1-9-2/)
 * New `RubyThreadPoolExecutor` and `JavaThreadPoolExecutor` classes
 * All thread pools now extend the appropriate thread pool executor classes
-* All thread pools now support `:overflow_policy` (based on Java's [reject policies](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ThreadPoolExecutor.html))
+* All thread pools now support `:overflow_policy` (based on Java's [reject policies](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ThreadPoolExecutor.html))
 * Deprecated `UsesGlobalThreadPool` in lieu of explicit `:executor` option (dependency injection) on `Future`, `Promise`, and `Agent`
 * Added `Concurrent::dataflow_with(executor, *inputs)` method to support executor dependency injection for dataflow
 * Software transactional memory with `TVar` and `Concurrent::atomically`
@@ -424,7 +424,7 @@ Please see the [roadmap](https://github.com/ruby-concurrency/concurrent-ruby/iss
 
 This is the most significant release of this gem since its inception. This release includes many improvements and optimizations. It also includes several bug fixes. The major areas of focus for this release were:
 
-* Stability improvements on Ruby versions with thread-level parallelism ([JRuby](http://jruby.org/) and [Rubinius](http://rubini.us/))
+* Stability improvements on Ruby versions with thread-level parallelism ([JRuby](https://jruby.org/) and [Rubinius](https://rubini.us/))
 * Creation of new low-level concurrency abstractions
 * Internal refactoring to use the new low-level abstractions
 

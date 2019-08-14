@@ -92,7 +92,7 @@ describe "WebSocket server draft75" do
   it "should call onerror callback with raised exception and close connection on bad handshake" do
     em {
       EventMachine.add_timer(0.1) do
-        http = EM::HttpRequest.new('http://127.0.0.1:12345/').get
+        http = EM::HttpRequest.new('https://127.0.0.1:12345/').get
         http.errback { }
         http.callback { fail }
       end

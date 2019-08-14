@@ -92,8 +92,8 @@ module Concurrent
   #
   #   @!macro thread_safe_variable_comparison
   #
-  #   @see http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicReference.html
-  #   @see http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/package-summary.html
+  #   @see https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/AtomicReference.html
+  #   @see https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/atomic/package-summary.html
   #
   #   @!method initialize(value = nil)
   #     @!macro atomic_reference_method_initialize

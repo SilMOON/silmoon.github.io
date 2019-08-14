@@ -6,7 +6,7 @@ module Concurrent
 
   # A mixin module that provides simple asynchronous behavior to a class,
   # turning it into a simple actor. Loosely based on Erlang's
-  # [gen_server](http://www.erlang.org/doc/man/gen_server.html), but without
+  # [gen_server](https://www.erlang.org/doc/man/gen_server.html), but without
   # supervision or linking.
   #
   # A more feature-rich {Concurrent::Actor} is also available when the
@@ -232,8 +232,8 @@ module Concurrent
   #
   # @see Concurrent::Actor
   # @see https://en.wikipedia.org/wiki/Actor_model "Actor Model" at Wikipedia
-  # @see http://www.erlang.org/doc/man/gen_server.html Erlang gen_server
-  # @see http://c2.com/cgi/wiki?LetItCrash "Let It Crash" at http://c2.com/
+  # @see https://www.erlang.org/doc/man/gen_server.html Erlang gen_server
+  # @see https://c2.com/cgi/wiki?LetItCrash "Let It Crash" at https://c2.com/
   module Async
 
     # @!method self.new(*args, &block)
@@ -262,9 +262,9 @@ module Concurrent
     #   arguments are given. This check may also fail to recognize dynamic behavior
     #   of the object, such as methods simulated with `method_missing`.
     #
-    # @see http://www.ruby-doc.org/core-2.1.1/Method.html#method-i-arity Method#arity
-    # @see http://ruby-doc.org/core-2.1.0/Object.html#method-i-respond_to-3F Object#respond_to?
-    # @see http://www.ruby-doc.org/core-2.1.0/BasicObject.html#method-i-method_missing BasicObject#method_missing
+    # @see https://www.ruby-doc.org/core-2.1.1/Method.html#method-i-arity Method#arity
+    # @see https://ruby-doc.org/core-2.1.0/Object.html#method-i-respond_to-3F Object#respond_to?
+    # @see https://www.ruby-doc.org/core-2.1.0/BasicObject.html#method-i-method_missing BasicObject#method_missing
     #
     # @!visibility private
     def self.validate_argc(obj, method, *args)

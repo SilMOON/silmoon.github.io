@@ -8,7 +8,7 @@ module Rouge
       filenames '*.mos'
       title "Mosel"
       desc "An optimization language used by Fico's Xpress." 
-      # http://www.fico.com/en/products/fico-xpress-optimization-suite
+      # https://www.fico.com/en/products/fico-xpress-optimization-suite
       filenames '*.mos'
 
       mimetypes 'text/x-mosel'

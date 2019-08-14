@@ -101,7 +101,7 @@ module Jekyll
           template = <<-TEMPLATE
           <script>
             document.write(
-              '<script src="http://' +
+              '<script src="https://' +
               (location.host || 'localhost').split(':')[0] +
               ':<%=@options["livereload_port"] %>/livereload.js?snipver=1<%= livereload_args %>"' +
               '></' +
@@ -113,7 +113,7 @@ module Jekyll
 
         def livereload_args
           # XHTML standard requires ampersands to be encoded as entities when in
-          # attributes. See http://stackoverflow.com/a/2190292
+          # attributes. See https://stackoverflow.com/a/2190292
           src = ""
           if @options["livereload_min_delay"]
             src += "&amp;mindelay=#{@options["livereload_min_delay"]}"

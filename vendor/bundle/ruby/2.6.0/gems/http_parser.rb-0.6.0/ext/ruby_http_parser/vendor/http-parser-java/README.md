@@ -4,7 +4,7 @@ HTTP Parser
 This is a parser for HTTP written in Java, based quite heavily on
 the Ryan Dahl's C Version: `http-parser` available here:
 
-  http://github.com/ry/http-parser
+  https://github.com/ry/http-parser
 
 It parses both requests and responses. The parser is designed to be used
 in performance HTTP applications. 
@@ -115,12 +115,12 @@ a request like
         Upgrade: WebSocket
         Connection: Upgrade
         Host: example.com
-        Origin: http://example.com
+        Origin: https://example.com
         WebSocket-Protocol: sample
 
 followed by non-HTTP data.
 
-(See http://tools.ietf.org/html/draft-hixie-thewebsocketprotocol-75 for more
+(See https://tools.ietf.org/html/draft-hixie-thewebsocketprotocol-75 for more
 information the Web Socket protocol.)
 
 To support this, the parser will treat this as a normal HTTP message without a

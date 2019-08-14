@@ -29,10 +29,10 @@ module Concurrent
   #
   # ## See Also
   #
-  # 1. P. Barth, R. Nikhil, and Arvind. [M-Structures: Extending a parallel, non- strict, functional language with state](http://dl.acm.org/citation.cfm?id=652538). In Proceedings of the 5th
+  # 1. P. Barth, R. Nikhil, and Arvind. [M-Structures: Extending a parallel, non- strict, functional language with state](https://dl.acm.org/citation.cfm?id=652538). In Proceedings of the 5th
   #    ACM Conference on Functional Programming Languages and Computer Architecture (FPCA), 1991.
   #
-  # 2. S. Peyton Jones, A. Gordon, and S. Finne. [Concurrent Haskell](http://dl.acm.org/citation.cfm?id=237794).
+  # 2. S. Peyton Jones, A. Gordon, and S. Finne. [Concurrent Haskell](https://dl.acm.org/citation.cfm?id=237794).
   #    In Proceedings of the 23rd Symposium on Principles of Programming Languages
   #    (PoPL), 1996.
   class MVar < Synchronization::Object

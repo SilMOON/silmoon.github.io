@@ -370,11 +370,11 @@ module EventMachine
     #
     #
     # @option args [String] :cert_chain_file (nil) local path of a readable file that contants  a chain of X509 certificates in
-    #                                              the [PEM format](http://en.wikipedia.org/wiki/Privacy_Enhanced_Mail),
+    #                                              the [PEM format](https://en.wikipedia.org/wiki/Privacy_Enhanced_Mail),
     #                                              with the most-resolved certificate at the top of the file, successive intermediate
     #                                              certs in the middle, and the root (or CA) cert at the bottom.
     #
-    # @option args [String] :private_key_file (nil) local path of a readable file that must contain a private key in the [PEM format](http://en.wikipedia.org/wiki/Privacy_Enhanced_Mail).
+    # @option args [String] :private_key_file (nil) local path of a readable file that must contain a private key in the [PEM format](https://en.wikipedia.org/wiki/Privacy_Enhanced_Mail).
     #
     # @option args [Boolean] :verify_peer (false)   indicates whether a server should request a certificate from a peer, to be verified by user code.
     #                                               If true, the {#ssl_verify_peer} callback on the {EventMachine::Connection} object is called with each certificate
@@ -383,11 +383,11 @@ module EventMachine
     # @option args [Boolean] :fail_if_no_peer_cert (false)   Used in conjunction with verify_peer. If set the SSL handshake will be terminated if the peer does not provide a certificate.
     #
     #
-    # @option args [String] :cipher_list ("ALL:!ADH:!LOW:!EXP:!DES-CBC3-SHA:@STRENGTH") indicates the available SSL cipher values. Default value is "ALL:!ADH:!LOW:!EXP:!DES-CBC3-SHA:@STRENGTH". Check the format of the OpenSSL cipher string at http://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT.
+    # @option args [String] :cipher_list ("ALL:!ADH:!LOW:!EXP:!DES-CBC3-SHA:@STRENGTH") indicates the available SSL cipher values. Default value is "ALL:!ADH:!LOW:!EXP:!DES-CBC3-SHA:@STRENGTH". Check the format of the OpenSSL cipher string at https://www.openssl.org/docs/apps/ciphers.html#CIPHER_LIST_FORMAT.
     #
     # @option args [String] :ecdh_curve (nil)  The curve for ECDHE ciphers. See available ciphers with 'openssl ecparam -list_curves'
     #
-    # @option args [String] :dhparam (nil)  The local path of a file containing DH parameters for EDH ciphers in [PEM format](http://en.wikipedia.org/wiki/Privacy_Enhanced_Mail) See: 'openssl dhparam'
+    # @option args [String] :dhparam (nil)  The local path of a file containing DH parameters for EDH ciphers in [PEM format](https://en.wikipedia.org/wiki/Privacy_Enhanced_Mail) See: 'openssl dhparam'
     #
     # @option args [Array] :ssl_version (TLSv1 TLSv1_1 TLSv1_2) indicates the allowed SSL/TLS versions. Possible values are: {SSLv2}, {SSLv3}, {TLSv1}, {TLSv1_1}, {TLSv1_2}.
     #
@@ -459,8 +459,8 @@ module EventMachine
       EventMachine::start_tls @signature
     end
 
-    # If [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security) is active on the connection, returns the remote [X509 certificate](http://en.wikipedia.org/wiki/X.509)
-    # as a string, in the popular [PEM format](http://en.wikipedia.org/wiki/Privacy_Enhanced_Mail). This can then be used for arbitrary validation
+    # If [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) is active on the connection, returns the remote [X509 certificate](https://en.wikipedia.org/wiki/X.509)
+    # as a string, in the popular [PEM format](https://en.wikipedia.org/wiki/Privacy_Enhanced_Mail). This can then be used for arbitrary validation
     # of a peer's certificate in your code.
     #
     # This should be called in/after the {#ssl_handshake_completed} callback, which indicates
@@ -470,8 +470,8 @@ module EventMachine
     #
     # This method will return `nil` if:
     #
-    # * EventMachine is not built with [OpenSSL](http://www.openssl.org) support
-    # * [TLS](http://en.wikipedia.org/wiki/Transport_Layer_Security) is not active on the connection
+    # * EventMachine is not built with [OpenSSL](https://www.openssl.org) support
+    # * [TLS](https://en.wikipedia.org/wiki/Transport_Layer_Security) is not active on the connection
     # * TLS handshake is not yet complete
     # * Remote peer for any other reason has not presented a certificate
     #
@@ -522,7 +522,7 @@ module EventMachine
     # You can do whatever you want with the certificate String, such as load it
     # as a certificate object using the OpenSSL library, and check its fields.
     #
-    # @return [String] the remote [X509 certificate](http://en.wikipedia.org/wiki/X.509), in the popular [PEM format](http://en.wikipedia.org/wiki/Privacy_Enhanced_Mail),
+    # @return [String] the remote [X509 certificate](https://en.wikipedia.org/wiki/X.509), in the popular [PEM format](https://en.wikipedia.org/wiki/Privacy_Enhanced_Mail),
     #                  if TLS is active on the connection
     #
     # @see Connection#start_tls

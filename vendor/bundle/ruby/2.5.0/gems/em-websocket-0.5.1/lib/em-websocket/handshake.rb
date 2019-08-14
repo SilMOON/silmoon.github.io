@@ -80,7 +80,7 @@ module EventMachine
 
         # Validate request path
         #
-        # According to http://tools.ietf.org/search/rfc2616#section-5.1.2, an
+        # According to https://tools.ietf.org/search/rfc2616#section-5.1.2, an
         # invalid Request-URI should result in a 400 status code, but
         # HandshakeError's currently result in a WebSocket abort. It's not
         # clear which should take precedence, but an abort will do just fine.

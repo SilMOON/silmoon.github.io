@@ -38,13 +38,13 @@ module Concurrent
     #
     #   @note This implementation is *not* thread safe.
     #
-    #   @see http://en.wikipedia.org/wiki/Priority_queue
-    #   @see http://ruby-doc.org/stdlib-2.0.0/libdoc/thread/rdoc/Queue.html
+    #   @see https://en.wikipedia.org/wiki/Priority_queue
+    #   @see https://ruby-doc.org/stdlib-2.0.0/libdoc/thread/rdoc/Queue.html
     #
-    #   @see http://algs4.cs.princeton.edu/24pq/index.php#2.6
-    #   @see http://algs4.cs.princeton.edu/24pq/MaxPQ.java.html
+    #   @see https://algs4.cs.princeton.edu/24pq/index.php#2.6
+    #   @see https://algs4.cs.princeton.edu/24pq/MaxPQ.java.html
     #
-    #   @see http://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html
+    #   @see https://docs.oracle.com/javase/7/docs/api/java/util/PriorityQueue.html
     #
     # @!visibility private
     class NonConcurrentPriorityQueue < NonConcurrentPriorityQueueImplementation

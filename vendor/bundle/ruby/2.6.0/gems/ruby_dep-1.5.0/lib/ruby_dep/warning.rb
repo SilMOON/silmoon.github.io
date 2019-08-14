@@ -2,7 +2,7 @@ require 'ruby_dep/logger'
 require 'ruby_dep/ruby_version'
 
 module RubyDep
-  PROJECT_URL = 'http://github.com/e2/ruby_dep'.freeze
+  PROJECT_URL = 'https://github.com/e2/ruby_dep'.freeze
 
   class Warning
     DISABLING_ENVIRONMENT_VAR = 'RUBY_DEP_GEM_SILENCE_WARNINGS'.freeze

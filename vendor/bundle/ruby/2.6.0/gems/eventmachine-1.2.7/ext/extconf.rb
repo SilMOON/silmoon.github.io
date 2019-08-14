@@ -82,7 +82,7 @@ if ENV['CROSS_COMPILING']
     STDERR.puts
     STDERR.puts "**************************************************************************************"
     STDERR.puts "**** Cross-compiled OpenSSL not found"
-    STDERR.puts "**** Run: hg clone http://bitbucket.org/ged/ruby-pg && cd ruby-pg && rake openssl_libs"
+    STDERR.puts "**** Run: hg clone https://bitbucket.org/ged/ruby-pg && cd ruby-pg && rake openssl_libs"
     STDERR.puts "**************************************************************************************"
     STDERR.puts
   end

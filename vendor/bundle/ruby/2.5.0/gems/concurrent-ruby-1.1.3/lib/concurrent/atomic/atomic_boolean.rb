@@ -112,7 +112,7 @@ module Concurrent
   #     3.340000   0.010000   3.350000 (  0.855000)
   #   ```
   #
-  #   @see http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicBoolean.html java.util.concurrent.atomic.AtomicBoolean
+  #   @see https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/atomic/AtomicBoolean.html java.util.concurrent.atomic.AtomicBoolean
   #
   # @!macro atomic_boolean_public_api
   class AtomicBoolean < AtomicBooleanImplementation

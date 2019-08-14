@@ -4,7 +4,7 @@ require 'concurrent/collection/copy_on_write_observer_set'
 module Concurrent
   module Concern
 
-    # The [observer pattern](http://en.wikipedia.org/wiki/Observer_pattern) is one
+    # The [observer pattern](https://en.wikipedia.org/wiki/Observer_pattern) is one
     # of the most useful design patterns.
     #
     # The workflow is very simple:

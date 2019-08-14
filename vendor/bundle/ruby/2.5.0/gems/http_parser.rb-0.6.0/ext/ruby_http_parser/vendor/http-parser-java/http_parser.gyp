@@ -1,7 +1,7 @@
 # This file is used with the GYP meta build system.
-# http://code.google.com/p/gyp/
+# https://code.google.com/p/gyp/
 # To build try this:
-#   svn co http://gyp.googlecode.com/svn/trunk gyp
+#   svn co https://gyp.googlecode.com/svn/trunk gyp
 #   ./gyp/gyp -f make --depth=`pwd` http_parser.gyp 
 #   ./out/Debug/test 
 {

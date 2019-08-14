@@ -7,7 +7,7 @@ module EventMachine
   #
   #   EM.run do
   #     pool  = EM::Pool.new
-  #     spawn = lambda { pool.add EM::HttpRequest.new('http://example.org') }
+  #     spawn = lambda { pool.add EM::HttpRequest.new('https://example.org') }
   #     10.times { spawn[] }
   #     done, scheduled = 0, 0
   #

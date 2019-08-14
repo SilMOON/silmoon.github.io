@@ -16,7 +16,7 @@ describe "draft03" do
         'Sec-WebSocket-Protocol' => 'sample',
         'Upgrade' => 'WebSocket',
         'Sec-WebSocket-Key1' => '4 @1  46546xW%0l 1 5',
-        'Origin' => 'http://example.com',
+        'Origin' => 'https://example.com',
         'Sec-WebSocket-Draft' => '3'
       },
       :body => '^n:ds[4U'
@@ -27,7 +27,7 @@ describe "draft03" do
         "Upgrade" => "WebSocket",
         "Connection" => "Upgrade",
         "Sec-WebSocket-Location" => "ws://example.com/demo",
-        "Sec-WebSocket-Origin" => "http://example.com",
+        "Sec-WebSocket-Origin" => "https://example.com",
         "Sec-WebSocket-Protocol" => "sample"
       },
       :body => "8jKS\'y:G*Co,Wxa-"
@@ -50,7 +50,7 @@ describe "draft03" do
   end
 
   # These examples are straight from the spec
-  # http://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-03#section-4.6
+  # https://tools.ietf.org/html/draft-ietf-hybi-thewebsocketprotocol-03#section-4.6
   describe "examples from the spec" do
     it "should accept a single-frame text message" do
       em {

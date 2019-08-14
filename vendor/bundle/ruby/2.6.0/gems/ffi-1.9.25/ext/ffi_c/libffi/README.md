@@ -5,7 +5,7 @@ Status
 [![Build status](https://ci.appveyor.com/api/projects/status/8lko9vagbx4w2kxq?svg=true)](https://ci.appveyor.com/project/atgreen/libffi)
 
 libffi-3.3-rc0 was released on April 2, 2018.  Check the libffi web
-page for updates: <URL:http://sourceware.org/libffi/>.
+page for updates: <URL:https://sourceware.org/libffi/>.
 
 
 What is libffi?
@@ -188,7 +188,7 @@ To install the library and header files, type ``make install``.
 History
 =======
 
-See the git log for details at http://github.com/libffi/libffi.
+See the git log for details at https://github.com/libffi/libffi.
 
     3.3 TBD
         Add RISC-V support.

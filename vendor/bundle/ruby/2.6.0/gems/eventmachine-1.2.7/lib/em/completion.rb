@@ -109,7 +109,7 @@
 #      def connection_completed
 #        @host, @port = Socket.unpack_sockaddr_in get_peername
 #        @completion.change_state(:connected, @host, @port)
-#        send_data("GET http://example.org/ HTTP/1.0\r\n\r\n")
+#        send_data("GET https://example.org/ HTTP/1.0\r\n\r\n")
 #      end
 #
 #      def receive_data(data)

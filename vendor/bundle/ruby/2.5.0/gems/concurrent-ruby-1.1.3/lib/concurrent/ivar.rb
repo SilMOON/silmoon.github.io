@@ -40,10 +40,10 @@ module Concurrent
   # ## See Also
   #
   # 1. For the theory: Arvind, R. Nikhil, and K. Pingali.
-  #    [I-Structures: Data structures for parallel computing](http://dl.acm.org/citation.cfm?id=69562).
+  #    [I-Structures: Data structures for parallel computing](https://dl.acm.org/citation.cfm?id=69562).
   #    In Proceedings of Workshop on Graph Reduction, 1986.
   # 2. For recent application:
-  #    [DataDrivenFuture in Habanero Java from Rice](http://www.cs.rice.edu/~vs3/hjlib/doc/edu/rice/hj/api/HjDataDrivenFuture.html).
+  #    [DataDrivenFuture in Habanero Java from Rice](https://www.cs.rice.edu/~vs3/hjlib/doc/edu/rice/hj/api/HjDataDrivenFuture.html).
   class IVar < Synchronization::LockableObject
     include Concern::Obligation
     include Concern::Observable

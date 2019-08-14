@@ -44,7 +44,7 @@ module Rouge
         end
       end
 
-      # source: http://php.net/manual/en/language.variables.basics.php
+      # source: https://php.net/manual/en/language.variables.basics.php
       # the given regex is invalid utf8, so... we're using the unicode
       # "Letter" property instead.
       id = /[\p{L}_][\p{L}\p{N}_]*/

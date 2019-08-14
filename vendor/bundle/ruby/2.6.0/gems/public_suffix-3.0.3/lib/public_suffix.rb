@@ -51,8 +51,8 @@ module PublicSuffix
   #   # => PublicSuffix::DomainInvalid: `x.yz` is not a valid domain
   #
   # @example Parse an URL (not supported, only domains)
-  #   PublicSuffix.parse("http://www.google.com")
-  #   # => PublicSuffix::DomainInvalid: http://www.google.com is not expected to contain a scheme
+  #   PublicSuffix.parse("https://www.google.com")
+  #   # => PublicSuffix::DomainInvalid: https://www.google.com is not expected to contain a scheme
   #
   #
   # @param  [String, #to_s] name The domain name or fully qualified domain name to parse.
@@ -112,7 +112,7 @@ module PublicSuffix
   #   # => true
   #
   # @example Check an URL (which is not a valid domain)
-  #   PublicSuffix.valid?("http://www.example.com")
+  #   PublicSuffix.valid?("https://www.example.com")
   #   # => false
   #
   #

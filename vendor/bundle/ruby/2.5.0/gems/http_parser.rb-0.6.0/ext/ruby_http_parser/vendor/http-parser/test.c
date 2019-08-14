@@ -473,7 +473,7 @@ const struct message requests[] =
          "Sec-WebSocket-Protocol: sample\r\n"
          "Upgrade: WebSocket\r\n"
          "Sec-WebSocket-Key1: 4 @1  46546xW%0l 1 5\r\n"
-         "Origin: http://example.com\r\n"
+         "Origin: https://example.com\r\n"
          "\r\n"
          "Hot diggity dogg"
   ,.should_keep_alive= TRUE
@@ -493,7 +493,7 @@ const struct message requests[] =
              , { "Sec-WebSocket-Protocol", "sample" }
              , { "Upgrade", "WebSocket" }
              , { "Sec-WebSocket-Key1", "4 @1  46546xW%0l 1 5" }
-             , { "Origin", "http://example.com" }
+             , { "Origin", "https://example.com" }
              }
   ,.body= ""
   }
@@ -619,7 +619,7 @@ const struct message requests[] =
 #define QUERY_TERMINATED_HOST 21
 , {.name= "host terminated by a query string"
   ,.type= HTTP_REQUEST
-  ,.raw= "GET http://hypnotoad.org?hail=all HTTP/1.1\r\n"
+  ,.raw= "GET https://hypnotoad.org?hail=all HTTP/1.1\r\n"
          "\r\n"
   ,.should_keep_alive= TRUE
   ,.message_complete_on_eof= FALSE
@@ -629,7 +629,7 @@ const struct message requests[] =
   ,.query_string= "hail=all"
   ,.fragment= ""
   ,.request_path= ""
-  ,.request_url= "http://hypnotoad.org?hail=all"
+  ,.request_url= "https://hypnotoad.org?hail=all"
   ,.num_headers= 0
   ,.headers= { }
   ,.body= ""
@@ -638,7 +638,7 @@ const struct message requests[] =
 #define QUERY_TERMINATED_HOSTPORT 22
 , {.name= "host:port terminated by a query string"
   ,.type= HTTP_REQUEST
-  ,.raw= "GET http://hypnotoad.org:1234?hail=all HTTP/1.1\r\n"
+  ,.raw= "GET https://hypnotoad.org:1234?hail=all HTTP/1.1\r\n"
          "\r\n"
   ,.should_keep_alive= TRUE
   ,.message_complete_on_eof= FALSE
@@ -648,7 +648,7 @@ const struct message requests[] =
   ,.query_string= "hail=all"
   ,.fragment= ""
   ,.request_path= ""
-  ,.request_url= "http://hypnotoad.org:1234?hail=all"
+  ,.request_url= "https://hypnotoad.org:1234?hail=all"
   ,.port= 1234
   ,.num_headers= 0
   ,.headers= { }
@@ -658,7 +658,7 @@ const struct message requests[] =
 #define SPACE_TERMINATED_HOSTPORT 23
 , {.name= "host:port terminated by a space"
   ,.type= HTTP_REQUEST
-  ,.raw= "GET http://hypnotoad.org:1234 HTTP/1.1\r\n"
+  ,.raw= "GET https://hypnotoad.org:1234 HTTP/1.1\r\n"
          "\r\n"
   ,.should_keep_alive= TRUE
   ,.message_complete_on_eof= FALSE
@@ -668,7 +668,7 @@ const struct message requests[] =
   ,.query_string= ""
   ,.fragment= ""
   ,.request_path= ""
-  ,.request_url= "http://hypnotoad.org:1234"
+  ,.request_url= "https://hypnotoad.org:1234"
   ,.port= 1234
   ,.num_headers= 0
   ,.headers= { }
@@ -859,7 +859,7 @@ const struct message responses[] =
 { {.name= "google 301"
   ,.type= HTTP_RESPONSE
   ,.raw= "HTTP/1.1 301 Moved Permanently\r\n"
-         "Location: http://www.google.com/\r\n"
+         "Location: https://www.google.com/\r\n"
          "Content-Type: text/html; charset=UTF-8\r\n"
          "Date: Sun, 26 Apr 2009 11:11:49 GMT\r\n"
          "Expires: Tue, 26 May 2009 11:11:49 GMT\r\n"
@@ -872,7 +872,7 @@ const struct message responses[] =
          "<TITLE>301 Moved</TITLE></HEAD><BODY>\n"
          "<H1>301 Moved</H1>\n"
          "The document has moved\n"
-         "<A HREF=\"http://www.google.com/\">here</A>.\r\n"
+         "<A HREF=\"https://www.google.com/\">here</A>.\r\n"
          "</BODY></HTML>\r\n"
   ,.should_keep_alive= TRUE
   ,.message_complete_on_eof= FALSE
@@ -881,7 +881,7 @@ const struct message responses[] =
   ,.status_code= 301
   ,.num_headers= 8
   ,.headers=
-    { { "Location", "http://www.google.com/" }
+    { { "Location", "https://www.google.com/" }
     , { "Content-Type", "text/html; charset=UTF-8" }
     , { "Date", "Sun, 26 Apr 2009 11:11:49 GMT" }
     , { "Expires", "Tue, 26 May 2009 11:11:49 GMT" }
@@ -894,7 +894,7 @@ const struct message responses[] =
           "<TITLE>301 Moved</TITLE></HEAD><BODY>\n"
           "<H1>301 Moved</H1>\n"
           "The document has moved\n"
-          "<A HREF=\"http://www.google.com/\">here</A>.\r\n"
+          "<A HREF=\"https://www.google.com/\">here</A>.\r\n"
           "</BODY></HTML>\r\n"
   }
 
@@ -914,7 +914,7 @@ const struct message responses[] =
          "Connection: close\r\n"
          "\r\n"
          "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-         "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+         "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"https://schemas.xmlsoap.org/soap/envelope/\">\n"
          "  <SOAP-ENV:Body>\n"
          "    <SOAP-ENV:Fault>\n"
          "       <faultcode>SOAP-ENV:Client</faultcode>\n"
@@ -936,7 +936,7 @@ const struct message responses[] =
     , { "Connection", "close" }
     }
   ,.body= "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-          "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\n"
+          "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"https://schemas.xmlsoap.org/soap/envelope/\">\n"
           "  <SOAP-ENV:Body>\n"
           "    <SOAP-ENV:Fault>\n"
           "       <faultcode>SOAP-ENV:Client</faultcode>\n"
@@ -1014,7 +1014,7 @@ const struct message responses[] =
          "Content-Type: text/html; charset=utf-8\n"
          "Connection: close\n"
          "\n"
-         "these headers are from http://news.ycombinator.com/"
+         "these headers are from https://news.ycombinator.com/"
   ,.should_keep_alive= FALSE
   ,.message_complete_on_eof= TRUE
   ,.http_major= 1
@@ -1025,7 +1025,7 @@ const struct message responses[] =
     { {"Content-Type", "text/html; charset=utf-8" }
     , {"Connection", "close" }
     }
-  ,.body= "these headers are from http://news.ycombinator.com/"
+  ,.body= "these headers are from https://news.ycombinator.com/"
   }
 
 #define PROXY_CONNECTION 6
@@ -1055,7 +1055,7 @@ const struct message responses[] =
 
 #define UNDERSTORE_HEADER_KEY 7
   // shown by
-  // curl -o /dev/null -v "http://ad.doubleclick.net/pfadx/DARTSHELLCONFIGXML;dcmt=text/xml;"
+  // curl -o /dev/null -v "https://ad.doubleclick.net/pfadx/DARTSHELLCONFIGXML;dcmt=text/xml;"
 , {.name="underscore header key"
   ,.type= HTTP_RESPONSE
   ,.raw= "HTTP/1.1 200 OK\r\n"
@@ -1089,7 +1089,7 @@ const struct message responses[] =
          "Server: Apache/2.2.3 (Red Hat)\r\n"
          "Cache-Control: public\r\n"
          "Pragma: \r\n"
-         "Location: http://www.bonjourmadame.fr/\r\n"
+         "Location: https://www.bonjourmadame.fr/\r\n"
          "Vary: Accept-Encoding\r\n"
          "Content-Length: 0\r\n"
          "Content-Type: text/html; charset=UTF-8\r\n"
@@ -1106,7 +1106,7 @@ const struct message responses[] =
     , { "Server", "Apache/2.2.3 (Red Hat)" }
     , { "Cache-Control", "public" }
     , { "Pragma", "" }
-    , { "Location", "http://www.bonjourmadame.fr/" }
+    , { "Location", "https://www.bonjourmadame.fr/" }
     , { "Vary",  "Accept-Encoding" }
     , { "Content-Length", "0" }
     , { "Content-Type", "text/html; charset=UTF-8" }
@@ -1934,7 +1934,7 @@ struct url_test {
 
 const struct url_test url_tests[] =
 { {.name="proxy request"
-  ,.url="http://hostname/"
+  ,.url="https://hostname/"
   ,.is_connect=0
   ,.u=
     {.field_set=(1 << UF_SCHEMA) | (1 << UF_HOST) | (1 << UF_PATH)
@@ -1970,7 +1970,7 @@ const struct url_test url_tests[] =
   }
 
 , {.name="proxy ipv6 request"
-  ,.url="http://[1:2::3:4]/"
+  ,.url="https://[1:2::3:4]/"
   ,.is_connect=0
   ,.u=
     {.field_set=(1 << UF_SCHEMA) | (1 << UF_HOST) | (1 << UF_PATH)
@@ -2006,7 +2006,7 @@ const struct url_test url_tests[] =
   }
 
 , {.name="extra ? in query string"
-  ,.url="http://a.tbcdn.cn/p/fp/2010c/??fp-header-min.css,fp-base-min.css,fp-channel-min.css,fp-product-min.css,fp-mall-min.css,fp-category-min.css,fp-sub-min.css,fp-gdp4p-min.css,fp-css3-min.css,fp-misc-min.css?t=20101022.css"
+  ,.url="https://a.tbcdn.cn/p/fp/2010c/??fp-header-min.css,fp-base-min.css,fp-channel-min.css,fp-product-min.css,fp-mall-min.css,fp-category-min.css,fp-sub-min.css,fp-gdp4p-min.css,fp-css3-min.css,fp-misc-min.css?t=20101022.css"
   ,.is_connect=0
   ,.u=
     {.field_set=(1<<UF_SCHEMA) | (1<<UF_HOST) | (1<<UF_PATH) | (1<<UF_QUERY)
@@ -2024,13 +2024,13 @@ const struct url_test url_tests[] =
   }
 
 , {.name="proxy empty host"
-  ,.url="http://:443/"
+  ,.url="https://:443/"
   ,.is_connect=0
   ,.rv=1
   }
 
 , {.name="proxy empty port"
-  ,.url="http://hostname:/"
+  ,.url="https://hostname:/"
   ,.is_connect=0
   ,.rv=1
   }

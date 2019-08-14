@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.email = "concurrent-ruby@googlegroups.com".freeze
   s.extra_rdoc_files = ["README.md".freeze, "LICENSE.md".freeze, "CHANGELOG.md".freeze]
   s.files = ["CHANGELOG.md".freeze, "LICENSE.md".freeze, "README.md".freeze]
-  s.homepage = "http://www.concurrent-ruby.com".freeze
+  s.homepage = "https://www.concurrent-ruby.com".freeze
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 1.9.3".freeze)
   s.rubygems_version = "2.7.6".freeze

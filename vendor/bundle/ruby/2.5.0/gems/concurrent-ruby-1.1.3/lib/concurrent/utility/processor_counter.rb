@@ -44,8 +44,8 @@ module Concurrent
       #
       # @see https://github.com/grosser/parallel/blob/4fc8b89d08c7091fe0419ca8fba1ec3ce5a8d185/lib/parallel.rb
       #
-      # @see http://docs.oracle.com/javase/6/docs/api/java/lang/Runtime.html#availableProcessors()
-      # @see http://msdn.microsoft.com/en-us/library/aa394373(v=vs.85).aspx
+      # @see https://docs.oracle.com/javase/6/docs/api/java/lang/Runtime.html#availableProcessors()
+      # @see https://msdn.microsoft.com/en-us/library/aa394373(v=vs.85).aspx
       def processor_count
         @processor_count.value
       end
@@ -64,9 +64,9 @@ module Concurrent
       #
       # @see https://github.com/grosser/parallel/blob/4fc8b89d08c7091fe0419ca8fba1ec3ce5a8d185/lib/parallel.rb
       #
-      # @see http://msdn.microsoft.com/en-us/library/aa394373(v=vs.85).aspx
-      # @see http://www.unix.com/man-page/osx/1/HWPREFS/
-      # @see http://linux.die.net/man/8/sysctl
+      # @see https://msdn.microsoft.com/en-us/library/aa394373(v=vs.85).aspx
+      # @see https://www.unix.com/man-page/osx/1/HWPREFS/
+      # @see https://linux.die.net/man/8/sysctl
       def physical_processor_count
         @physical_processor_count.value
       end

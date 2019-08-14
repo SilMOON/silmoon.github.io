@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.date = "2014-04-23"
   s.description = "EventMachine based WebSocket server".freeze
   s.email = ["ilya@igvita.com".freeze, "me@mloughran.com".freeze]
-  s.homepage = "http://github.com/igrigorik/em-websocket".freeze
+  s.homepage = "https://github.com/igrigorik/em-websocket".freeze
   s.rubygems_version = "3.0.3".freeze
   s.summary = "EventMachine based WebSocket server".freeze
 

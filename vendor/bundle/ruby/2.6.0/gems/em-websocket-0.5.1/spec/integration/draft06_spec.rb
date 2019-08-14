@@ -15,7 +15,7 @@ describe "draft06" do
         'Connection' => 'Upgrade',
         'Sec-WebSocket-Key' => 'dGhlIHNhbXBsZSBub25jZQ==',
         'Sec-WebSocket-Protocol' => 'sample',
-        'Sec-WebSocket-Origin' => 'http://example.com',
+        'Sec-WebSocket-Origin' => 'https://example.com',
         'Sec-WebSocket-Version' => '6'
       }
     }

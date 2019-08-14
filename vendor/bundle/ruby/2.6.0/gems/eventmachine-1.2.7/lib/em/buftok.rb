@@ -2,7 +2,7 @@
 # by default.  It allows input to be spoon-fed from some outside source which
 # receives arbitrary length datagrams which may-or-may-not contain the token
 # by which entities are delimited.  In this respect it's ideally paired with
-# something like EventMachine (http://rubyeventmachine.com/).
+# something like EventMachine (https://rubyeventmachine.com/).
 class BufferedTokenizer
   # New BufferedTokenizers will operate on lines delimited by a delimiter,
   # which is by default the global input delimiter $/ ("\n").

@@ -10,11 +10,11 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib".freeze]
   s.authors = ["Marc-Andre Cournoyer".freeze, "Aman Gupta".freeze]
   s.date = "2013-12-11"
-  s.description = "Ruby bindings to http://github.com/ry/http-parser and http://github.com/a2800276/http-parser.java".freeze
+  s.description = "Ruby bindings to https://github.com/ry/http-parser and https://github.com/a2800276/http-parser.java".freeze
   s.email = ["macournoyer@gmail.com".freeze, "aman@tmm1.net".freeze]
   s.extensions = ["ext/ruby_http_parser/extconf.rb".freeze]
   s.files = ["ext/ruby_http_parser/extconf.rb".freeze]
-  s.homepage = "http://github.com/tmm1/http_parser.rb".freeze
+  s.homepage = "https://github.com/tmm1/http_parser.rb".freeze
   s.licenses = ["MIT".freeze]
   s.rubygems_version = "2.7.6".freeze
   s.summary = "Simple callback-based HTTP request/response parser".freeze

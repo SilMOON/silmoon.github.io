@@ -47,7 +47,7 @@ module Concurrent
   #   lock.with_read_lock  { data.retrieve }
   #   lock.with_write_lock { data.modify! }
   #
-  # @see http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html java.util.concurrent.ReentrantReadWriteLock
+  # @see https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/locks/ReentrantReadWriteLock.html java.util.concurrent.ReentrantReadWriteLock
   class ReentrantReadWriteLock < Synchronization::Object
 
     # Implementation notes:

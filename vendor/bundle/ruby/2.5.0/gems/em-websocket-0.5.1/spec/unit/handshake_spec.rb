@@ -19,7 +19,7 @@ describe EM::WebSocket::Handshake do
         'Sec-WebSocket-Protocol' => 'sample',
         'Upgrade' => 'WebSocket',
         'Sec-WebSocket-Key1' => '4 @1  46546xW%0l 1 5',
-        'Origin' => 'http://example.com'
+        'Origin' => 'https://example.com'
       },
       :body => '^n:ds[4U'
     }
@@ -30,7 +30,7 @@ describe EM::WebSocket::Handshake do
         "Upgrade" => "WebSocket",
         "Connection" => "Upgrade",
         "Sec-WebSocket-Location" => "ws://example.com/demo",
-        "Sec-WebSocket-Origin" => "http://example.com",
+        "Sec-WebSocket-Origin" => "https://example.com",
         "Sec-WebSocket-Protocol" => "sample"
       },
       :body => "8jKS\'y:G*Co,Wxa-"

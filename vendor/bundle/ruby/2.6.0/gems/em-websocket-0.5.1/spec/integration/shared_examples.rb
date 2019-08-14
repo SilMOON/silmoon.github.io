@@ -20,7 +20,7 @@ shared_examples_for "a websocket server" do
     em {
       start_server { |ws|
         ws.onopen { |handshake|
-          handshake.origin.should == 'http://example.com'
+          handshake.origin.should == 'https://example.com'
           done
         }
       }

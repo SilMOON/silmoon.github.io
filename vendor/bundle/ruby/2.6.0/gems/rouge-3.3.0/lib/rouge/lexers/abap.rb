@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- #
 # frozen_string_literal: true
 
-# ABAP elements taken from http://help.sap.com/abapdocu_750/en/index.htm?file=abapdo.htm
+# ABAP elements taken from https://help.sap.com/abapdocu_750/en/index.htm?file=abapdo.htm
 
 module Rouge
   module Lexers

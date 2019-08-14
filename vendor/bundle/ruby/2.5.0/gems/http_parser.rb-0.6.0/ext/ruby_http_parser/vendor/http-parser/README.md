@@ -96,12 +96,12 @@ a request like
         Upgrade: WebSocket
         Connection: Upgrade
         Host: example.com
-        Origin: http://example.com
+        Origin: https://example.com
         WebSocket-Protocol: sample
 
 followed by non-HTTP data.
 
-(See http://tools.ietf.org/html/draft-hixie-thewebsocketprotocol-75 for more
+(See https://tools.ietf.org/html/draft-hixie-thewebsocketprotocol-75 for more
 information the Web Socket protocol.)
 
 To support this, the parser will treat this as a normal HTTP message without a
@@ -173,6 +173,6 @@ consecutive `on_url` callbacks.
 
 See examples of reading in headers:
 
-* [partial example](http://gist.github.com/155877) in C
-* [from http-parser tests](http://github.com/ry/http-parser/blob/37a0ff8928fb0d83cec0d0d8909c5a4abcd221af/test.c#L403) in C
-* [from Node library](http://github.com/ry/node/blob/842eaf446d2fdcb33b296c67c911c32a0dabc747/src/http.js#L284) in Javascript
+* [partial example](https://gist.github.com/155877) in C
+* [from http-parser tests](https://github.com/ry/http-parser/blob/37a0ff8928fb0d83cec0d0d8909c5a4abcd221af/test.c#L403) in C
+* [from Node library](https://github.com/ry/node/blob/842eaf446d2fdcb33b296c67c911c32a0dabc747/src/http.js#L284) in Javascript

@@ -331,7 +331,7 @@
   {
     "name": "upgrade request",
     "type": "HTTP_REQUEST",
-    "raw": "GET /demo HTTP/1.1\r\nHost: example.com\r\nConnection: Upgrade\r\nSec-WebSocket-Key2: 12998 5 Y3 1  .P00\r\nSec-WebSocket-Protocol: sample\r\nUpgrade: WebSocket\r\nSec-WebSocket-Key1: 4 @1  46546xW%0l 1 5\r\nOrigin: http://example.com\r\n\r\nHot diggity dogg",
+    "raw": "GET /demo HTTP/1.1\r\nHost: example.com\r\nConnection: Upgrade\r\nSec-WebSocket-Key2: 12998 5 Y3 1  .P00\r\nSec-WebSocket-Protocol: sample\r\nUpgrade: WebSocket\r\nSec-WebSocket-Key1: 4 @1  46546xW%0l 1 5\r\nOrigin: https://example.com\r\n\r\nHot diggity dogg",
     "should_keep_alive": true,
     "message_complete_on_eof": false,
     "http_major": 1,
@@ -350,7 +350,7 @@
       "Sec-WebSocket-Protocol": "sample",
       "Upgrade": "WebSocket",
       "Sec-WebSocket-Key1": "4 @1  46546xW%0l 1 5",
-      "Origin": "http://example.com"
+      "Origin": "https://example.com"
     },
     "body": "",
     "strict": true
@@ -463,7 +463,7 @@
   {
     "name": "host terminated by a query string",
     "type": "HTTP_REQUEST",
-    "raw": "GET http://hypnotoad.org?hail=all HTTP/1.1\r\n\r\n",
+    "raw": "GET https://hypnotoad.org?hail=all HTTP/1.1\r\n\r\n",
     "should_keep_alive": true,
     "message_complete_on_eof": false,
     "http_major": 1,
@@ -472,7 +472,7 @@
     "query_string": "hail=all",
     "fragment": "",
     "request_path": "",
-    "request_url": "http://hypnotoad.org?hail=all",
+    "request_url": "https://hypnotoad.org?hail=all",
     "num_headers": 0,
     "headers": {
 
@@ -483,7 +483,7 @@
   {
     "name": "host:port terminated by a query string",
     "type": "HTTP_REQUEST",
-    "raw": "GET http://hypnotoad.org:1234?hail=all HTTP/1.1\r\n\r\n",
+    "raw": "GET https://hypnotoad.org:1234?hail=all HTTP/1.1\r\n\r\n",
     "should_keep_alive": true,
     "message_complete_on_eof": false,
     "http_major": 1,
@@ -492,7 +492,7 @@
     "query_string": "hail=all",
     "fragment": "",
     "request_path": "",
-    "request_url": "http://hypnotoad.org:1234?hail=all",
+    "request_url": "https://hypnotoad.org:1234?hail=all",
     "port": 1234,
     "num_headers": 0,
     "headers": {
@@ -504,7 +504,7 @@
   {
     "name": "host:port terminated by a space",
     "type": "HTTP_REQUEST",
-    "raw": "GET http://hypnotoad.org:1234 HTTP/1.1\r\n\r\n",
+    "raw": "GET https://hypnotoad.org:1234 HTTP/1.1\r\n\r\n",
     "should_keep_alive": true,
     "message_complete_on_eof": false,
     "http_major": 1,
@@ -513,7 +513,7 @@
     "query_string": "",
     "fragment": "",
     "request_path": "",
-    "request_url": "http://hypnotoad.org:1234",
+    "request_url": "https://hypnotoad.org:1234",
     "port": 1234,
     "num_headers": 0,
     "headers": {

@@ -7,7 +7,7 @@ module Concurrent
   # A wrapper/delegator for any `ExecutorService` that
   # guarantees serialized execution of tasks.
   #
-  # @see [SimpleDelegator](http://www.ruby-doc.org/stdlib-2.1.2/libdoc/delegate/rdoc/SimpleDelegator.html)
+  # @see [SimpleDelegator](https://www.ruby-doc.org/stdlib-2.1.2/libdoc/delegate/rdoc/SimpleDelegator.html)
   # @see Concurrent::SerializedExecution
   class SerializedExecutionDelegator < SimpleDelegator
     include SerialExecutorService

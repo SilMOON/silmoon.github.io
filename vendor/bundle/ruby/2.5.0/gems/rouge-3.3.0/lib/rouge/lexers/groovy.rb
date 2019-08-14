@@ -5,7 +5,7 @@ module Rouge
   module Lexers
     class Groovy < RegexLexer
       title "Groovy"
-      desc 'The Groovy programming language (http://www.groovy-lang.org/)'
+      desc 'The Groovy programming language (https://www.groovy-lang.org/)'
       tag 'groovy'
       filenames '*.groovy', 'Jenkinsfile'
       mimetypes 'text/x-groovy'

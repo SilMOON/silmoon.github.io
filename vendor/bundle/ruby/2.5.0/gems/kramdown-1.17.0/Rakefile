@@ -198,7 +198,7 @@ EOF
 
       s.author = 'Thomas Leitner'
       s.email = 't_leitner@gmx.at'
-      s.homepage = "http://kramdown.gettalong.org"
+      s.homepage = "https://kramdown.gettalong.org"
     end
 
 
@@ -277,7 +277,7 @@ EOF
 Some requirement by the mathjax-node-cli package has not been satisfied.
 Cf. the above error messages.
 MJC
-    raise (<<MJN) unless %r{\A<math xmlns="http://www.w3.org/\d+/Math/MathML".*</math>\Z}m === html
+    raise (<<MJN) unless %r{\A<math xmlns="https://www.w3.org/\d+/Math/MathML".*</math>\Z}m === html
 The MathjaxNode engine is not available. Try "npm install mathjax-node-cli".
 MJN
     puts "MathjaxNode is available, and its default configuration works."

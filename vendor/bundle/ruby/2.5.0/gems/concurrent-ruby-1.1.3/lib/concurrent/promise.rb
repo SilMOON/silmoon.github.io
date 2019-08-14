@@ -10,8 +10,8 @@ module Concurrent
 
   PromiseExecutionError = Class.new(StandardError)
 
-  # Promises are inspired by the JavaScript [Promises/A](http://wiki.commonjs.org/wiki/Promises/A)
-  # and [Promises/A+](http://promises-aplus.github.io/promises-spec/) specifications.
+  # Promises are inspired by the JavaScript [Promises/A](https://wiki.commonjs.org/wiki/Promises/A)
+  # and [Promises/A+](https://promises-aplus.github.io/promises-spec/) specifications.
   #
   # > A promise represents the eventual value returned from the single
   # > completion of an operation.
@@ -205,8 +205,8 @@ module Concurrent
     #
     # @raise [ArgumentError] if no block is given
     #
-    # @see http://wiki.commonjs.org/wiki/Promises/A
-    # @see http://promises-aplus.github.io/promises-spec/
+    # @see https://wiki.commonjs.org/wiki/Promises/A
+    # @see https://promises-aplus.github.io/promises-spec/
     def initialize(opts = {}, &block)
       opts.delete_if { |k, v| v.nil? }
       super(NULL, opts.merge(__promise_body_from_block__: block), &nil)

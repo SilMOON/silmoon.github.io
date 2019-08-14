@@ -27,8 +27,8 @@ module Concurrent
   # ```
   #
   # In this example the standard library function `file:consult` returns a
-  # [tuple](http://erlang.org/doc/reference_manual/data_types.html#id69044)
-  # with two elements: an [atom](http://erlang.org/doc/reference_manual/data_types.html#id64134)
+  # [tuple](https://erlang.org/doc/reference_manual/data_types.html#id69044)
+  # with two elements: an [atom](https://erlang.org/doc/reference_manual/data_types.html#id64134)
   # (similar to a ruby symbol) and a variable containing ancillary data. On
   # success it returns the atom `ok` and the data from the file. On failure it
   # returns `error` and a string with an explanation of the problem. With this

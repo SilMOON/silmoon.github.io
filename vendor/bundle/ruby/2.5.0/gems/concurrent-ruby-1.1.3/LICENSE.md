@@ -1,7 +1,7 @@
 ```
 Copyright (c) Jerry D'Antonio -- released under the MIT license.
 
-http://www.opensource.org/licenses/mit-license.php  
+https://www.opensource.org/licenses/mit-license.php  
 
 Permission is hereby granted, free of charge, to any person obtaining a copy  
 of this software and associated documentation files (the "Software"), to deal  

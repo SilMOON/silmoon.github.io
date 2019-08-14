@@ -11,7 +11,7 @@ This guide is a quick tutorial that helps you to get started with EventMachine f
 servers, clients and using it as a lightweight concurrency library.
 It should take about 20 minutes to read and study the provided code examples. This guide covers
 
- * Installing EventMachine via [Rubygems](http://rubygems.org) and [Bundler](http://gembundler.com).
+ * Installing EventMachine via [Rubygems](https://rubygems.org) and [Bundler](https://gembundler.com).
  * Building an Echo server, the "Hello, world"-like code example of network servers.
  * Building a simple chat, both server and client.
  * Building a very small asynchronous Websockets client.
@@ -25,7 +25,7 @@ This guide covers EventMachine v0.12.10 and 1.0 (including betas).
 ## Level ##
 
 This guide assumes you are comfortable (but not necessary a guru) with the command line. On Microsoft Windows™,
-we recommend you to use [JRuby](http://jruby.org) when running these examples.
+we recommend you to use [JRuby](https://jruby.org) when running these examples.
 
 
 ## Installing EventMachine ##
@@ -36,9 +36,9 @@ This guide assumes you have one of the supported Ruby implementations installed:
 
  * Ruby 1.8.7
  * Ruby 1.9.2
- * [JRuby](http://jruby.org) (we recommend 1.6)
- * [Rubinius](http://rubini.us) 1.2 or higher
- * [Ruby Enterprise Edition](http://www.rubyenterpriseedition.com)
+ * [JRuby](https://jruby.org) (we recommend 1.6)
+ * [Rubinius](https://rubini.us) 1.2 or higher
+ * [Ruby Enterprise Edition](https://www.rubyenterpriseedition.com)
 
 EventMachine works on Microsoft Windows™.
 
@@ -106,7 +106,7 @@ Lets walk this example line by line and see what's going on. These lines
     require 'rubygems' # or use Bundler.setup
     require 'eventmachine'
 
-probably look familiar: you use [RubyGems](http://rubygems.org) (or [Bundler](http://gembundler.com/)) for dependencies and then require EventMachine gem. Boring.
+probably look familiar: you use [RubyGems](https://rubygems.org) (or [Bundler](https://gembundler.com/)) for dependencies and then require EventMachine gem. Boring.
 
 Next:
 
@@ -165,7 +165,7 @@ To set some expectations about our example:
  * It will keep track of connected clients
  * It will support a couple of commands, à la IRC
  * It will support direct messages using Twitter-like @usernames
- * It won't use MongoDB, fibers or distributed map/reduce for anything but will be totally [Web Scale™](http://bit.ly/webscaletm) nonetheless. Maybe even [ROFLscale](http://bit.ly/roflscalevideo).
+ * It won't use MongoDB, fibers or distributed map/reduce for anything but will be totally [Web Scale™](https://bit.ly/webscaletm) nonetheless. Maybe even [ROFLscale](https://bit.ly/roflscalevideo).
 
 ### Step one: detecting connections and disconnectons ###
 
@@ -436,7 +436,7 @@ Just in case, here is the final version of the chat server code we have built:
 ### Step seven: future directions and some closing thoughts ###
 
 The chat server is just about 150 lines of Ruby including empty lines and comments, yet it has a few features most of chat server
-examples never add. We did not, however, implement many other features that popular IRC clients like [Colloquy](http://colloquy.info) have:
+examples never add. We did not, however, implement many other features that popular IRC clients like [Colloquy](https://colloquy.info) have:
 
  * Chat moderation
  * Multiple rooms
@@ -467,11 +467,11 @@ to some of those projects:
  * For Redis, there is a young but already popular [em-hiredis](https://github.com/mloughran/em-hiredis) library that combines EventMachine's non-blocking I/O with
    extreme performance of the official Redis C client, [hiredis](https://github.com/antirez/hiredis).
  * For MongoDB, see [em-mongo](https://github.com/bcg/em-mongo)
- * For Cassandra, Mike Perham [added transport agnosticism feature](http://www.mikeperham.com/2010/02/09/cassandra-and-eventmachine/) to the [cassandra gem](https://rubygems.org/gems/cassandra).
+ * For Cassandra, Mike Perham [added transport agnosticism feature](https://www.mikeperham.com/2010/02/09/cassandra-and-eventmachine/) to the [cassandra gem](https://rubygems.org/gems/cassandra).
 
-[Riak](http://www.basho.com/products_riak_overview.php) and CouchDB talk HTTP so it's possible to use [em-http-request](https://github.com/igrigorik/em-http-request).
-If you are aware of EventMachine-based non-blocking drivers for these databases, as well as for HBase, let us know on the [EventMachine mailing list](http://groups.google.com/group/eventmachine).
-Also, EventMachine supports TLS (aka SSL) and works well on [JRuby](http://jruby.org) and Windows.
+[Riak](https://www.basho.com/products_riak_overview.php) and CouchDB talk HTTP so it's possible to use [em-http-request](https://github.com/igrigorik/em-http-request).
+If you are aware of EventMachine-based non-blocking drivers for these databases, as well as for HBase, let us know on the [EventMachine mailing list](https://groups.google.com/group/eventmachine).
+Also, EventMachine supports TLS (aka SSL) and works well on [JRuby](https://jruby.org) and Windows.
 
 Learn more in our {file:docs/Ecosystem.md EventMachine ecosystem} and {file:docs/TLS.md TLS (aka SSL)} guides.
 
@@ -515,7 +515,7 @@ topics. TBD
 
 ## Tell us what you think! ##
 
-Please take a moment and tell us what you think about this guide on the [EventMachine mailing list](http://bit.ly/jW3cR3)
+Please take a moment and tell us what you think about this guide on the [EventMachine mailing list](https://bit.ly/jW3cR3)
 or in the #eventmachine channel on irc.freenode.net: what was unclear? What wasn't covered?
 Maybe you don't like the guide style or the grammar and spelling are incorrect? Reader feedback is
 key to making documentation better.

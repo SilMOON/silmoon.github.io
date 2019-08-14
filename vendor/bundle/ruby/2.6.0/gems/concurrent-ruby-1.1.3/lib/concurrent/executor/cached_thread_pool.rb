@@ -35,7 +35,7 @@ module Concurrent
     #
     #   @raise [ArgumentError] if `fallback_policy` is not a known policy
     #
-    #   @see http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html#newCachedThreadPool--
+    #   @see https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html#newCachedThreadPool--
     def initialize(opts = {})
       defaults  = { idletime:    DEFAULT_THREAD_IDLETIMEOUT }
       overrides = { min_threads: 0,

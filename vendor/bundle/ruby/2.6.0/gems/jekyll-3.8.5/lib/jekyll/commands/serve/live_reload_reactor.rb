@@ -58,14 +58,14 @@ module Jekyll
               EM.add_shutdown_hook { @stopped_event.set }
 
               Jekyll.logger.info "LiveReload address:",
-                "http://#{opts["host"]}:#{opts["livereload_port"]}"
+                "https://#{opts["host"]}:#{opts["livereload_port"]}"
             end
           end
           @thread.abort_on_exception = true
         end
 
         # For a description of the protocol see
-        # http://feedback.livereload.com/knowledgebase/articles/86174-livereload-protocol
+        # https://feedback.livereload.com/knowledgebase/articles/86174-livereload-protocol
         def reload(pages)
           pages.each do |p|
             json_message = JSON.dump({
@@ -91,7 +91,7 @@ module Jekyll
           websocket.send(
             JSON.dump(
               :command    => "hello",
-              :protocols  => ["http://livereload.com/protocols/official-7"],
+              :protocols  => ["https://livereload.com/protocols/official-7"],
               :serverName => "jekyll"
             )
           )

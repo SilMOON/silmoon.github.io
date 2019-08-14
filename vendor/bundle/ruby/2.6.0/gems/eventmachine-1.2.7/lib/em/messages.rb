@@ -1,7 +1,7 @@
 #--
 #
 # Author:: Francis Cianfrocca (gmail: blackhedd)
-# Homepage::  http://rubyeventmachine.com
+# Homepage::  https://rubyeventmachine.com
 # Date:: 16 Jul 2006
 # 
 # See EventMachine and EventMachine::Connection for documentation and

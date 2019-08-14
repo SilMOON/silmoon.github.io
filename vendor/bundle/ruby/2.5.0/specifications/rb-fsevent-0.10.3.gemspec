@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.date = "2018-03-03"
   s.description = "FSEvents API with Signals catching (without RubyCocoa)".freeze
   s.email = ["thibaud@thibaud.gg".freeze, "ttilley@gmail.com".freeze]
-  s.homepage = "http://rubygems.org/gems/rb-fsevent".freeze
+  s.homepage = "https://rubygems.org/gems/rb-fsevent".freeze
   s.licenses = ["MIT".freeze]
   s.rubygems_version = "2.7.6".freeze
   s.summary = "Very simple & usable FSEvents API".freeze

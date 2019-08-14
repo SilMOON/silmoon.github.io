@@ -4,9 +4,9 @@
 ## What is EventMachine ##
 
 EventMachine is an event-driven I/O and lightweight concurrency library for Ruby.
-It provides event-driven I/O using the [Reactor pattern](http://en.wikipedia.org/wiki/Reactor_pattern),
-much like [JBoss Netty](http://www.jboss.org/netty), [Apache MINA](http://mina.apache.org/),
-Python's [Twisted](http://twistedmatrix.com), [Node.js](http://nodejs.org), libevent and libev.
+It provides event-driven I/O using the [Reactor pattern](https://en.wikipedia.org/wiki/Reactor_pattern),
+much like [JBoss Netty](https://www.jboss.org/netty), [Apache MINA](https://mina.apache.org/),
+Python's [Twisted](https://twistedmatrix.com), [Node.js](https://nodejs.org), libevent and libev.
 
 EventMachine is designed to simultaneously meet two key needs:
 
@@ -23,7 +23,7 @@ EventMachine has been around since the early 2000s and is a mature and battle-te
 
 ## What EventMachine is good for? ##
 
- * Scalable event-driven servers. Examples: [Thin](http://code.macournoyer.com/thin/) or [Goliath](https://github.com/postrank-labs/goliath/).
+ * Scalable event-driven servers. Examples: [Thin](https://code.macournoyer.com/thin/) or [Goliath](https://github.com/postrank-labs/goliath/).
  * Scalable asynchronous clients for various protocols, RESTful APIs and so on. Examples: [em-http-request](https://github.com/igrigorik/em-http-request) or [amqp gem](https://github.com/ruby-amqp/amqp).
  * Efficient network proxies with custom logic. Examples: [Proxymachine](https://github.com/mojombo/proxymachine/).
  * File and network monitoring tools. Examples: [eventmachine-tail](https://github.com/jordansissel/eventmachine-tail) and [logstash](https://github.com/logstash/logstash).
@@ -43,7 +43,7 @@ Install it with [RubyGems](https://rubygems.org/)
 
     gem install eventmachine
 
-or add this to your Gemfile if you use [Bundler](http://gembundler.com/):
+or add this to your Gemfile if you use [Bundler](https://gembundler.com/):
 
     gem "eventmachine"
 
@@ -53,8 +53,8 @@ or add this to your Gemfile if you use [Bundler](http://gembundler.com/):
 
 For an introduction to EventMachine, check out:
 
- * [blog post about EventMachine by Ilya Grigorik](http://www.igvita.com/2008/05/27/ruby-eventmachine-the-speed-demon/).
- * [EventMachine Introductions by Dan Sinclair](http://everburning.com/news/eventmachine-introductions.html).
+ * [blog post about EventMachine by Ilya Grigorik](https://www.igvita.com/2008/05/27/ruby-eventmachine-the-speed-demon/).
+ * [EventMachine Introductions by Dan Sinclair](https://everburning.com/news/eventmachine-introductions.html).
 
 
 ### Server example: Echo server ###
@@ -88,12 +88,12 @@ EventMachine.run {
 
 ## EventMachine documentation ##
 
-Currently we only have [reference documentation](http://rdoc.info/github/eventmachine/eventmachine/frames) and a [wiki](https://github.com/eventmachine/eventmachine/wiki).
+Currently we only have [reference documentation](https://rdoc.info/github/eventmachine/eventmachine/frames) and a [wiki](https://github.com/eventmachine/eventmachine/wiki).
 
 
 ## Community and where to get help ##
 
- * Join the [mailing list](http://groups.google.com/group/eventmachine) (Google Group)
+ * Join the [mailing list](https://groups.google.com/group/eventmachine) (Google Group)
  * Join IRC channel #eventmachine on irc.freenode.net
 
 

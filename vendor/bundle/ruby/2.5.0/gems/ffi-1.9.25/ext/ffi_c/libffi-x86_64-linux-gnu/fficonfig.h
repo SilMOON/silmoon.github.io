@@ -132,7 +132,7 @@
 #define PACKAGE "libffi"
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "http://github.com/libffi/libffi/issues"
+#define PACKAGE_BUGREPORT "https://github.com/libffi/libffi/issues"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "libffi"

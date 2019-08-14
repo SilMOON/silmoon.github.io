@@ -160,10 +160,10 @@ module Concurrent
   #   @note Failure to properly shutdown a thread pool can lead to unpredictable results.
   #     Please read *Shutting Down Thread Pools* for more information.
   #
-  #   @see http://docs.oracle.com/javase/tutorial/essential/concurrency/pools.html Java Tutorials: Thread Pools
-  #   @see http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executors.html Java Executors class
-  #   @see http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html Java ExecutorService interface
-  #   @see http://ruby-doc.org//core-2.2.0/Kernel.html#method-i-at_exit Kernel#at_exit
+  #   @see https://docs.oracle.com/javase/tutorial/essential/concurrency/pools.html Java Tutorials: Thread Pools
+  #   @see https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executors.html Java Executors class
+  #   @see https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ExecutorService.html Java ExecutorService interface
+  #   @see https://ruby-doc.org//core-2.2.0/Kernel.html#method-i-at_exit Kernel#at_exit
 
 
 
@@ -193,7 +193,7 @@ module Concurrent
     #   @raise [ArgumentError] if `num_threads` is less than or equal to zero
     #   @raise [ArgumentError] if `fallback_policy` is not a known policy
     #
-    #   @see http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html#newFixedThreadPool-int-
+    #   @see https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Executors.html#newFixedThreadPool-int-
     def initialize(num_threads, opts = {})
       raise ArgumentError.new('number of threads must be greater than zero') if num_threads.to_i < 1
       defaults  = { max_queue:   DEFAULT_MAX_QUEUE_SIZE,
