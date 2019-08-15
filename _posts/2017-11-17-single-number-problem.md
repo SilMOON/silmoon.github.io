@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The single element problem
-categories: [Algorithm,Java]
+categories: [Algorithm]
 tags: [Algorithm,Java]
 fullview: true
 ---

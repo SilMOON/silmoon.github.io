@@ -2,7 +2,7 @@
 layout: post
 title: Some Rust notes II
 categories: [Rust]
-tags: [Tips]
+tags: [Rust, Notes]
 fullview: true
 ---
 

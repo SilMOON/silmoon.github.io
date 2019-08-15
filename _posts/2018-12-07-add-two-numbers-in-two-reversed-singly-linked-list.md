@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Add two numbers in two reversed singly linked list
-categories: [Algorithm,Java]
+categories: [Algorithm]
 tags: [Algorithm,Java]
 fullview: true
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fix gems/plugins version issue in GitPage
-categories: [GitPage,Ruby]
+categories: [GitPage]
 tags: [GitPage,Ruby]
 fullview: true
 ---

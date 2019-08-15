@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jewels and stones problem
-categories: [Algorithm,Java]
+categories: [Algorithm]
 tags: [Algorithm,Java]
 fullview: true
 ---

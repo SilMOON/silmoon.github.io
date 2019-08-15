@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Some flutter notes
-categories: [Flutter,Dart]
+categories: [Flutter]
 tags: [Flutter,Dart]
 fullview: true
 ---

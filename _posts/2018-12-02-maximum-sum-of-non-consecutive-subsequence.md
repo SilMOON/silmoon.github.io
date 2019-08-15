@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Maximum sum of non-consecutive subsequence
-categories: [Algorithm,Java]
+categories: [Algorithm]
 tags: [Algorithm,Java]
 fullview: true
 ---

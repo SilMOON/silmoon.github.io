@@ -2,7 +2,7 @@
 layout: post
 title: Semantic versioning note
 categories: [General]
-tags: [Tips]
+tags: [Versioning]
 fullview: true
 ---
 
