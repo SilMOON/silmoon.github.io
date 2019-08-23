@@ -24,3 +24,6 @@ fn longest_with_an_announcement<'a, T>(x: &'a str, y: &'a str, ann: T) -> &'a st
 ```rust
 #[should_panic(expected = "Guess value must be less than or equal to 100")]
 ```
+3. `FnOnce` consumes the variables it captures from the closure’s environment. To consume the captured variables, the closure must take ownership of these variables and move them into the closure when it is defined. The Once part of the name represents the fact that the closure can’t take ownership of the same variables more than once, so it can be called only once.
+`FnMut` can change the environment because it mutably borrows values.
+`Fn` borrows values from the environment immutably.
