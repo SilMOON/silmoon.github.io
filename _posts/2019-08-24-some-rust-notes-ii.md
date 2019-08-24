@@ -58,3 +58,10 @@ impl<T> Cacher<T>
     }
 }
 ```
+5. Using `sum` method for `iterator` will take ownership so that if this statement is called:
+```rust
+let v1 = vec![1, 2, 3];
+let v1_iter = v1.iter();
+let total: i32 = v1_iter.sum();
+```
+we cannot use v1_iter after the call because of the reason stated above.
