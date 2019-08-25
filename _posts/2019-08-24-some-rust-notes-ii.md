@@ -35,7 +35,6 @@ struct Cacher<T>
     calculation: T,
     value: HashMap<u32, u32>,
 }
-
 impl<T> Cacher<T>
     where T: Fn(u32) -> u32 
 {
@@ -45,7 +44,6 @@ impl<T> Cacher<T>
             value: HashMap::new(),
         }
     }
-
     fn value(&mut self, arg: u32) -> u32 {
         match self.value.get(&arg) {
             Some(v)     => *v,
@@ -58,7 +56,7 @@ impl<T> Cacher<T>
     }
 }
 ```
-5. Using `sum` method for `iterator` will take ownership so that if this statement is called:
+5. Using `sum` method for `iterator` will take ownership so that if this statement is called: 
 ```rust
 let v1 = vec![1, 2, 3];
 let v1_iter = v1.iter();
