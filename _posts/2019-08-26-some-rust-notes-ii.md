@@ -63,3 +63,8 @@ let v1_iter = v1.iter();
 let total: i32 = v1_iter.sum();
 ```
 we cannot use v1_iter after the call because of the reason stated above.
+6. The default value for the opt-level setting for the dev profile is 0 and the one for the release profile is 3. Add these two lines in `Cargo.toml` will override the default optimization level for `dev` profile:
+```
+[profile.dev]
+opt-level = 1
+```
