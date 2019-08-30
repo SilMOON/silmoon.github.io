@@ -68,3 +68,17 @@ we cannot use v1_iter after the call because of the reason stated above.
 [profile.dev]
 opt-level = 1
 ```
+7. A `cons list` example written using `Box<T>`: 
+```rust
+enum List {
+    Cons(i32, Box<List>),
+    Nil,
+}
+use self::List::{Cons, Nil};
+fn main() {
+    let test = Cons(1, 
+                    Box::new(Cons(2,
+                    Box::new(Cons(3, 
+                    Box::new(Nil))))));
+}
+```
