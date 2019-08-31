@@ -101,5 +101,4 @@ impl<T> Drop for MyBox<T> {
         println!("Dropping MyBox!");
     }
 }
-
 ```
