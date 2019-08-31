@@ -82,3 +82,24 @@ fn main() {
                     Box::new(Nil))))));
 }
 ```
+8. An example of creating a simple smart pointer implementing `Deref` and `Drop` traits:
+```rust
+struct MyBox<T>(T);
+impl<T> MyBox<T> {
+    fn new(x: T) -> MyBox<T> {
+        MyBox(x)
+    }
+}
+impl<T> Deref for MyBox<T> {
+    type Target = T;
+    fn deref(&self) -> &T {
+        &self.0
+    }
+}
+impl<T> Drop for MyBox<T> {
+    fn drop(&mut self) {
+        println!("Dropping MyBox!");
+    }
+}
+
+```
