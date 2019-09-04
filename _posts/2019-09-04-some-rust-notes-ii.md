@@ -122,3 +122,4 @@ fn main() {
     println!("{:?}\n{:?}\n{:?}\n", a, b, c);
 }
 ```
+11. By using `Rc<T>` and `RefCell<T>`, it’s possible to create reference cycles which creates memory leaks because the reference count of each item in the cycle will never reach 0, and the values will never be dropped.
