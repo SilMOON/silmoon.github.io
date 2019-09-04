@@ -102,3 +102,23 @@ impl<T> Drop for MyBox<T> {
     }
 }
 ```
+9. Comparing with regular reference, with `Rc` we can create things with shared ownership and do not need to specify lifetime parameters.
+10. An example of combination of `Rc` and `RefCell`:
+```rust
+use std::rc::Rc;
+use std::cell::RefCell;
+#[derive(Debug)]
+enum List {
+    Cons(Rc<RefCell<i32>>, Rc<List>),
+    Nil,
+}
+use crate::List::{Cons, Nil};
+fn main() {
+    let value = Rc::new(RefCell::new(5));
+    let a = Rc::new(Cons(Rc::clone(&value), Rc::new(Nil)));
+    let b = Cons(Rc::new(RefCell::new(6)), Rc::clone(&a));
+    let c = Cons(Rc::new(RefCell::new(12)), Rc::clone(&a));
+    *value.borrow_mut() += 10;
+    println!("{:?}\n{:?}\n{:?}\n", a, b, c);
+}
+```
