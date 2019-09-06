@@ -123,3 +123,71 @@ fn main() {
 }
 ```
 11. By using `Rc<T>` and `RefCell<T>`, it’s possible to create reference cycles which creates memory leaks because the reference count of each item in the cycle will never reach 0, and the values will never be dropped.
+12. An example of using `Weak<T>` to avoid reference cycle and create a simple node structure:
+```rust
+struct Node {
+    value: i32,
+    parent: RefCell<Weak<Node>>,
+    children: RefCell<Vec<Rc<Node>>>,
+}
+fn main() {
+    let root = Rc::new(Node {
+        value: 0,
+        parent: RefCell::new(Weak::new()),
+        children: RefCell::new(vec![]),
+    });
+
+    let leaf = Rc::new(Node {
+        value: 3,
+        parent: RefCell::new(Weak::new()),
+        children: RefCell::new(vec![]),
+    });
+    println!(
+        "leaf strong = {}, weak = {}",
+        Rc::strong_count(&leaf),
+        Rc::weak_count(&leaf),
+    );
+    println!(
+        "root strong = {}, weak = {}",
+        Rc::strong_count(&root),
+        Rc::weak_count(&root),
+    );
+    println!("-------------------------------");
+    {
+        let branch = Rc::new(Node {
+            value: 10,
+            parent: RefCell::new(Rc::downgrade(&root)),
+            children: RefCell::new(vec![Rc::clone(&leaf)]),
+        });
+        *leaf.parent.borrow_mut() = Rc::downgrade(&branch);
+        root.children.borrow_mut().push(Rc::clone(&branch));
+        println!(
+            "root strong = {}, weak = {}",
+            Rc::strong_count(&root),
+            Rc::weak_count(&root),
+        );
+        println!(
+            "branch strong = {}, weak = {}",
+            Rc::strong_count(&branch),
+            Rc::weak_count(&branch),
+        );
+        println!(
+            "leaf strong = {}, weak = {}",
+            Rc::strong_count(&leaf),
+            Rc::weak_count(&leaf),
+        );
+        println!("-------------------------------");
+    }
+    println!("leaf parent = {:?}", leaf.parent.borrow().upgrade());
+    println!(
+        "leaf strong = {}, weak = {}",
+        Rc::strong_count(&leaf),
+        Rc::weak_count(&leaf),
+    );
+    println!(
+        "root strong = {}, weak = {}",
+        Rc::strong_count(&root),
+        Rc::weak_count(&root),
+    );
+}
+```
