@@ -210,3 +210,17 @@ fn main() {
     println!("{}", *counter.lock().unwrap());
 }
 ```
+14. This code: 
+```rust
+let a = 5;
+{
+    let a = 10;
+    println!("{}", a);
+}
+println!("{}", a);
+```
+will print: 
+```
+10
+5
+```
