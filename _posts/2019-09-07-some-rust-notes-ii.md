@@ -224,3 +224,5 @@ will print:
 10
 5
 ```
+15. Use concurrent safe types such as `Arc<T>` instead of `Rc<T>` in concurrent programs. However, types like `Rc<T>` have better performance so it's a trade-off we have to choose.
+16. A trait is object safe if all the methods defined in the trait have the following properties: (1) The return type isn’t Self. (2) There are no generic type parameters.
