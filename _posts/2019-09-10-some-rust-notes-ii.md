@@ -235,3 +235,22 @@ match x {
     _ => println!("no"),
 }
 ```
+17. Using `extern` to call external code in other languages:
+```rust
+extern "C" {
+    fn abs(input: i32) -> i32;
+}
+fn main() {
+    unsafe {
+        println!("Absolute value of -3 according to C: {}", abs(-3));
+    }
+}
+```
+18. An example of using `extern` to create an interface that allows other languages to call Rust functions. (This usage of extern does not require unsafe):
+```rust
+#[no_mangle]
+pub extern "C" fn call_from_c() {
+    println!("Just called a Rust function from C!");
+}
+```
+Note that `#[no_mangle]` annotation to tell the Rust compiler not to mangle the name of this function. Mangling is when a compiler changes the name we’ve given a function to a different name that contains more information for other parts of the compilation process to consume but is less human readable.
