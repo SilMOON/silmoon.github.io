@@ -254,4 +254,18 @@ pub extern "C" fn call_from_c() {
 }
 ```
 Note that `#[no_mangle]` annotation to tell the Rust compiler not to mangle the name of this function. Mangling is when a compiler changes the name we’ve given a function to a different name that contains more information for other parts of the compilation process to consume but is less human readable.
-19. Values in a static variable have a fixed address in memory so that using the value will always access the same data. On the other hand, constants are allowed to duplicate their data whenever they’re used.
+19. Values in a static variable have a fixed address in memory so that using the value will always access the same data. On the other hand, constants are allowed to duplicate their data whenever they’re used. Also, static variables can be mutable, although accessing and modifying mutable static variables is unsafe:
+```rust
+static mut COUNTER: u32 = 0;
+fn add_to_count(inc: u32) {
+    unsafe {
+        COUNTER += inc;
+    }
+}
+fn main() {
+    add_to_count(3);
+    unsafe {
+        println!("COUNTER: {}", COUNTER);
+    }
+}
+```
