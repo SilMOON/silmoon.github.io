@@ -303,3 +303,24 @@ fn main() {
     person.fly();
 }
 ```
+However, for `associated functions` which does not have a `self` parameter so that Rust cannot figure out which implementation of a trait to use. In this case, we need to use `fully qualified syntax`:
+```rust
+trait Animal {
+    fn baby_name() -> String;
+}
+struct Dog;
+impl Dog {
+    fn baby_name() -> String {
+        String::from("Spot")
+    }
+}
+impl Animal for Dog {
+    fn baby_name() -> String {
+        String::from("puppy")
+    }
+}
+fn main() {
+    println!("A baby dog is called a {}", Dog::baby_name());
+    println!("A baby dog is called a {}", <Dog as Animal>::baby_name());
+}
+```
