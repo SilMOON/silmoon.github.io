@@ -269,3 +269,37 @@ fn main() {
     }
 }
 ```
+20. When having multiple methods with the same name defined in different traits or directly on a type:
+```rust
+trait Pilot {
+    fn fly(&self);
+}
+trait Wizard {
+    fn fly(&self);
+}
+struct Human;
+impl Pilot for Human {
+    fn fly(&self) {
+        println!("This is your captain speaking.");
+    }
+}
+impl Wizard for Human {
+    fn fly(&self) {
+        println!("Up!");
+    }
+}
+impl Human {
+    fn fly(&self) {
+        println!("*waving arms furiously*");
+    }
+}
+```
+When we call the `fly` method on a `Human` without other information, the one directly defined in `Human` will be called. If we want to explicitly specify a `fly` method, we can do as below:
+```rust
+fn main() {
+    let person = Human;
+    Pilot::fly(&person);
+    Wizard::fly(&person);
+    person.fly();
+}
+```
