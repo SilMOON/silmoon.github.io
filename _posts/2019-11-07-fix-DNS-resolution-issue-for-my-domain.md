@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fix DNS resolution issue for my own domain
+title: Fix DNS resolution issue for my domain
 categories: [Website]
 tags: [Website]
 fullview: true
