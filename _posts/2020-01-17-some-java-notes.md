@@ -28,7 +28,8 @@ Manager e;
 e = new Employee(. . .);  //this doesn't work!
 ```
 In this case, you must use a cast so that your promise can be checked at runtime. 
-Now consider the following situation:
+
+3. Now consider the following situation: 
 ```java
 Manager boss = new Manager(...);
 boss.setbonus(5000);
