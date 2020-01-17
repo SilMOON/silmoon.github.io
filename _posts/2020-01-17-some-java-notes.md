@@ -39,3 +39,11 @@ In this case, you must use a cast so that your promise can be checked at runtime
     staff[2] = new Employee(...);
 ```
 However, staff[0] will be an `Employee` instance whose actual type (`Manager` in this case) has been temporarily forgotten and we cannot do `staff[0].setbonus(xxx)` (although we can still do `boss.setbonus(xxx)`). To convert it into `Manager` again, we can cast it like this: `Manager xx = (Manager) staff[0]`. And this should be the only case we want to make a cast for an object: to use an object in its full capacity after its actual type has been temporarily forgotten.
+
+4. Use the `instanceof` operator to check if a cast will succeed before doing it:
+```java
+if (staff[1] instanceof Manager) {
+    boss = (Manager) staff[1];
+    //...
+}
+```
