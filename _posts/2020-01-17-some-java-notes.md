@@ -27,7 +27,7 @@ If a superclass is assigned to a subclass variable, you are promising more:
 Manager e;
 e = new Employee(. . .);  //this doesn't work!
 ```
-In this case, you must use a cast so that your promise can be checked at runtime.
+In this case, you must use a cast so that your promise can be checked at runtime. 
 Now consider the following situation:
 ```java
 Manager boss = new Manager(...);
