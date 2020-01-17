@@ -47,3 +47,7 @@ if (staff[1] instanceof Manager) {
     //...
 }
 ```
+
+5. Converting the type of an object by a cast is not usually a good idea, so avoid it if possible.
+
+6. The `final` modifier can be used on classes to prevent someone from forming a subclass of one of your classes. You can also make a specific method in a class final, then no subclass can override that method. (All methods in a final class are automatically final.) Fields can also be declared as final. A final field cannot be changed after the object has been constructed. However, if a class is declared final, only the methods, not the fields, are automatically final.
