@@ -29,11 +29,10 @@ e = new Employee(. . .);  //this doesn't work!
 ```
 In this case, you must use a cast so that your promise can be checked at runtime. 
 
-3. Now consider the following situation: 
+3. Now consider the following situation:
 ```java
 Manager boss = new Manager(...);
 boss.setbonus(5000);
-
 var staff = new Employee[3];
 staff[0] = boss; //this works
 staff[1] = new Employee(...);
