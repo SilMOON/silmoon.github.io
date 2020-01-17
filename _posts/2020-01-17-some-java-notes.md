@@ -11,8 +11,8 @@ The `super` keyword also has two meanings: to call a superclass constructor and 
 ```java
 public Manager(String name, double salary, int year, int month, int day)
 {
-super(name, salary, year, month, day); //is the same as Employee(name, salary, year, month, day)
-bonus = 0;
+    super(name, salary, year, month, day); //is the same as Employee(name, salary, year, month, day)
+    bonus = 0;
 }
 ```
 Likewise, the `this` keyword can be used in a similar way.
