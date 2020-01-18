@@ -6,7 +6,8 @@ tags: [openSUSE,Tips,Linux]
 fullview: true
 ---
 
-1. Check mail-lists frequently.<br><br>
+1. Check mail-lists frequently.
+
 2. Use
 ```Shell
 zypper dup
@@ -15,4 +16,5 @@ instead of
 ```Shell
 zypper up
 ```
+
 3. Use snapper to manage snapshots for recovery
