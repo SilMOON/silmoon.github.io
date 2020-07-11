@@ -7,7 +7,7 @@ fullview: true
 ---
 
 1. Use `vararg` for variable arguments:
-```Kotlin
+```kotlin
 fun printLetters(vararg letters: String, count: Int): Unit {
     print("$count letters are ")
     for (letter in letters) print(letter)
@@ -15,11 +15,11 @@ fun printLetters(vararg letters: String, count: Int): Unit {
 }
 ```
 Then we can use it by calling:
-```Kotlin
+```kotlin
 printLetters("a", "c", "q", count = 3)
 ```
 Or use `*` to pass an array as parameters:
-```Kotlin
+```kotlin
 val argArray = arrayOf("q","e","w")
 printLetters(*argArray, count = 3)
 ```
