@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Some Kotlin notes II
+title: Some Kotlin notes
 categories: [Kotlin]
 tags: [Kotlin, Notes]
 fullview: true
@@ -76,3 +76,25 @@ interface Flyer {
         get() = 1000
 }
 ```
+
+6. Usage of `coerceIn`:
+```kotlin
+println(0.coerceIn(1, 100)) // 1
+println(500.coerceIn(1, 100)) // 100
+```
+
+7. Use `require` to add rules for parameters of a class in `init` block:
+```kotlin
+class Robot (
+    val code: String,
+    val battery: String? = null,
+    val weight: Int? = null
+) {
+    init {
+        require (weight == null || battery != null) {
+            "Weight cannot be set with no battery assigned."
+        }
+    }
+}
+```
+In this case, if we call `val robot = Robot(code="001", weight=100)`, an `IllegalArgumentException` will be thrown because the rule we set cannot be satisfied.
