@@ -98,3 +98,58 @@ class Robot (
 }
 ```
 In this case, if we call `val robot = Robot(code="001", weight=100)`, an `IllegalArgumentException` will be thrown because the rule we set cannot be satisfied.
+
+8. Use `Delegates.observable()` to implement observer pattern, unlike Java's `Observable()` which only provide one `update()` method for overriding, `Delegates.observable()` provide 3 parameters (property itself for delegating, oldValue, newValue) which shows powerful ability to customize:
+```kotlin
+interface PriceUpdateListener {
+    fun onRise(price: Int)
+    fun onFall(price: Int)
+}
+
+class PriceDisplayer: PriceUpdateListener {
+    override fun onRise(price: Int) {
+        println("Price has risen to ${price}.")
+    }
+    override fun onFall(price: Int) {
+        println("Price has fallen to ${price}.")
+    }
+}
+
+class PriceUpdater {
+    var listeners = mutableSetOf<PriceUpdateListener>()
+
+    var price: Int by Delegates.observable(0) { _, old, new ->    //0 is initial value, (_, old, new) are the 3 parameters mentioned above
+        listeners.forEach {
+            if (new > old) it.onRise(price) else it.onFall(price)
+        }
+    }
+}
+```
+To use the class above, we can do:
+```kotlin
+fun main (args: Array<String>) {
+    val priceUpdater = PriceUpdater()
+    val priceDispalyer = PriceDisplayer()
+    priceUpdater.listeners.add(priceDispalyer)
+    priceUpdater.price = 50
+    priceUpdater.price = 40
+}
+```
+
+9. `Delegates.vetoable()` can be used when you want to make sure the assignment follows your rule before a new value is assigned to the target:
+```kotlin
+var value: Int by Delegates.vetoable(0) { prop, old, new ->
+    new > 0
+}
+```
+In this case:
+```
+>>> value = 1
+>>> println(value)
+1
+```
+```
+>>> value = -1  //will be intercepted because -1 does not satisfy the rule (greater than 0)
+>>> println(value)
+1
+```
