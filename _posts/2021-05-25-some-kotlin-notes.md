@@ -114,7 +114,6 @@ class PriceDisplayer: PriceUpdateListener {
         println("Price has fallen to ${price}.")
     }
 }
-
 class PriceUpdater {
     var listeners = mutableSetOf<PriceUpdateListener>()
 
