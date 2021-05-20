@@ -99,12 +99,12 @@ class Robot (
 ```
 In this case, if we call `val robot = Robot(code="001", weight=100)`, an `IllegalArgumentException` will be thrown because the rule we set cannot be satisfied.
 
-8. Use `Delegates.observable()` to implement observer pattern, unlike Java's `Observable()` which only provide one `update()` method for overriding, `Delegates.observable()` provide 3 parameters (property itself for delegating, oldValue, newValue) which shows powerful ability to customize:
+8. Use `Delegates.observable()` to implement observer pattern, unlike Java's `Observable()` which only provide one `update()` method for overriding, `Delegates.observable()` provide 3 parameters (property itself for delegating, oldValue, newValue) which shows powerful ability to customize: 
 ```kotlin
 interface PriceUpdateListener {
     fun onRise(price: Int)
     fun onFall(price: Int)
-}
+} 
 class PriceDisplayer: PriceUpdateListener {
     override fun onRise(price: Int) {
         println("Price has risen to ${price}.")
@@ -112,7 +112,7 @@ class PriceDisplayer: PriceUpdateListener {
     override fun onFall(price: Int) {
         println("Price has fallen to ${price}.")
     }
-}
+} 
 class PriceUpdater {
     var listeners = mutableSetOf<PriceUpdateListener>()
     var price: Int by Delegates.observable(0) { _, old, new ->    //0 is initial value, (_, old, new) are the 3 parameters mentioned above
@@ -120,7 +120,7 @@ class PriceUpdater {
             if (new > old) it.onRise(price) else it.onFall(price)
         }
     }
-}
+} 
 fun main (args: Array<String>) {
     val priceUpdater = PriceUpdater()
     val priceDispalyer = PriceDisplayer()
