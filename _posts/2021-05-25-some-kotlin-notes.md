@@ -136,14 +136,12 @@ var value: Int by Delegates.vetoable(0) { prop, old, new ->
     new > 0
 }
 ```
-
 In this case:
 ```
 >>> value = 1
 >>> println(value)
 1
 ```
-
 ```
 >>> value = -1  //will be intercepted because -1 does not satisfy the rule (greater than 0)
 >>> println(value)
