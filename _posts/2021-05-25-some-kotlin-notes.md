@@ -105,7 +105,6 @@ interface PriceUpdateListener {
     fun onRise(price: Int)
     fun onFall(price: Int)
 }
-
 class PriceDisplayer: PriceUpdateListener {
     override fun onRise(price: Int) {
         println("Price has risen to ${price}.")
@@ -116,7 +115,6 @@ class PriceDisplayer: PriceUpdateListener {
 }
 class PriceUpdater {
     var listeners = mutableSetOf<PriceUpdateListener>()
-
     var price: Int by Delegates.observable(0) { _, old, new ->    //0 is initial value, (_, old, new) are the 3 parameters mentioned above
         listeners.forEach {
             if (new > old) it.onRise(price) else it.onFall(price)
