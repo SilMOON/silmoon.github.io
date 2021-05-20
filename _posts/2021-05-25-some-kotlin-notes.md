@@ -123,10 +123,6 @@ class PriceUpdater {
         }
     }
 }
-```
-
-To use the class above, we can do:
-```kotlin
 fun main (args: Array<String>) {
     val priceUpdater = PriceUpdater()
     val priceDispalyer = PriceDisplayer()
