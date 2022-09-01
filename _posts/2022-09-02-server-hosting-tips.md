@@ -19,12 +19,14 @@ fullview: true
 
 3. Use non-root user
 
-4. (Just my preference) Install zsh & oh-my-zsh
+4. (Just my preference) Install `zsh` & `oh-my-zsh`
 
-5. Setting up SSH keys
+5. Set up SSH keys
   - If no exsisting key, generate one first
   - On local machine: `$ ssh-copy-id USERNAME@IP_ADDRESS`
 
-6. Setting up ufw firewall
+6. Configure `ufw` firewall
 
-7. Use Docker rootless
+7. Install `Fail2Ban`
+`
+8. Use Docker rootless
