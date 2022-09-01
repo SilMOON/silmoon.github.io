@@ -34,10 +34,10 @@ If we call:
 ```kotlin
 println( cal( listOf(1, 2, 3) ) )
 ```
-It will print `15` as the process below:
-0*1+1 = 1
-1*2+2 = 4
-4*3+3=15
+It will print `15` as the process below:  
+`0 * 1 + 1 = 1`  
+`1 * 2 + 2 = 4`  
+`4 * 3 + 3 = 15`  
 
 3. infix function `to` returns paired data structure which is usually combined with `map`:
 ```kotlin
