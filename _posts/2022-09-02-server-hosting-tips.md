@@ -21,4 +21,10 @@ fullview: true
 
 4. (Just my preference) Install zsh & oh-my-zsh
 
-5. Use Docker rootless
+5. Setting up SSH keys
+  - If no exsisting key, generate one first
+  - On local machine: `$ ssh-copy-id USERNAME@IP_ADDRESS`
+
+6. Setting up ufw firewall
+
+7. Use Docker rootless
