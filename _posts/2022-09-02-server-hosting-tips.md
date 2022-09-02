@@ -6,16 +6,16 @@ tags: [Website, Linux]
 fullview: true
 ---
 
-1. Add non-root user.
-  - `# useradd USERNAME`
-  - `# passwd USERNAME`
-  - Add your user to the `wheel` or `sudo` group:
+1. Add non-root user.  
+  I. `# useradd USERNAME`  
+  II. `# passwd USERNAME`  
+  III. Add your user to the `wheel` or `sudo` group:
     - DEB based distros: `# usermod -aG sudo USERNAME`
     - RPM based distros: `# usermod -aG wheel USERNAME`
 
-2. Disable root logins.
-  - `# vim /etc/ssh/sshd_config`
-  - Set `PermitRootLogin=no`
+2. Disable root logins.  
+  I. `# vim /etc/ssh/sshd_config`  
+  II. Set `PermitRootLogin=no`
 
 3. Change SSH port
 
