@@ -7,7 +7,7 @@ fullview: true
 ---
 
 1. Add non-root user.  
-  I. `# useradd USERNAME`  
+  I. `# useradd -m USERNAME`  
   II. `# passwd USERNAME`  
   III. Add your user to the `wheel` or `sudo` group:
     - DEB based distros: `# usermod -aG sudo USERNAME`
