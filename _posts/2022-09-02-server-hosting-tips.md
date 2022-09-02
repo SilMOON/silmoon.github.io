@@ -28,5 +28,5 @@ fullview: true
 6. Configure `ufw` firewall
 
 7. Install `Fail2Ban`
-`
+
 8. Use Docker rootless
