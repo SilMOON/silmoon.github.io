@@ -17,16 +17,20 @@ fullview: true
   i. `# vim /etc/ssh/sshd_config`  
   ii. Set `PermitRootLogin=no`
 
-3. Use non-root user
+3. Change SSH port
 
-4. (Just my preference) Install `zsh` & `oh-my-zsh`
+4. Use non-root user
 
-5. Set up SSH keys
+5. (Just my preference) Install `zsh` & `oh-my-zsh`
+
+6. Set up SSH keys
   - If no exsisting key, generate one first
   - On local machine: `$ ssh-copy-id USERNAME@IP_ADDRESS`
 
-6. Configure `ufw` firewall
+7. Configure `ufw` firewall
 
-7. Install `Fail2Ban`
+8. Install `Fail2Ban`
 
-8. Use Docker rootless
+9. Use Docker rootless
+
+10. (Optional) Disable SMTP port
