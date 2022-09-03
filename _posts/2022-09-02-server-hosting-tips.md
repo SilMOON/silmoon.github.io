@@ -25,12 +25,17 @@ fullview: true
 
 6. Set up SSH keys
   - If no exsisting key, generate one first
-  - On local machine: `$ ssh-copy-id USERNAME@IP_ADDRESS`
+  - On local machine: `$ ssh-copy-id USERNAME@IP_ADDRESS` (If SSH port changed: `$ ssh-copy-id -p PORT USERNAME@IP_ADDRESS`)
 
 7. Configure `ufw` firewall
 
 8. Install `Fail2Ban`
 
-9. Use Docker rootless
+9. (If possible) Use Docker rootless
 
-10. (Optional) Disable SMTP port
+10. (From: https://docs.docker.com/engine/install/linux-postinstall/) If using regular Docker, don't forget:
+  - `$ sudo groupadd docker`
+  - `$ sudo usermod -aG docker $USER`
+  - Reboot
+
+11. (Optional) Disable SMTP port
