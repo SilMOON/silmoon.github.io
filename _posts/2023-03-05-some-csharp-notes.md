@@ -18,6 +18,7 @@ Console.WriteLine(
   "
   );
 ```
+Noted that C#11 introduced raw string literals which is more convenient. I'm actually suprised that they didn't add this feature earlier. :)
 
 2. Interpolated strings examples:
 ```C#
