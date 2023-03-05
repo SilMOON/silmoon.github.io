@@ -26,7 +26,7 @@ Console.WriteLine($"Interpolated strings example: {testValue}");
 string s = $"255 in hex is {byte.MaxValue:X2}"; // X2 = 2-digit hexadecimal
 // When using  a colon for another purpose, wrap the entire expression in parentheses
 Console.WriteLine($"This is a ternary conditional operator in interpolated strings example: {(testObj.Method() ? "result1" : "result2")}");
-  
+// 
 // Interpolated strings must complete on a single line, unless you also specify the verbatim string operator:
 Console.WriteLine(
   $@"
@@ -52,7 +52,7 @@ char[] firstTwo = alphabet [..2]; // 'a', 'b'
 // Declare a Range variable can do the same
 Range firstTwoRange = 0..2;
 char[] firstTwoVersionTwo = vowels [firstTwoRange]; // 'a', 'b'
-
+// 
 char[] lastThree = vowels [2..]; // 'c', 'd', 'e'
 // Indices can be used in range as well
 char[] lastThreeVersionTwo = vowels [^3..]; // 'c', 'd', 'e'
