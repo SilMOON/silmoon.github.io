@@ -58,3 +58,29 @@ char[] lastThree = vowels [2..]; // 'c', 'd', 'e'
 // Indices can be used in range as well
 char[] lastThreeVersionTwo = vowels [^3..]; // 'c', 'd', 'e'
 ```
+
+5. Passing a reference-type argument by value copies the reference but not the object. (If it's just a value-type argument, it will just copy the value.)
+```C#
+StringBuilder test = new StringBuilder();
+Foo(test);
+Console.WriteLine(test.ToString()); // print: abcd
+// test and fooTest are both just reference point to the same object
+static void Foo(StringBuilder fooTest)
+{
+  fooTest.Append("abcd");
+  // In this case, fooTest as a reference become null but doesn't affect the stringBuilder object
+  fooTest = null;
+}
+```
+6. Different from `5`, `ref` can be used to pass by reference.
+```C#
+int x = 8;
+Foo(ref x);
+Console.WriteLine(x);
+// x is now 9
+static void Foo(ref int p)
+{
+  p = p + 1;
+  Console.WriteLine(p);
+}
+```
