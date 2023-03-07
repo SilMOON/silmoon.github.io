@@ -84,3 +84,54 @@ static void Foo(ref int p)
   Console.WriteLine(p);
 }
 ```
+7. Modifier `out` and `in` can be useful in some situations.
+8. Modifier `params` allows the method to accept any number of arguments of a particular type.
+```C#
+int total = Sum(1, 2, 3, 4); // 10
+// equivalent to:
+int total2 = Sum(new int[] { 1, 2, 3, 4 });
+// The parameter type must be declared as array
+int Sum(params int[] intList)
+{
+  int sum = 0;
+  foreach (var item in intList)
+  {
+    sum += item;
+  }
+  return sum;
+}
+```
+9. Methods / constructors etc. can declare optional parameters. A parameter is optional if it specifies a default value.
+```C#
+Foo(); // 6
+void Foo(int x = 6) { Console.WriteLine(x); }
+```
+Optional parameters cannot be marked with `ref` or `out`.
+Mandatory parameters must occur before optional parameters in both the method declaration and the method call (the exception is with params arguments, which still always come last).
+10. `ref locals` and `ref returns` can be used in micro-optimization scenarios.
+11. C# will perform a `defensive copy` if we use struct under a readonly context but doesn't mark the struct (or members involve) as readonly as well.
+12. Target-typed `new` expressions example:
+```C#
+System.Text.StringBuilder sb = new ("Test");
+// equivalent to
+System.Text.StringBuilder sb = new System.Text.StringBuilder ("Test");
+```
+13. The null-coalescing operator example:
+```C#
+// Null-Coalescing operator
+string s1 = null;
+string s2 = s1 ?? "nothing"; // "nothing"
+// Null-Coalescing assignment operator
+int? test(int? x)
+{
+  x ??= 3; // x will become 3 if it is null
+  return x;
+}
+```
+14. By using Null-Conditional Operator (“Elvis” operator), if the operand on the left is null, the expression evaluates to null instead of throwing a NullReferenceException:
+```C#
+System.Text.StringBuilder sb = null;
+string s = sb?.ToString(); // No error; s instead evaluates to null
+// equivalent to
+string s = (sb == null ? null : sb.ToString());
+```
