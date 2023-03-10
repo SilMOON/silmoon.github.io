@@ -135,3 +135,71 @@ string s = sb?.ToString(); // No error; s instead evaluates to null
 // equivalent to
 string s = (sb == null ? null : sb.ToString());
 ```
+15. `switch` statement can switch on not only constants but also types:
+```C#
+// switch on constants
+void constantSwitchTest(object constantExample)
+{
+  switch (constantExample)
+  {
+    case 1:
+      Console.WriteLine("One or Negative");
+      break;
+    case 2:
+      Console.WriteLine("Two");
+      break;
+    case 0:
+    case -1:
+      goto case 1;
+    default:
+      Console.WriteLine(constantExample);
+      break;
+  }
+}
+// switch on types
+void typeSwitchTest(object typeExample)
+{
+  switch (typeExample)
+  {
+    case string s:
+      Console.WriteLine($"String: {s}.");
+      break;
+    case float f when f > 1000:
+    case double d when d > 1000:
+    case decimal m when m > 1000:
+      Console.WriteLine($"We can refer to {typeExample} here but not f or d or m");
+      break;
+    // can use `_` if don't care the value of the variable
+    case int _:
+      Console.WriteLine("It's an int.");
+      break;
+    // predicate a case with the `when` keyword
+    // Fires only when b is true
+    case bool b when b == true:
+      Console.WriteLine("True!");
+      break;
+    case bool b:
+      Console.WriteLine("False!");
+      break;
+  }
+}
+```
+16. Switch expressions:
+```C#
+// The case clauses here are expressions (terminated by commas) rather than statements
+string cardName = cardNumber switch
+{
+  13 => "King",
+  12 => "Queen",
+  11 => "Jack",
+  _ => "Pip card"
+  // equivalent to 'default'
+};
+// Can switch on multiple values (the tuple pattern)
+string result = (numberAsInt, numberAsString) switch
+{
+  (1, "one") => "test1",
+  (2, "two") => "test2",
+  ...
+};
+```
