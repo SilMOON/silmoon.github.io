@@ -7,7 +7,7 @@ fullview: true
 ---
 
 1. Use escape sequences for special signs such as `\n`. Or use a verbatim statement
-```C#
+```c#
 // Escape sequences example
 Console.WriteLine("I need to use escape sequences for special signs such as \\ here.");
 // Verbatim statement example
@@ -21,7 +21,7 @@ Console.WriteLine(
 Noted that C#11 introduced raw string literals which is more convenient. I'm actually suprised that they didn't add this feature earlier. :)
 
 2. Interpolated strings examples:
-```C#
+```csharp
 Console.WriteLine($"Interpolated strings example: {testValue}");
 // Use colon and a format string to format
 string s = $"255 in hex is {byte.MaxValue:X2}"; // X2 = 2-digit hexadecimal
@@ -192,8 +192,7 @@ string cardName = cardNumber switch
   13 => "King",
   12 => "Queen",
   11 => "Jack",
-  _ => "Pip card"
-  // equivalent to 'default'
+  _ => "Pip card" // equivalent to 'default'
 };
 // Can switch on multiple values (the tuple pattern)
 string result = (numberAsInt, numberAsString) switch
@@ -202,4 +201,30 @@ string result = (numberAsInt, numberAsString) switch
   (2, "two") => "test2",
   ...
 };
+```
+17. Namespace examples:
+```C#
+namespace Outer.Middle.Inner
+{
+  class Class1 { }
+  class Class2 { }
+}
+// equivalent to
+namespace Outer
+{
+  namespace Middle
+  {
+    namespace Inner
+    {
+      class Class1 { }
+      class Class2 { }
+    }
+  }
+}
+```
+18. If you want all the types in a file to be defined in one namespace, a `file-scoped namespace` is simpler:
+```C#
+namespace MyNamespace; // Applies to everything that follows in the file
+class Class1 {} // inside MyNamespace
+class Class2 {} // inside MyNamespace
 ```
