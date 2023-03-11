@@ -3,7 +3,7 @@ layout: post
 title: Some Rust notes
 categories: [Rust]
 tags: [Rust, Notes]
-fullview: true
+fullview: false
 ---
 
 1. io::stdin().read_line(&xx) appends new value on the target which is "xx" in this case.

@@ -3,7 +3,7 @@ layout: post
 title: Some Rust notes II
 categories: [Rust]
 tags: [Rust, Notes]
-fullview: true
+fullview: false
 ---
 
 1. A simple example of the syntax of specifying generic type parameters, trait bounds, and lifetimes: 

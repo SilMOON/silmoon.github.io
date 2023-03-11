@@ -3,7 +3,7 @@ layout: post
 title: Some Kotlin notes
 categories: [Kotlin]
 tags: [Kotlin, Notes]
-fullview: true
+fullview: false
 ---
 
 1. Use `vararg` for variable arguments:

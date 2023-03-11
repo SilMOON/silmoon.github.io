@@ -3,7 +3,7 @@ layout: post
 title: Some C# notes
 categories: [CSharp]
 tags: [CSharp, Notes]
-fullview: true
+fullview: false
 ---
 
 1. Use escape sequences for special signs such as `\n`. Or use a verbatim statement
@@ -21,7 +21,7 @@ Console.WriteLine(
 Noted that C#11 introduced raw string literals which is more convenient. I'm actually suprised that they didn't add this feature earlier. :)
 
 2. Interpolated strings examples:
-```csharp
+```c#
 Console.WriteLine($"Interpolated strings example: {testValue}");
 // Use colon and a format string to format
 string s = $"255 in hex is {byte.MaxValue:X2}"; // X2 = 2-digit hexadecimal
@@ -38,7 +38,7 @@ Console.WriteLine(
 ```
 
 3. Indices can be used to get elements from the end of an array, with the `^` operator. `^1` refers to the last element, `^0` equals the length of the array so will exceed the max index and cause an error:
-```C#
+```c#
 char[] alphabet = new char[] {'a','b','c','d','e'};
 char firstElement = alphabet[0];
 char lastElement = alphabet[^1]; // 'e'
@@ -48,7 +48,7 @@ char secondToLast = alphabet[secondToLastIndex]; // 'd'
 ```
 
 4. Ranges can be used as `Range`, the second number in the range is exclusive:
-```C#
+```c#
 char[] firstTwo = alphabet [..2]; // 'a', 'b'
 // Declare a Range variable can do the same
 Range firstTwoRange = 0..2;
@@ -60,7 +60,7 @@ char[] lastThreeVersionTwo = vowels [^3..]; // 'c', 'd', 'e'
 ```
 
 5. Passing a reference-type argument by value copies the reference but not the object. (If it's just a value-type argument, it will just copy the value.)
-```C#
+```c#
 StringBuilder test = new StringBuilder();
 Foo(test);
 Console.WriteLine(test.ToString()); // print: abcd
@@ -73,7 +73,7 @@ static void Foo(StringBuilder fooTest)
 }
 ```
 6. Different from `5`, `ref` can be used to pass by reference.
-```C#
+```c#
 int x = 8;
 Foo(ref x);
 Console.WriteLine(x);
@@ -86,7 +86,7 @@ static void Foo(ref int p)
 ```
 7. Modifier `out` and `in` can be useful in some situations.
 8. Modifier `params` allows the method to accept any number of arguments of a particular type.
-```C#
+```c#
 int total = Sum(1, 2, 3, 4); // 10
 // equivalent to:
 int total2 = Sum(new int[] { 1, 2, 3, 4 });
@@ -102,7 +102,7 @@ int Sum(params int[] intList)
 }
 ```
 9. Methods / constructors etc. can declare optional parameters. A parameter is optional if it specifies a default value.
-```C#
+```c#
 Foo(); // 6
 void Foo(int x = 6) { Console.WriteLine(x); }
 ```
@@ -111,13 +111,13 @@ Mandatory parameters must occur before optional parameters in both the method de
 10. `ref locals` and `ref returns` can be used in micro-optimization scenarios.
 11. C# will perform a `defensive copy` if we use struct under a readonly context but doesn't mark the struct (or members involve) as readonly as well.
 12. Target-typed `new` expressions example:
-```C#
+```c#
 System.Text.StringBuilder sb = new ("Test");
 // equivalent to
 System.Text.StringBuilder sb = new System.Text.StringBuilder ("Test");
 ```
 13. The null-coalescing operator example:
-```C#
+```c#
 // Null-Coalescing operator
 string s1 = null;
 string s2 = s1 ?? "nothing"; // "nothing"
@@ -129,14 +129,14 @@ int? test(int? x)
 }
 ```
 14. By using Null-Conditional Operator (“Elvis” operator), if the operand on the left is null, the expression evaluates to null instead of throwing a NullReferenceException:
-```C#
+```c#
 System.Text.StringBuilder sb = null;
 string s = sb?.ToString(); // No error; s instead evaluates to null
 // equivalent to
 string s = (sb == null ? null : sb.ToString());
 ```
 15. `switch` statement can switch on not only constants but also types:
-```C#
+```c#
 // switch on constants
 void constantSwitchTest(object constantExample)
 {
@@ -185,7 +185,7 @@ void typeSwitchTest(object typeExample)
 }
 ```
 16. Switch expressions:
-```C#
+```c#
 // The case clauses here are expressions (terminated by commas) rather than statements
 string cardName = cardNumber switch
 {
@@ -203,7 +203,7 @@ string result = (numberAsInt, numberAsString) switch
 };
 ```
 17. Namespace examples:
-```C#
+```c#
 namespace Outer.Middle.Inner
 {
   class Class1 { }
@@ -223,8 +223,77 @@ namespace Outer
 }
 ```
 18. If you want all the types in a file to be defined in one namespace, a `file-scoped namespace` is simpler:
-```C#
+```c#
 namespace MyNamespace; // Applies to everything that follows in the file
 class Class1 {} // inside MyNamespace
 class Class2 {} // inside MyNamespace
+```
+19. A class or struct may overload constructors. To avoid code duplication, one constructor can call another, using the this keyword:
+```c#
+public class Wine
+{
+  public decimal Price;
+  public int Year;
+  // Constructor
+  public Wine(decimal price)
+  {
+    Price = price;
+  }
+  // Calls the previous constructor to avoid code duplication
+  public Wine(decimal price, int year) : this(price)
+  {
+    Year = year;
+  }
+  // You can also pass an expression into another constructor
+  public Wine (decimal price, DateTime year) : this (price, year.Year) {}
+}
+```
+20. Constructors do not need to be public:
+```c#
+public class Class1
+{
+  // Private constructor
+  Class1() {}
+  // Create instance using static method call instead
+  public static Class1 Create (...)
+  {
+    // Perform custom logic here to return an instance of Class1
+  }
+}
+```
+21. As an approximate opposite to a constructor, a deconstructor typically assigns fields back to a set of variables:
+```c#
+class Rectangle
+{
+  public readonly float Width, Height;
+  // Constructor
+  public Rectangle(float width, float height)
+  {
+    Width = width;
+    Height = height;
+  }
+  // Deconstruct must be called Deconstruct and have one or more out parameters
+  public void Deconstruct(out float width, out float height)
+  {
+    width = Width;
+    height = Height;
+  }
+}
+```
+22. To call the deconstructor, we can use the following syntax:
+```c#
+var rect = new Rectangle (3, 4);
+(float width, float height) = rect; // Deconstruction
+Console.WriteLine (width + " " + height); // 3 4
+// The deconstruction part above is equivalent to
+float width, height;
+rect.Deconstruct(out width, out height);
+// equivalent to
+rect.Deconstruct (out var width, out var height);
+// equivalent to
+(var width, var height) = rect;
+// equivalent to
+var (width, height) = rect;
+// use `_` if don't care one or more variables
+var (_, height) = rect;
 ```

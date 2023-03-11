@@ -3,7 +3,7 @@ layout: post
 title: Some Java notes
 categories: [Java]
 tags: [Java, Notes]
-fullview: true
+fullview: false
 ---
 
 1. The `this` keyword has two meanings: to refer a field of the implicit parameter and to call another defined constructor in the same class.
