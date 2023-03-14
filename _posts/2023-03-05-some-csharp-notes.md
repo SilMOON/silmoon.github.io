@@ -272,6 +272,8 @@ class Rectangle
     Width = width;
     Height = height;
   }
+  // The constructor above is equivalent to
+  public Rectangle (float width, float height) => (Width, Height) = (width, height);
   // Deconstruct must be called Deconstruct and have one or more out parameters
   public void Deconstruct(out float width, out float height)
   {
@@ -283,11 +285,16 @@ class Rectangle
 22. To call the deconstructor, we can use the following syntax:
 ```c#
 var rect = new Rectangle (3, 4);
-(float width, float height) = rect; // Deconstruction
-Console.WriteLine (width + " " + height); // 3 4
+// Deconstruction
+(float width, float height) = rect;
+// 3 4
+Console.WriteLine (width + " " + height);
 // The deconstruction part above is equivalent to
 float width, height;
 rect.Deconstruct(out width, out height);
+// equivalent to
+float width, height;
+(width, height) = rect;
 // equivalent to
 rect.Deconstruct (out var width, out var height);
 // equivalent to
@@ -296,4 +303,128 @@ rect.Deconstruct (out var width, out var height);
 var (width, height) = rect;
 // use `_` if don't care one or more variables
 var (_, height) = rect;
+```
+23. Any accessible fields or properties of an object can be set via an `object initializer` directly after construction, no need to set each fields separately:
+```c#
+public class Bunny
+{
+  public string Name;
+  public bool LikesCarrots;
+  public bool LikesHumans;
+  public Bunny () {}
+  public Bunny (string n) { Name = n; }
+}
+// Note parameterless constructors can omit empty parentheses
+Bunny b1 = new Bunny { Name="Bo", LikesCarrots=true, LikesHumans=false };
+Bunny b2 = new Bunny ("Bo") { LikesCarrots=true, LikesHumans=false };
+```
+24. Comparing with `field`, a `property` gives more control on how to get/set:
+```c#
+public class Stock
+{
+  // Private "backing" field
+  decimal currentPrice;
+  // The public property
+  public decimal CurrentPrice
+  {
+    get => currentPrice;
+    // Can put some validation and throw a custom exception if needed
+    set { currentPrice = value; }
+  }
+}
+```
+25. `Property initializer` can be added to automatic properties:
+```c#
+public class Stock{
+  public decimal CurrentPrice { get; set; } = 123;
+  public int Maximum { get; } = 999;
+  // ...
+}
+```
+26. The get and set accessors can have different access levels:
+```c#
+var a = new Foo();
+a.Test(16.121m); // a.X will be 16.12
+public class Foo
+{
+  private decimal x;
+  // X should be public here because one of the getter/setter is public
+  public decimal X
+  {
+    // public getter
+    get { return x; }
+    // private setter
+    private set { x = Math.Round(value, 2); }
+  }
+  //Use the private set
+  public void Test(decimal input) => X = input;
+}
+```
+27. Init-only setters:
+```c#
+// Can be set once via an object initializer
+var note = new Note { Pitch = 50 };
+public class Note
+{
+  // “Init-only” property
+  public int Pitch { get; init; } = 20;
+  // “Init-only” property
+  public int Duration { get; init; } = 100;
+}
+```
+28. Adding an `optional parameter` to the constructor can basically achieve the same effect comparing with `object initializer`. However, `optional constructors` can break binary compatibility in some cases (especially for public libraries).
+29. To write an `indexer`, define a property called this, specifying the arguments in square brackets
+```c#
+Sentence s = new Sentence();
+// fox
+Console.WriteLine (s[3]);
+s[3] = "kangaroo";
+// kangaroo
+Console.WriteLine (s[3]);
+class Sentence
+{
+  string[] words = "The quick brown fox".Split();
+  public string this [int wordNum]
+  {
+    get { return words [wordNum]; }
+    set { words [wordNum] = value; }
+  }
+}
+```
+30. A type can declare multiple indexers, each with parameters of different types. An indexer can also take more than one parameter:
+```c#
+public string this [int arg1, string arg2]
+{
+  get { ... } set { ... }
+}
+```
+31. Read-only indexer can be simplified as expression-bodied syntax, range can be supported by defining a range to `indexer`:
+```c#
+Sentence s = new Sentence();
+// fox
+Console.WriteLine (s [^1]);
+// (The, quick)
+string[] firstTwoWords = s [..2];
+class Sentence
+{
+  string[] words = "The quick brown fox".Split();
+  public string this [int wordNum] => words [wordNum];
+  // Define range
+  public string[] this [Range range] => words [range];
+}
+```
+32. A static constructor executes once per type rather than once per instance. A type can define only one static constructor, and it must be parameterless and have the same name as the type:
+```c#
+class Test
+{
+  static Test() { Console.WriteLine ("Type Initialized"); }
+}
+```
+33. `Module initializers` which execute once per assembly (when the assembly is first loaded) was introduced from C# 9. To define a module initializer, write a static void method and then apply the `[ModuleInitializer]` attribute to that method:
+```c#
+[System.Runtime.CompilerServices.ModuleInitializer]
+internal static void InitAssembly()
+{
+  // ...
+}
 ```
