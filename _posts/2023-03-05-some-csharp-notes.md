@@ -428,3 +428,15 @@ internal static void InitAssembly()
   // ...
 }
 ```
+34. `Finalizers` are class-only methods that execute before the garbage collector reclaims the memory for an unreferenced object:
+```c#
+class Class1
+{
+  // Name of the class prefixed with the ~ symbol
+  ~Class1()
+  {
+    //...
+  }
+}
+```
+35. `Partial` classes and methods: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods
