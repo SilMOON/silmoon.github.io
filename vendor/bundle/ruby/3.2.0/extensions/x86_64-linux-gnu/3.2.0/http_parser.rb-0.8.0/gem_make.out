@@ -1,0 +1,19 @@
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/usr/bin/ruby.ruby3.2 extconf.rb
+creating Makefile
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230728-4968-c1uhxc sitelibdir\=./.gem.20230728-4968-c1uhxc clean
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230728-4968-c1uhxc sitelibdir\=./.gem.20230728-4968-c1uhxc
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230728-4968-c1uhxc sitelibdir\=./.gem.20230728-4968-c1uhxc install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20230728-4968-c1uhxc
+
+current directory: /home/silmoon/MyProjects/silmoon.github.io/vendor/bundle/ruby/3.2.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20230728-4968-c1uhxc sitelibdir\=./.gem.20230728-4968-c1uhxc clean
