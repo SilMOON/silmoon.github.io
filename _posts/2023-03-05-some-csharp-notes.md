@@ -439,4 +439,13 @@ class Class1
   }
 }
 ```
-35. `Partial` classes and methods: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods
+35. `Partial` classes and methods: https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods 
+36. Be careful about type when using patterns with numeric constants
+```c#
+// Decimal
+object obj = 2m;
+// True
+Console.WriteLine(obj is < 3m);
+// False, because type doesn't match (integer)
+Console.WriteLine(obj is < 3);
+```
