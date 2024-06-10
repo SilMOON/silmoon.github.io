@@ -13,7 +13,10 @@ By using extension methods, it is quite convenient to group APIs into different 
 A third-party library [Carter](https://github.com/CarterCommunity/Carter) also seems useful in grouping APIs.  
   
 Below are some articles and videos I found useful regarding organizing Minimal API applications:  
-[Tess Ferrandez's article about organizing ASP.NET Core Minimal APIs](https://www.tessferrandez.com/blog/2023/10/31/organizing-minimal-apis.html)  
 [Milan Jovanović's video](https://www.youtube.com/watch?v=GCuVC_qDOV4)  
-  
+[Milan Jovanović's blog](https://www.milanjovanovic.tech/blog/how-to-structure-minimal-apis)
+[Tess Ferrandez's article about organizing ASP.NET Core Minimal APIs](https://www.tessferrandez.com/blog/2023/10/31/organizing-minimal-apis.html)  
+
+Milan uses extension methods for `IEndpointRouteBuilder` while Tess using `WebApplication`. I prefer the `IEndpointRouteBuilder` approach because [MS official document](https://learn.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-8.0#compare-terminal-middleware-with-routing) says so.
+
 In my previous experience with Spring Boot, I was used to a more MVC style when implementing Web APIs. However, I am glad to see a new way to develop them. I'm not sure if Minimal API is suitable for "large" projects, but it really looks promising to me for many Web API applications.  
