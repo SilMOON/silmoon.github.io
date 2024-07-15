@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Switch from Snap to DEB Firefox on Kubuntu
-categories: [Kubuntu][Linux]
-tags: [Kubuntu][Linux]
+categories: [Linux]
+tags: [Kubuntu, Linux]
 fullview: true
 ---
 
