@@ -6,7 +6,8 @@ tags: [Algorithm, CSharp]
 fullview: true
 ---
 
-Just a quick refresh.
+DP code sample.  
+Just a quick refresh.  
 
 ```c#
 class Program
